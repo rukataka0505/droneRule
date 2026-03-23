@@ -1,0 +1,7779 @@
+﻿node.exe : 2026-03-23T
+06:54:36.362Z astro:cl
+i --verbose flag enabl
+ed! Enabling: DEBUG="a
+stro:*,vite:*"
+発生場所 行:1 文字:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\P
+rogram Files\nodejs/no
+de_mo ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (2026-03-23   
+ T06:5...astro:*,v    
+ite:*":String) []    ,
+ RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+2026-03-23T06:54:36.36
+3Z astro:cli Tip: Set 
+the DEBUG env variable
+ directly for more con
+trol. Example: "DEBUG=
+astro:*,vite:* astro b
+uild".
+2026-03-23T06:54:37.91
+1Z astro:telemetry [no
+tify] last notified on
+ 1774246713362
+2026-03-23T06:54:39.91
+5Z astro:Failed to loa
+d config with Node Err
+or [ERR_UNSUPPORTED_NO
+DE_MODULES_TYPE_STRIPP
+ING]: Stripping types 
+is currently unsupport
+ed for files under nod
+e_modules, for "file:/
+//C:/Users/rukat/Downl
+oads/%E3%83%89%E3%83%A
+D%E3%83%BC%E3%83%B3%E8
+%B3%87%E6%A0%BC%E3%80%
+80%E6%95%99%E5%89%87/d
+rone-license-docs/node
+_modules/@astrojs/star
+light/index.ts"
+    at stripTypeScript
+ModuleTypes (node:inte
+rnal/modules/typescrip
+t:183:11)
+    at ModuleLoader.<a
+nonymous> (node:intern
+al/modules/esm/transla
+tors:663:29)
+    at #translate (nod
+e:internal/modules/esm
+/loader:467:20)
+    at afterLoad (node
+:internal/modules/esm/
+loader:523:29)
+    at ModuleLoader.lo
+adAndTranslate (node:i
+nternal/modules/esm/lo
+ader:528:12)
+    at #getOrCreateMod
+uleJobAfterResolve (no
+de:internal/modules/es
+m/loader:565:36)
+    at afterResolve (n
+ode:internal/modules/e
+sm/loader:618:52)
+    at ModuleLoader.ge
+tOrCreateModuleJob (no
+de:internal/modules/es
+m/loader:624:12)
+    at ModuleJob.syncL
+ink (node:internal/mod
+ules/esm/module_job:14
+3:33)
+    at ModuleJob.link 
+(node:internal/modules
+/esm/module_job:228:17
+)
+2026-03-23T06:54:39.92
+2Z vite:env loading en
+v files: [
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.local',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.development',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.development.local'
+]
+2026-03-23T06:54:39.92
+2Z vite:env env files 
+loaded in 1.49ms
+2026-03-23T06:54:39.92
+4Z vite:env using reso
+lved env: {}
+2026-03-23T06:54:39.94
+6Z vite:config using r
+esolved config: {
+  configFile: undefine
+d,
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?
+:\/\/(?:(?:[^:]+\.)?lo
+calhost|127\.0\.0\.1|\
+[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFi
+les: [], ssrFiles: [] 
+},
+    middlewareMode: tr
+ue,
+    fs: {
+      strict: true,
+      deny: [ '.env', 
+'.env.*', '*.{crt,pem}
+', '**/.git/**' ],
+      allow: [ 'C:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs' ]
+    },
+    preTransformReques
+ts: true,
+    perEnvironmentStar
+tEndDuringDev: false,
+    sourcemapIgnoreLis
+t: [Function: isInNode
+Modules$1],
+    hmr: false,
+    watch: null,
+    ws: false
+  },
+  optimizeDeps: {
+    include: [],
+    exclude: [],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefine
+d,
+    holdUntilCrawlEnd:
+ true,
+    force: false,
+    noDiscovery: true,
+    esbuildOptions: { 
+preserveSymlinks: fals
+e }
+  },
+  clearScreen: false,
+  appType: 'custom',
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: 
+{ preserveSymlinks: fa
+lse },
+      include: [],
+      exclude: [],
+      needsInterop: []
+,
+      extensions: [],
+      holdUntilCrawlEn
+d: true,
+      force: false,
+      noDiscovery: tru
+e
+    },
+    external: true,
+    noExternal: [],
+    resolve: {
+      conditions: [ 'm
+odule', 'node', 'devel
+opment|production' ],
+      externalConditio
+ns: [ 'node' ]
+    }
+  },
+  plugins: [
+    'vite:optimized-de
+ps',
+    'vite:watch-packag
+e-data',
+    'vite:pre-alias',
+    'alias',
+    'vite:modulepreloa
+d-polyfill',
+    'vite:resolve',
+    'vite:html-inline-
+proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper'
+,
+    'vite:worker',
+    'vite:asset',
+    'vite:wasm-fallbac
+k',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-impor
+t-meta-url',
+    'vite:asset-import
+-meta-url',
+    'vite:dynamic-impo
+rt-vars',
+    'vite:import-glob'
+,
+    'vite:client-injec
+t',
+    'vite:css-analysis
+',
+    'vite:import-analy
+sis'
+  ],
+  environments: {
+    client: {
+      define: undefine
+d,
+      resolve: {
+        externalCondit
+ions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.j
+s',
+          '.mts',  '.t
+s',
+          '.jsx',  '.t
+sx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: []
+,
+        external: [],
+        preserveSymlin
+ks: false,
+        alias: [
+          {
+            find: /^\/
+?@vite\/env/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/env.mjs'
+          },
+          {
+            find: /^\/
+?@vite\/client/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/client.mjs
+'
+          }
+        ],
+        mainFields: [ 
+'browser', 'module', '
+jsnext:main', 'jsnext'
+ ],
+        conditions: [ 
+'module', 'browser', '
+development|production
+' ],
+        builtins: []
+      },
+      keepProcessEnv: 
+false,
+      consumer: 'clien
+t',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: 
+[],
+        extensions: []
+,
+        disabled: unde
+fined,
+        holdUntilCrawl
+End: true,
+        force: false,
+        noDiscovery: t
+rue,
+        esbuildOptions
+: { preserveSymlinks: 
+false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { j
+s: true },
+        sourcemapIgnor
+eList: [Function: isIn
+NodeModules$1],
+        preTransformRe
+quests: true,
+        createEnvironm
+ent: [Function: defaul
+tCreateClientDevEnviro
+nment],
+        recoverable: t
+rue,
+        moduleRunnerTr
+ansform: false
+      },
+      build: {
+        target: [ 'es2
+020', 'edge88', 'firef
+ox78', 'chrome87', 'sa
+fari14' ],
+        polyfillModule
+Preload: true,
+        modulePreload:
+ { polyfill: true },
+        outDir: 'dist'
+,
+        assetsDir: 'as
+sets',
+        assetsInlineLi
+mit: 4096,
+        sourcemap: fal
+se,
+        terserOptions:
+ {},
+        rollupOptions:
+ {},
+        commonjsOption
+s: { include: [ /node_
+modules/ ], extensions
+: [ '.js', '.cjs' ] },
+        dynamicImportV
+arsOptions: { warnOnEr
+ror: true, exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: n
+ull,
+        copyPublicDir:
+ true,
+        manifest: fals
+e,
+        lib: false,
+        ssrManifest: f
+alse,
+        ssrEmitAssets:
+ false,
+        reportCompress
+edSize: true,
+        chunkSizeWarni
+ngLimit: 500,
+        watch: null,
+        cssCodeSplit: 
+true,
+        minify: 'esbui
+ld',
+        ssr: false,
+        emitAssets: tr
+ue,
+        createEnvironm
+ent: [Function: create
+Environment],
+        cssTarget: [ '
+es2020', 'edge88', 'fi
+refox78', 'chrome87', 
+'safari14' ],
+        cssMinify: tru
+e
+      }
+    },
+    ssr: {
+      define: undefine
+d,
+      resolve: {
+        externalCondit
+ions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.j
+s',
+          '.mts',  '.t
+s',
+          '.jsx',  '.t
+sx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: []
+,
+        external: true
+,
+        preserveSymlin
+ks: false,
+        alias: [
+          {
+            find: /^\/
+?@vite\/env/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/env.mjs'
+          },
+          {
+            find: /^\/
+?@vite\/client/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/client.mjs
+'
+          }
+        ],
+        mainFields: [ 
+'module', 'jsnext:main
+', 'jsnext' ],
+        conditions: [ 
+'module', 'node', 'dev
+elopment|production' ]
+,
+        builtins: [
+          '_http_agent
+',         '_http_clie
+nt',        '_http_com
+mon',
+          '_http_incom
+ing',      '_http_outg
+oing',      '_http_ser
+ver',
+          '_stream_dup
+lex',      '_stream_pa
+ssthrough', '_stream_r
+eadable',
+          '_stream_tra
+nsform',   '_stream_wr
+ap',        '_stream_w
+ritable',
+          '_tls_common
+',         '_tls_wrap'
+,           'assert',
+          'assert/stri
+ct',       'async_hook
+s',         'buffer',
+          'child_proce
+ss',       'cluster', 
+            'console',
+          'constants',
+           'crypto',  
+            'dgram',
+          'diagnostics
+_channel', 'dns',     
+            'dns/promi
+ses',
+          'domain',   
+           'events',  
+            'fs',
+          'fs/promises
+',         'http',    
+            'http2',
+          'https',    
+           'inspector'
+,           'inspector
+/promises',
+          'module',   
+           'net',     
+            'os',
+          'path',     
+           'path/posix
+',          'path/win3
+2',
+          'perf_hooks'
+,          'process', 
+            'punycode'
+,
+          'querystring
+',         'readline',
+            'readline/
+promises',
+          'repl',     
+           'stream',  
+            'stream/co
+nsumers',
+          'stream/prom
+ises',     'stream/web
+',          'string_de
+coder',
+          'sys',      
+           'timers',  
+            'timers/pr
+omises',
+          'tls',      
+           'trace_even
+ts',        'tty',
+          'url',      
+           'util',    
+            'util/type
+s',
+          'v8',       
+           'vm',      
+            'wasi',
+          'worker_thre
+ads',      'zlib',    
+            /^node:/,
+          /^npm:/,    
+           /^bun:/
+        ]
+      },
+      keepProcessEnv: 
+true,
+      consumer: 'serve
+r',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: 
+[],
+        extensions: []
+,
+        disabled: unde
+fined,
+        holdUntilCrawl
+End: true,
+        force: false,
+        noDiscovery: t
+rue,
+        esbuildOptions
+: { preserveSymlinks: 
+false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { j
+s: true },
+        sourcemapIgnor
+eList: [Function: isIn
+NodeModules$1],
+        preTransformRe
+quests: false,
+        createEnvironm
+ent: [Function: defaul
+tCreateDevEnvironment]
+,
+        recoverable: f
+alse,
+        moduleRunnerTr
+ansform: true
+      },
+      build: {
+        target: [ 'es2
+020', 'edge88', 'firef
+ox78', 'chrome87', 'sa
+fari14' ],
+        polyfillModule
+Preload: true,
+        modulePreload:
+ { polyfill: true },
+        outDir: 'dist'
+,
+        assetsDir: 'as
+sets',
+        assetsInlineLi
+mit: 4096,
+        sourcemap: fal
+se,
+        terserOptions:
+ {},
+        rollupOptions:
+ {},
+        commonjsOption
+s: { include: [ /node_
+modules/ ], extensions
+: [ '.js', '.cjs' ] },
+        dynamicImportV
+arsOptions: { warnOnEr
+ror: true, exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: n
+ull,
+        copyPublicDir:
+ true,
+        manifest: fals
+e,
+        lib: false,
+        ssrManifest: f
+alse,
+        ssrEmitAssets:
+ false,
+        reportCompress
+edSize: true,
+        chunkSizeWarni
+ngLimit: 500,
+        watch: null,
+        cssCodeSplit: 
+true,
+        minify: false,
+        ssr: true,
+        emitAssets: fa
+lse,
+        createEnvironm
+ent: [Function: create
+Environment],
+        cssTarget: [ '
+es2020', 'edge88', 'fi
+refox78', 'chrome87', 
+'safari14' ],
+        cssMinify: 'es
+build'
+      }
+    }
+  },
+  resolve: {
+    externalConditions
+: [ 'node' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: 
+false,
+    alias: [
+      {
+        find: /^\/?@vi
+te\/env/,
+        replacement: '
+/@fs/C:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/vite/dist
+/client/env.mjs'
+      },
+      {
+        find: /^\/?@vi
+te\/client/,
+        replacement: '
+/@fs/C:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/vite/dist
+/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'bro
+wser', 'module', 'jsne
+xt:main', 'jsnext' ],
+    conditions: [ 'mod
+ule', 'browser', 'deve
+lopment|production' ],
+    builtins: []
+  },
+  configFileDependenci
+es: [],
+  inlineConfig: {
+    configFile: false,
+    server: { middlewa
+reMode: true, hmr: fal
+se, watch: null, ws: f
+alse },
+    optimizeDeps: { no
+Discovery: true },
+    clearScreen: false
+,
+    appType: 'custom',
+    ssr: { external: t
+rue },
+    plugins: [ false ]
+,
+    environments: {
+      client: {
+        define: undefi
+ned,
+        resolve: undef
+ined,
+        dev: {},
+        build: undefin
+ed,
+        optimizeDeps: 
+{ noDiscovery: true }
+      },
+      ssr: {
+        define: undefi
+ned,
+        resolve: {
+          mainFields: 
+undefined,
+          conditions: 
+undefined,
+          external: tr
+ue
+        },
+        dev: { createE
+nvironment: undefined,
+ warmup: undefined },
+        build: { creat
+eEnvironment: undefine
+d },
+        optimizeDeps: 
+{}
+      }
+    },
+    resolve: { conditi
+ons: undefined, mainFi
+elds: undefined }
+  },
+  root: 'C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs',
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'C:/Users
+/rukat/Downloads/繝峨Ο繝ｼ
+繝ｳ雉・ｼ縲謨吝援/drone-lice
+nse-docs/public',
+  cacheDir: 'C:/Users/
+rukat/Downloads/繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援/drone-licen
+se-docs/node_modules/.
+vite',
+  command: 'serve',
+  mode: 'development',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'post
+css',
+    preprocessorMaxWor
+kers: 0,
+    devSourcemap: fals
+e
+  },
+  json: { namedExports
+: true, stringify: 'au
+to' },
+  esbuild: { jsxDev: f
+alse },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?
+:\/\/(?:(?:[^:]+\.)?lo
+calhost|127\.0\.0\.1|\
+[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs',
+  env: { BASE_URL: '/'
+, MODE: 'development',
+ DEV: false, PROD: tru
+e },
+  assetsInclude: [Func
+tion: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: i
+nfo],
+    warn: [Function: w
+arn],
+    warnOnce: [Functio
+n: warnOnce],
+    error: [Function: 
+error],
+    clearScreen: [Func
+tion: clearScreen],
+    hasErrorLogged: [F
+unction: hasErrorLogge
+d]
+  },
+  packageCache: Map(1)
+ {
+    'fnpd_C:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs' => {
+      dir: 'C:/Users/r
+ukat/Downloads/繝峨Ο繝ｼ繝ｳ
+雉・ｼ縲謨吝援/drone-licens
+e-docs',
+      data: {
+        name: 'drone-l
+icense-docs',
+        type: 'module'
+,
+        version: '0.0.
+1',
+        scripts: {
+          dev: 'astro 
+dev',
+          start: 'astr
+o dev',
+          build: 'astr
+o check && astro build
+',
+          preview: 'as
+tro preview',
+          astro: 'astr
+o'
+        },
+        dependencies: 
+{
+          '@astrojs/ch
+eck': '^0.9.4',
+          '@astrojs/st
+arlight': '^0.31.0',
+          astro: '^5.0
+.0',
+          typescript: 
+'^5.7.0'
+        }
+      },
+      hasSideEffects: 
+[Function: hasSideEffe
+cts],
+      setResolvedCache
+: [Function: setResolv
+edCache],
+      getResolvedCache
+: [Function: getResolv
+edCache]
+    },
+    set: [Function (an
+onymous)]
+  },
+  worker: { format: 'i
+ife', plugins: '() => 
+plugins', rollupOption
+s: {} },
+  experimental: { impo
+rtGlobRestoreExtension
+: false, hmrPartialAcc
+ept: false },
+  future: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: t
+rue },
+    sourcemapIgnoreLis
+t: [Function: isInNode
+Modules$1],
+    preTransformReques
+ts: false,
+    createEnvironment:
+ [Function: defaultCre
+ateDevEnvironment],
+    recoverable: false
+,
+    moduleRunnerTransf
+orm: false
+  },
+  build: {
+    target: [ 'es2020'
+, 'edge88', 'firefox78
+', 'chrome87', 'safari
+14' ],
+    polyfillModulePrel
+oad: true,
+    modulePreload: { p
+olyfill: true },
+    outDir: 'dist',
+    assetsDir: 'assets
+',
+    assetsInlineLimit:
+ 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: {},
+    commonjsOptions: {
+ include: [ /node_modu
+les/ ], extensions: [ 
+'.js', '.cjs' ] },
+    dynamicImportVarsO
+ptions: { warnOnError:
+ true, exclude: [ /nod
+e_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: tru
+e,
+    manifest: false,
+    lib: false,
+    ssrManifest: false
+,
+    ssrEmitAssets: fal
+se,
+    reportCompressedSi
+ze: true,
+    chunkSizeWarningLi
+mit: 500,
+    watch: null,
+    cssCodeSplit: true
+,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: false,
+    createEnvironment:
+ [Function: createEnvi
+ronment],
+    cssTarget: [ 'es20
+20', 'edge88', 'firefo
+x78', 'chrome87', 'saf
+ari14' ],
+    cssMinify: true
+  },
+  webSocketToken: 'WwY
+LNrpq2_hp',
+  getSortedPlugins: [F
+unction: getSortedPlug
+ins],
+  getSortedPluginHooks
+: [Function: getSorted
+PluginHooks],
+  createResolver: [Fun
+ction: createResolver]
+,
+  fsDenyGlob: [Functio
+n: arrayMatcher],
+  safeModulePaths: Set
+(0) {},
+  additionalAllowedHos
+ts: [],
+  Symbol(vite:resolved
+-config): true
+}
+2026-03-23T06:54:40.05
+0Z vite:resolve [33m2
+8.78ms[39m [36mC:\Us
+ers\rukat\Downloads\繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-l
+icense-docs\astro.conf
+ig.mjs[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/astro.co
+nfig.mjs[22m
+2026-03-23T06:54:40.06
+1Z vite:load [32m4.56
+ms[39m [fs] [2mC:\Us
+ers\rukat\Downloads\繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-l
+icense-docs\astro.conf
+ig.mjs[22m
+2026-03-23T06:54:40.08
+6Z vite:resolve [32m3
+.40ms[39m [36m@astro
+js/starlight[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/@astrojs/st
+arlight/index.ts[22m
+2026-03-23T06:54:40.08
+9Z vite:import-analysi
+s [33m21.93ms[39m [
+2m[1 imports rewritten
+] [2mastro.config.mjs
+[22m[2m[22m
+2026-03-23T06:54:40.08
+9Z vite:transform [33
+m27.46ms[39m [2mC:\U
+sers\rukat\Downloads\繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-
+license-docs\astro.con
+fig.mjs[22m
+2026-03-23T06:54:40.11
+9Z vite:load [32m7.74
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/index.ts[22m
+2026-03-23T06:54:40.17
+9Z vite:resolve [32m7
+.68ms[39m [36m./inte
+grations/asides[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/@astrojs
+/starlight/integration
+s/asides.ts[22m
+2026-03-23T06:54:40.17
+9Z vite:resolve [32m7
+.82ms[39m [36m./inte
+grations/expressive-co
+de/index[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/@astrojs/starli
+ght/integrations/expre
+ssive-code/index.ts[2
+2m
+2026-03-23T06:54:40.17
+9Z vite:resolve [32m7
+.90ms[39m [36m./inte
+grations/sitemap[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/integratio
+ns/sitemap.ts[22m
+2026-03-23T06:54:40.17
+9Z vite:resolve [32m7
+.95ms[39m [36m./inte
+grations/virtual-user-
+config[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/@astrojs/starligh
+t/integrations/virtual
+-user-config.ts[22m
+2026-03-23T06:54:40.17
+9Z vite:resolve [32m8
+.07ms[39m [36m./inte
+grations/code-rtl-supp
+ort[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/@astrojs/starlight/i
+ntegrations/code-rtl-s
+upport.ts[22m
+2026-03-23T06:54:40.18
+0Z vite:resolve [32m8
+.18ms[39m [36m./util
+s/translations-fs[39m
+ -> [2mC:/Users/rukat
+/Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ
+縲謨吝援/drone-license-do
+cs/node_modules/@astro
+js/starlight/utils/tra
+nslations-fs.ts[22m
+2026-03-23T06:54:40.18
+0Z vite:resolve [32m8
+.25ms[39m [36m./util
+s/plugins[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/@astrojs/starl
+ight/utils/plugins.ts
+[22m
+2026-03-23T06:54:40.18
+0Z vite:resolve [32m8
+.33ms[39m [36m./util
+s/i18n[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/@astrojs/starligh
+t/utils/i18n.ts[22m
+2026-03-23T06:54:40.18
+1Z vite:import-analysi
+s [33m16.99ms[39m [
+2m[8 imports rewritten
+] [2mnode_modules/@as
+trojs/starlight/index.
+ts[22m[2m[22m
+2026-03-23T06:54:40.18
+1Z vite:transform [31
+m61.98ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/index.ts[22m
+2026-03-23T06:54:40.52
+0Z vite:load [32m0.76
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/asi
+des.ts[22m
+2026-03-23T06:54:40.54
+5Z vite:resolve [32m1
+.55ms[39m [36m./shar
+ed/pathToLocale[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/@astrojs
+/starlight/integration
+s/shared/pathToLocale.
+ts[22m
+2026-03-23T06:54:40.54
+5Z vite:resolve [32m1
+.64ms[39m [36m./shar
+ed/localeToLang[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/@astrojs
+/starlight/integration
+s/shared/localeToLang.
+ts[22m
+2026-03-23T06:54:40.54
+6Z vite:import-analysi
+s [33m20.00ms[39m [
+2m[2 imports rewritten
+] [2mnode_modules/@as
+trojs/starlight/integr
+ations/asides.ts[22m
+[2m[22m
+2026-03-23T06:54:40.54
+6Z vite:transform [33
+m25.36ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/integrations/as
+ides.ts[22m
+2026-03-23T06:54:40.61
+7Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/sha
+red/pathToLocale.ts[2
+2m
+2026-03-23T06:54:40.62
+2Z vite:resolve [32m1
+.99ms[39m [36m../../
+utils/collection[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/utils/coll
+ection.ts[22m
+2026-03-23T06:54:40.62
+2Z vite:resolve [32m2
+.11ms[39m [36m./slug
+ToLocale[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/@astrojs/starli
+ght/integrations/share
+d/slugToLocale.ts[22m
+2026-03-23T06:54:40.62
+3Z vite:import-analysi
+s [32m2.86ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/shared/pathToLoc
+ale.ts[22m[2m[22m
+2026-03-23T06:54:40.62
+3Z vite:transform [32
+m5.54ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/sha
+red/pathToLocale.ts[2
+2m
+2026-03-23T06:54:40.62
+8Z vite:load [32m1.01
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/collection
+.ts[22m
+2026-03-23T06:54:40.63
+2Z vite:import-analysi
+s [32m0.11ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/c
+ollection.ts[22m[2m
+[22m
+2026-03-23T06:54:40.63
+2Z vite:transform [32
+m4.19ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/collection
+.ts[22m
+2026-03-23T06:54:40.63
+6Z vite:load [32m0.79
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/sha
+red/slugToLocale.ts[2
+2m
+2026-03-23T06:54:40.63
+8Z vite:import-analysi
+s [32m0.04ms[39m [2
+m[no imports] [2mnode
+_modules/@astrojs/star
+light/integrations/sha
+red/slugToLocale.ts[2
+2m[2m[22m
+2026-03-23T06:54:40.63
+8Z vite:transform [32
+m2.12ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/sha
+red/slugToLocale.ts[2
+2m
+2026-03-23T06:54:40.64
+2Z vite:load [32m0.80
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/sha
+red/localeToLang.ts[2
+2m
+2026-03-23T06:54:40.64
+6Z vite:resolve [32m0
+.99ms[39m [36m../../
+utils/i18n[39m -> [2
+mC:/Users/rukat/Downlo
+ads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/d
+rone-license-docs/node
+_modules/@astrojs/star
+light/utils/i18n.ts[2
+2m
+2026-03-23T06:54:40.64
+6Z vite:import-analysi
+s [32m1.55ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/shared/localeToL
+ang.ts[22m[2m[22m
+2026-03-23T06:54:40.64
+6Z vite:transform [32
+m3.94ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/sha
+red/localeToLang.ts[2
+2m
+2026-03-23T06:54:40.64
+9Z vite:load [32m0.86
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/i18n.ts[2
+2m
+2026-03-23T06:54:40.65
+4Z vite:import-analysi
+s [32m0.23ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/i
+18n.ts[22m[2m[22m
+2026-03-23T06:54:40.65
+4Z vite:transform [32
+m5.28ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/i18n.ts[2
+2m
+2026-03-23T06:54:40.67
+4Z vite:load [32m0.99
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/exp
+ressive-code/index.ts
+[22m
+2026-03-23T06:54:40.68
+8Z vite:resolve [32m3
+.71ms[39m [36m../sha
+red/pathToLocale[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/integratio
+ns/shared/pathToLocale
+.ts[22m
+2026-03-23T06:54:40.68
+9Z vite:resolve [32m3
+.84ms[39m [36m../sha
+red/slugToLocale[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/integratio
+ns/shared/slugToLocale
+.ts[22m
+2026-03-23T06:54:40.68
+9Z vite:resolve [32m3
+.90ms[39m [36m./them
+ing[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/@astrojs/starlight/i
+ntegrations/expressive
+-code/theming.ts[22m
+2026-03-23T06:54:40.68
+9Z vite:resolve [32m3
+.99ms[39m [36m./tran
+slations[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/@astrojs/starli
+ght/integrations/expre
+ssive-code/translation
+s.ts[22m
+2026-03-23T06:54:40.68
+9Z vite:import-analysi
+s [33m10.94ms[39m [
+2m[4 imports rewritten
+] [2mnode_modules/@as
+trojs/starlight/integr
+ations/expressive-code
+/index.ts[22m[2m[22
+m
+2026-03-23T06:54:40.68
+9Z vite:transform [33
+m15.35ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/integrations/ex
+pressive-code/index.ts
+[22m
+2026-03-23T06:54:41.02
+3Z vite:load [33m11.4
+1ms[39m [fs] [2m/nod
+e_modules/@astrojs/sta
+rlight/integrations/ex
+pressive-code/theming.
+ts[22m
+2026-03-23T06:54:41.02
+8Z vite:resolve [32m1
+.58ms[39m [36m./them
+es/night-owl-dark.json
+c?raw[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/@astrojs/starlight
+/integrations/expressi
+ve-code/themes/night-o
+wl-dark.jsonc?raw[22m
+2026-03-23T06:54:41.02
+9Z vite:resolve [32m1
+.70ms[39m [36m./them
+es/night-owl-light.jso
+nc?raw[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/@astrojs/starligh
+t/integrations/express
+ive-code/themes/night-
+owl-light.jsonc?raw[2
+2m
+2026-03-23T06:54:41.02
+9Z vite:import-analysi
+s [32m2.36ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/expressive-code/
+theming.ts[22m[2m[2
+2m
+2026-03-23T06:54:41.02
+9Z vite:transform [32
+m5.91ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/exp
+ressive-code/theming.t
+s[22m
+2026-03-23T06:54:41.03
+5Z vite:load [32m1.51
+ms[39m [plugin] [2m/
+node_modules/@astrojs/
+starlight/integrations
+/expressive-code/theme
+s/night-owl-dark.jsonc
+?raw[22m
+2026-03-23T06:54:41.03
+8Z vite:import-analysi
+s [32m2.76ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/expressive-code/
+themes/night-owl-dark.
+jsonc?raw[22m[2m[22
+m
+2026-03-23T06:54:41.03
+9Z vite:transform [32
+m3.06ms[39m[2m [skip
+ped] [2m/node_modules
+/@astrojs/starlight/in
+tegrations/expressive-
+code/themes/night-owl-
+dark.jsonc?raw[22m[2
+m[22m
+2026-03-23T06:54:41.05
+8Z vite:load [32m1.34
+ms[39m [plugin] [2m/
+node_modules/@astrojs/
+starlight/integrations
+/expressive-code/theme
+s/night-owl-light.json
+c?raw[22m
+2026-03-23T06:54:41.06
+0Z vite:import-analysi
+s [32m1.64ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/expressive-code/
+themes/night-owl-light
+.jsonc?raw[22m[2m[2
+2m
+2026-03-23T06:54:41.06
+0Z vite:transform [32
+m1.98ms[39m[2m [skip
+ped] [2m/node_modules
+/@astrojs/starlight/in
+tegrations/expressive-
+code/themes/night-owl-
+light.jsonc?raw[22m[
+2m[22m
+2026-03-23T06:54:41.07
+9Z vite:load [32m1.01
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/exp
+ressive-code/translati
+ons.ts[22m
+2026-03-23T06:54:41.08
+3Z vite:resolve [32m1
+.08ms[39m [36m../sha
+red/localeToLang[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/integratio
+ns/shared/localeToLang
+.ts[22m
+2026-03-23T06:54:41.08
+4Z vite:import-analysi
+s [32m1.51ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/expressive-code/
+translations.ts[22m[
+2m[22m
+2026-03-23T06:54:41.08
+4Z vite:transform [32
+m4.94ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/exp
+ressive-code/translati
+ons.ts[22m
+2026-03-23T06:54:41.08
+8Z vite:load [32m0.77
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/sit
+emap.ts[22m
+2026-03-23T06:54:41.09
+4Z vite:import-analysi
+s [32m3.16ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/sitemap.ts[22m
+[2m[22m
+2026-03-23T06:54:41.09
+4Z vite:transform [32
+m5.76ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/sit
+emap.ts[22m
+2026-03-23T06:54:41.29
+6Z vite:load [32m1.14
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/vir
+tual-user-config.ts[2
+2m
+2026-03-23T06:54:41.30
+1Z vite:resolve [32m1
+.88ms[39m [36m../uti
+ls/collection[39m -> 
+[2mC:/Users/rukat/Dow
+nloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援/drone-license-docs/n
+ode_modules/@astrojs/s
+tarlight/utils/collect
+ion.ts[22m
+2026-03-23T06:54:41.30
+1Z vite:resolve [32m1
+.97ms[39m [36m../uti
+ls/git[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/@astrojs/starligh
+t/utils/git.ts[22m
+2026-03-23T06:54:41.30
+2Z vite:import-analysi
+s [32m2.51ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/virtual-user-con
+fig.ts[22m[2m[22m
+2026-03-23T06:54:41.30
+2Z vite:transform [32
+m5.44ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/vir
+tual-user-config.ts[2
+2m
+2026-03-23T06:54:41.30
+6Z vite:load [32m0.64
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/git.ts[22
+m
+2026-03-23T06:54:41.31
+0Z vite:import-analysi
+s [32m0.13ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/g
+it.ts[22m[2m[22m
+2026-03-23T06:54:41.31
+0Z vite:transform [32
+m3.60ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/git.ts[22
+m
+2026-03-23T06:54:41.31
+4Z vite:load [32m0.66
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/integrations/cod
+e-rtl-support.ts[22m
+2026-03-23T06:54:41.31
+6Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/integra
+tions/code-rtl-support
+.ts[22m[2m[22m
+2026-03-23T06:54:41.31
+6Z vite:transform [32
+m1.88ms[39m [2m/node
+_modules/@astrojs/star
+light/integrations/cod
+e-rtl-support.ts[22m
+2026-03-23T06:54:41.31
+9Z vite:load [32m0.52
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/translatio
+ns-fs.ts[22m
+2026-03-23T06:54:41.32
+4Z vite:resolve [32m0
+.79ms[39m [36m./crea
+teTranslationSystem[3
+9m -> [2mC:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs/node_modules/@ast
+rojs/starlight/utils/c
+reateTranslationSystem
+.ts[22m
+2026-03-23T06:54:41.32
+4Z vite:import-analysi
+s [32m3.68ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/t
+ranslations-fs.ts[22m
+[2m[22m
+2026-03-23T06:54:41.32
+4Z vite:transform [32
+m5.65ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/translatio
+ns-fs.ts[22m
+2026-03-23T06:54:41.33
+0Z vite:load [32m0.60
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/createTran
+slationSystem.ts[22m
+2026-03-23T06:54:41.33
+9Z vite:resolve [32m1
+.60ms[39m [36m../tra
+nslations/index[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/@astrojs
+/starlight/translation
+s/index.ts[22m
+2026-03-23T06:54:41.33
+9Z vite:resolve [32m1
+.69ms[39m [36m./i18n
+[39m -> [2mC:/Users/
+rukat/Downloads/繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援/drone-licen
+se-docs/node_modules/@
+astrojs/starlight/util
+s/i18n.ts[22m
+2026-03-23T06:54:41.33
+9Z vite:import-analysi
+s [32m5.48ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/c
+reateTranslationSystem
+.ts[22m[2m[22m
+2026-03-23T06:54:41.33
+9Z vite:transform [32
+m9.15ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/createTran
+slationSystem.ts[22m
+2026-03-23T06:54:41.35
+2Z vite:load [32m0.74
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ind
+ex.ts[22m
+2026-03-23T06:54:41.36
+8Z vite:resolve [33m1
+3.72ms[39m [36m../sc
+hemas/i18n[39m -> [2
+mC:/Users/rukat/Downlo
+ads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/d
+rone-license-docs/node
+_modules/@astrojs/star
+light/schemas/i18n.ts
+[22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+3.82ms[39m [36m./cs.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/cs.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+3.90ms[39m [36m./en.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/en.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+3.95ms[39m [36m./es.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/es.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+3.98ms[39m [36m./ca.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/ca.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.01ms[39m [36m./de.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/de.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.03ms[39m [36m./ja.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/ja.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.06ms[39m [36m./pt.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/pt.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.08ms[39m [36m./fa.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/fa.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.10ms[39m [36m./fr.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/fr.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.12ms[39m [36m./gl.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/gl.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.14ms[39m [36m./he.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/he.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.17ms[39m [36m./id.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/id.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.20ms[39m [36m./it.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/it.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.23ms[39m [36m./nl.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/nl.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.25ms[39m [36m./da.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/da.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.28ms[39m [36m./tr.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/tr.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.31ms[39m [36m./ar.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/ar.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.34ms[39m [36m./nb.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/nb.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.36ms[39m [36m./zh-
+CN.json[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/@astrojs/starlig
+ht/translations/zh-CN.
+json[22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.36ms[39m [36m./ko.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/ko.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.44ms[39m [36m./sv.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/sv.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.50ms[39m [36m./ro.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/ro.json[
+22m
+2026-03-23T06:54:41.36
+9Z vite:resolve [33m1
+4.52ms[39m [36m./ru.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/ru.json[
+22m
+2026-03-23T06:54:41.37
+0Z vite:resolve [33m1
+4.55ms[39m [36m./vi.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/vi.json[
+22m
+2026-03-23T06:54:41.37
+0Z vite:resolve [33m1
+4.57ms[39m [36m./uk.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/uk.json[
+22m
+2026-03-23T06:54:41.37
+0Z vite:resolve [33m1
+4.59ms[39m [36m./hi.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/hi.json[
+22m
+2026-03-23T06:54:41.37
+0Z vite:resolve [33m1
+4.61ms[39m [36m./zh-
+TW.json[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/@astrojs/starlig
+ht/translations/zh-TW.
+json[22m
+2026-03-23T06:54:41.37
+0Z vite:resolve [33m1
+4.63ms[39m [36m./pl.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/pl.json[
+22m
+2026-03-23T06:54:41.37
+0Z vite:resolve [33m1
+4.66ms[39m [36m./sk.
+json[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/@astrojs/starlight/
+translations/sk.json[
+22m
+2026-03-23T06:54:41.37
+1Z vite:import-analysi
+s [33m16.62ms[39m [
+2m[30 imports rewritte
+n] [2mnode_modules/@a
+strojs/starlight/trans
+lations/index.ts[22m
+[2m[22m
+2026-03-23T06:54:41.37
+1Z vite:transform [33
+m19.07ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/translations/in
+dex.ts[22m
+2026-03-23T06:54:41.38
+0Z vite:load [32m5.29
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/i18n.ts
+[22m
+2026-03-23T06:54:41.38
+7Z vite:import-analysi
+s [32m2.81ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/i18n.ts[22m[2m[22m
+2026-03-23T06:54:41.38
+7Z vite:transform [32
+m6.26ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/i18n.ts
+[22m
+2026-03-23T06:54:41.39
+6Z vite:load [32m0.74
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/cs.
+json[22m
+2026-03-23T06:54:41.39
+8Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/c
+s.json[22m[2m[22m
+2026-03-23T06:54:41.39
+8Z vite:transform [32
+m1.13ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/cs.
+json[22m
+2026-03-23T06:54:41.39
+9Z vite:load [32m0.51
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/en.
+json[22m
+2026-03-23T06:54:41.40
+0Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/e
+n.json[22m[2m[22m
+2026-03-23T06:54:41.40
+0Z vite:transform [32
+m0.50ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/en.
+json[22m
+2026-03-23T06:54:41.40
+2Z vite:load [32m0.82
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/es.
+json[22m
+2026-03-23T06:54:41.40
+2Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/e
+s.json[22m[2m[22m
+2026-03-23T06:54:41.40
+2Z vite:transform [32
+m0.48ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/es.
+json[22m
+2026-03-23T06:54:41.40
+4Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ca.
+json[22m
+2026-03-23T06:54:41.40
+5Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/c
+a.json[22m[2m[22m
+2026-03-23T06:54:41.40
+5Z vite:transform [32
+m0.41ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/ca.
+json[22m
+2026-03-23T06:54:41.40
+7Z vite:load [32m0.53
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/de.
+json[22m
+2026-03-23T06:54:41.40
+7Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/d
+e.json[22m[2m[22m
+2026-03-23T06:54:41.40
+7Z vite:transform [32
+m0.27ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/de.
+json[22m
+2026-03-23T06:54:41.40
+8Z vite:load [32m0.68
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ja.
+json[22m
+2026-03-23T06:54:41.40
+9Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/j
+a.json[22m[2m[22m
+2026-03-23T06:54:41.40
+9Z vite:transform [32
+m0.31ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/ja.
+json[22m
+2026-03-23T06:54:41.41
+0Z vite:load [32m0.63
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/pt.
+json[22m
+2026-03-23T06:54:41.41
+1Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/p
+t.json[22m[2m[22m
+2026-03-23T06:54:41.41
+1Z vite:transform [32
+m0.33ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/pt.
+json[22m
+2026-03-23T06:54:41.41
+2Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/fa.
+json[22m
+2026-03-23T06:54:41.41
+3Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/f
+a.json[22m[2m[22m
+2026-03-23T06:54:41.41
+3Z vite:transform [32
+m0.28ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/fa.
+json[22m
+2026-03-23T06:54:41.41
+4Z vite:load [32m0.69
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/fr.
+json[22m
+2026-03-23T06:54:41.41
+5Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/f
+r.json[22m[2m[22m
+2026-03-23T06:54:41.41
+5Z vite:transform [32
+m0.36ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/fr.
+json[22m
+2026-03-23T06:54:41.41
+6Z vite:load [32m0.85
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/gl.
+json[22m
+2026-03-23T06:54:41.41
+7Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/g
+l.json[22m[2m[22m
+2026-03-23T06:54:41.41
+7Z vite:transform [32
+m0.30ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/gl.
+json[22m
+2026-03-23T06:54:41.41
+8Z vite:load [32m0.62
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/he.
+json[22m
+2026-03-23T06:54:41.41
+9Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/h
+e.json[22m[2m[22m
+2026-03-23T06:54:41.41
+9Z vite:transform [32
+m0.42ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/he.
+json[22m
+2026-03-23T06:54:41.42
+0Z vite:load [32m0.71
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/id.
+json[22m
+2026-03-23T06:54:41.42
+1Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/i
+d.json[22m[2m[22m
+2026-03-23T06:54:41.42
+1Z vite:transform [32
+m0.33ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/id.
+json[22m
+2026-03-23T06:54:41.42
+2Z vite:load [32m0.76
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/it.
+json[22m
+2026-03-23T06:54:41.42
+3Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/i
+t.json[22m[2m[22m
+2026-03-23T06:54:41.42
+3Z vite:transform [32
+m0.26ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/it.
+json[22m
+2026-03-23T06:54:41.42
+4Z vite:load [32m0.54
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/nl.
+json[22m
+2026-03-23T06:54:41.42
+4Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/n
+l.json[22m[2m[22m
+2026-03-23T06:54:41.42
+4Z vite:transform [32
+m0.38ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/nl.
+json[22m
+2026-03-23T06:54:41.42
+6Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/da.
+json[22m
+2026-03-23T06:54:41.42
+6Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/d
+a.json[22m[2m[22m
+2026-03-23T06:54:41.42
+6Z vite:transform [32
+m0.30ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/da.
+json[22m
+2026-03-23T06:54:41.42
+8Z vite:load [32m0.63
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/tr.
+json[22m
+2026-03-23T06:54:41.42
+8Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/t
+r.json[22m[2m[22m
+2026-03-23T06:54:41.42
+8Z vite:transform [32
+m0.26ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/tr.
+json[22m
+2026-03-23T06:54:41.43
+0Z vite:load [32m0.51
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ar.
+json[22m
+2026-03-23T06:54:41.43
+0Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/a
+r.json[22m[2m[22m
+2026-03-23T06:54:41.43
+0Z vite:transform [32
+m0.25ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/ar.
+json[22m
+2026-03-23T06:54:41.43
+1Z vite:load [32m0.77
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/nb.
+json[22m
+2026-03-23T06:54:41.43
+2Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/n
+b.json[22m[2m[22m
+2026-03-23T06:54:41.43
+2Z vite:transform [32
+m0.31ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/nb.
+json[22m
+2026-03-23T06:54:41.43
+4Z vite:load [32m0.83
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/zh-
+CN.json[22m
+2026-03-23T06:54:41.43
+4Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/z
+h-CN.json[22m[2m[22
+m
+2026-03-23T06:54:41.43
+4Z vite:transform [32
+m0.30ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/zh-
+CN.json[22m
+2026-03-23T06:54:41.43
+6Z vite:load [32m0.80
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ko.
+json[22m
+2026-03-23T06:54:41.43
+6Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/k
+o.json[22m[2m[22m
+2026-03-23T06:54:41.43
+6Z vite:transform [32
+m0.27ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/ko.
+json[22m
+2026-03-23T06:54:41.43
+8Z vite:load [32m0.64
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/sv.
+json[22m
+2026-03-23T06:54:41.43
+8Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/s
+v.json[22m[2m[22m
+2026-03-23T06:54:41.43
+8Z vite:transform [32
+m0.34ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/sv.
+json[22m
+2026-03-23T06:54:41.43
+9Z vite:load [32m0.45
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ro.
+json[22m
+2026-03-23T06:54:41.44
+0Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/r
+o.json[22m[2m[22m
+2026-03-23T06:54:41.44
+0Z vite:transform [32
+m0.32ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/ro.
+json[22m
+2026-03-23T06:54:41.44
+1Z vite:load [32m0.79
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/ru.
+json[22m
+2026-03-23T06:54:41.44
+2Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/r
+u.json[22m[2m[22m
+2026-03-23T06:54:41.44
+2Z vite:transform [32
+m0.32ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/ru.
+json[22m
+2026-03-23T06:54:41.44
+3Z vite:load [32m0.57
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/vi.
+json[22m
+2026-03-23T06:54:41.44
+4Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/v
+i.json[22m[2m[22m
+2026-03-23T06:54:41.44
+4Z vite:transform [32
+m0.25ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/vi.
+json[22m
+2026-03-23T06:54:41.44
+5Z vite:load [32m0.55
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/uk.
+json[22m
+2026-03-23T06:54:41.44
+5Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/u
+k.json[22m[2m[22m
+2026-03-23T06:54:41.44
+5Z vite:transform [32
+m0.29ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/uk.
+json[22m
+2026-03-23T06:54:41.44
+7Z vite:load [32m0.55
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/hi.
+json[22m
+2026-03-23T06:54:41.44
+7Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/h
+i.json[22m[2m[22m
+2026-03-23T06:54:41.44
+7Z vite:transform [32
+m0.31ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/hi.
+json[22m
+2026-03-23T06:54:41.44
+9Z vite:load [32m0.60
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/zh-
+TW.json[22m
+2026-03-23T06:54:41.44
+9Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/z
+h-TW.json[22m[2m[22
+m
+2026-03-23T06:54:41.44
+9Z vite:transform [32
+m0.26ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/zh-
+TW.json[22m
+2026-03-23T06:54:41.45
+1Z vite:load [32m0.61
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/pl.
+json[22m
+2026-03-23T06:54:41.45
+1Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/p
+l.json[22m[2m[22m
+2026-03-23T06:54:41.45
+1Z vite:transform [32
+m0.53ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/pl.
+json[22m
+2026-03-23T06:54:41.45
+3Z vite:load [32m0.63
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/translations/sk.
+json[22m
+2026-03-23T06:54:41.45
+3Z vite:import-analysi
+s [2m[skipped] [2mno
+de_modules/@astrojs/st
+arlight/translations/s
+k.json[22m[2m[22m
+2026-03-23T06:54:41.45
+4Z vite:transform [32
+m0.73ms[39m [2m/node
+_modules/@astrojs/star
+light/translations/sk.
+json[22m
+2026-03-23T06:54:41.46
+2Z vite:load [32m1.13
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/plugins.ts
+[22m
+2026-03-23T06:54:41.46
+8Z vite:resolve [32m2
+.04ms[39m [36m../uti
+ls/user-config[39m ->
+ [2mC:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/@astrojs/
+starlight/utils/user-c
+onfig.ts[22m
+2026-03-23T06:54:41.46
+9Z vite:resolve [32m2
+.16ms[39m [36m../uti
+ls/error-map[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/@astrojs/st
+arlight/utils/error-ma
+p.ts[22m
+2026-03-23T06:54:41.46
+9Z vite:import-analysi
+s [32m2.70ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/p
+lugins.ts[22m[2m[22
+m
+2026-03-23T06:54:41.46
+9Z vite:transform [32
+m6.68ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/plugins.ts
+[22m
+2026-03-23T06:54:41.47
+6Z vite:load [32m1.19
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/user-confi
+g.ts[22m
+2026-03-23T06:54:41.49
+0Z vite:resolve [32m8
+.11ms[39m [36m../sch
+emas/components[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/@astrojs
+/starlight/schemas/com
+ponents.ts[22m
+2026-03-23T06:54:41.49
+0Z vite:resolve [32m8
+.20ms[39m [36m../sch
+emas/expressiveCode[3
+9m -> [2mC:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs/node_modules/@ast
+rojs/starlight/schemas
+/expressiveCode.ts[22
+m
+2026-03-23T06:54:41.49
+0Z vite:resolve [32m8
+.23ms[39m [36m../sch
+emas/favicon[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/@astrojs/st
+arlight/schemas/favico
+n.ts[22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.27ms[39m [36m../sch
+emas/head[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/@astrojs/starl
+ight/schemas/head.ts[
+22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.29ms[39m [36m../sch
+emas/logo[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/@astrojs/starl
+ight/schemas/logo.ts[
+22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.32ms[39m [36m../sch
+emas/pagefind[39m -> 
+[2mC:/Users/rukat/Dow
+nloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援/drone-license-docs/n
+ode_modules/@astrojs/s
+tarlight/schemas/pagef
+ind.ts[22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.35ms[39m [36m../sch
+emas/sidebar[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/@astrojs/st
+arlight/schemas/sideba
+r.ts[22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.37ms[39m [36m../sch
+emas/site-title[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/@astrojs
+/starlight/schemas/sit
+e-title.ts[22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.40ms[39m [36m../sch
+emas/social[39m -> [
+2mC:/Users/rukat/Downl
+oads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/
+drone-license-docs/nod
+e_modules/@astrojs/sta
+rlight/schemas/social.
+ts[22m
+2026-03-23T06:54:41.49
+1Z vite:resolve [32m8
+.43ms[39m [36m../sch
+emas/tableOfContents[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/@as
+trojs/starlight/schema
+s/tableOfContents.ts[
+22m
+2026-03-23T06:54:41.49
+1Z vite:import-analysi
+s [33m12.14ms[39m [
+2m[11 imports rewritte
+n] [2mnode_modules/@a
+strojs/starlight/utils
+/user-config.ts[22m[
+2m[22m
+2026-03-23T06:54:41.49
+1Z vite:transform [33
+m15.76ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/utils/user-conf
+ig.ts[22m
+2026-03-23T06:54:41.51
+0Z vite:load [32m0.89
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/componen
+ts.ts[22m
+2026-03-23T06:54:41.51
+4Z vite:import-analysi
+s [32m0.23ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/components.ts[22m[2
+m[22m
+2026-03-23T06:54:41.51
+4Z vite:transform [32
+m4.30ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/componen
+ts.ts[22m
+2026-03-23T06:54:41.52
+2Z vite:load [32m0.69
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/expressi
+veCode.ts[22m
+2026-03-23T06:54:41.52
+4Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/expressiveCode.ts[22
+m[2m[22m
+2026-03-23T06:54:41.52
+4Z vite:transform [32
+m1.99ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/expressi
+veCode.ts[22m
+2026-03-23T06:54:41.52
+6Z vite:load [32m0.71
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/favicon.
+ts[22m
+2026-03-23T06:54:41.52
+8Z vite:import-analysi
+s [32m0.11ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/favicon.ts[22m[2m[
+22m
+2026-03-23T06:54:41.52
+8Z vite:transform [32
+m2.22ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/favicon.
+ts[22m
+2026-03-23T06:54:41.53
+1Z vite:load [32m0.70
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/head.ts
+[22m
+2026-03-23T06:54:41.53
+4Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/head.ts[22m[2m[22m
+2026-03-23T06:54:41.53
+4Z vite:transform [32
+m2.65ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/head.ts
+[22m
+2026-03-23T06:54:41.53
+7Z vite:load [32m0.89
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/logo.ts
+[22m
+2026-03-23T06:54:41.53
+9Z vite:import-analysi
+s [32m0.06ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/logo.ts[22m[2m[22m
+2026-03-23T06:54:41.53
+9Z vite:transform [32
+m1.84ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/logo.ts
+[22m
+2026-03-23T06:54:41.54
+1Z vite:load [32m0.57
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/pagefind
+.ts[22m
+2026-03-23T06:54:41.54
+3Z vite:import-analysi
+s [32m0.11ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/pagefind.ts[22m[2m
+[22m
+2026-03-23T06:54:41.54
+3Z vite:transform [32
+m1.96ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/pagefind
+.ts[22m
+2026-03-23T06:54:41.54
+7Z vite:load [32m0.98
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/sidebar.
+ts[22m
+2026-03-23T06:54:41.55
+2Z vite:resolve [32m2
+.05ms[39m [36m./badg
+e[39m -> [2mC:/Users
+/rukat/Downloads/繝峨Ο繝ｼ
+繝ｳ雉・ｼ縲謨吝援/drone-lice
+nse-docs/node_modules/
+@astrojs/starlight/sch
+emas/badge.ts[22m
+2026-03-23T06:54:41.55
+2Z vite:resolve [32m2
+.14ms[39m [36m../uti
+ls/path[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/@astrojs/starlig
+ht/utils/path.ts[22m
+2026-03-23T06:54:41.55
+2Z vite:import-analysi
+s [32m2.70ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/sidebar.ts[22m[2m[
+22m
+2026-03-23T06:54:41.55
+2Z vite:transform [32
+m4.95ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/sidebar.
+ts[22m
+2026-03-23T06:54:41.55
+7Z vite:load [32m0.83
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/badge.ts
+[22m
+2026-03-23T06:54:41.56
+0Z vite:import-analysi
+s [32m0.11ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/badge.ts[22m[2m[22
+m
+2026-03-23T06:54:41.56
+0Z vite:transform [32
+m3.32ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/badge.ts
+[22m
+2026-03-23T06:54:41.56
+4Z vite:load [32m0.87
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/path.ts[2
+2m
+2026-03-23T06:54:41.56
+6Z vite:import-analysi
+s [32m0.05ms[39m [2
+m[no imports] [2mnode
+_modules/@astrojs/star
+light/utils/path.ts[2
+2m[2m[22m
+2026-03-23T06:54:41.56
+6Z vite:transform [32
+m2.12ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/path.ts[2
+2m
+2026-03-23T06:54:41.57
+0Z vite:load [32m0.88
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/site-tit
+le.ts[22m
+2026-03-23T06:54:41.57
+2Z vite:import-analysi
+s [32m0.08ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/site-title.ts[22m[2
+m[22m
+2026-03-23T06:54:41.57
+2Z vite:transform [32
+m2.09ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/site-tit
+le.ts[22m
+2026-03-23T06:54:41.57
+6Z vite:load [32m0.86
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/social.t
+s[22m
+2026-03-23T06:54:41.57
+9Z vite:import-analysi
+s [32m0.09ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/social.ts[22m[2m[2
+2m
+2026-03-23T06:54:41.57
+9Z vite:transform [32
+m3.06ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/social.t
+s[22m
+2026-03-23T06:54:41.58
+4Z vite:load [32m0.64
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/tableOfC
+ontents.ts[22m
+2026-03-23T06:54:41.58
+6Z vite:import-analysi
+s [32m0.08ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/tableOfContents.ts[2
+2m[2m[22m
+2026-03-23T06:54:41.58
+6Z vite:transform [32
+m2.31ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/tableOfC
+ontents.ts[22m
+2026-03-23T06:54:41.59
+3Z vite:load [32m0.88
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/error-map.
+ts[22m
+2026-03-23T06:54:41.59
+7Z vite:import-analysi
+s [32m0.16ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/utils/e
+rror-map.ts[22m[2m[
+22m
+2026-03-23T06:54:41.59
+7Z vite:transform [32
+m3.77ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/error-map.
+ts[22m
+2026-03-23T06:54:41.73
+3Z astro:telemetry {
+  context: {
+    isGit: true,
+    anonymousProjectId
+: 'b92499f04fa591b1a0e
+377a8726c2642be218aa98
+18c31aa38e0b47dab61f23
+5',
+    packageManager: 'n
+pm',
+    packageManagerVers
+ion: '11.6.2',
+    anonymousId: '052b
+18466b818c562306a1a938
+009ea8621c55fbf3e00199
+a20e4fad6091a3a4',
+    anonymousSessionId
+: '481c4634403a8e17f52
+db4ab9c9192ceaf5def768
+cd292114c14161b9077c28
+a'
+  },
+  meta: {
+    nodeVersion: '25.2
+.1',
+    viteVersion: '6.4.
+1',
+    astroVersion: '5.1
+8.1',
+    systemPlatform: 'w
+in32',
+    systemRelease: '10
+.0.26100',
+    systemArchitecture
+: 'x64',
+    cpuCount: 16,
+    cpuModel: 'AMD Ryz
+en 7 7730U with Radeon
+ Graphics         ',
+    cpuSpeed: 1996,
+    memoryInMb: 14188,
+    isDocker: false,
+    isTTY: undefined,
+    isWSL: false,
+    isCI: false,
+    ciName: null
+  }
+}
+2026-03-23T06:54:41.73
+3Z astro:telemetry [
+  {
+    "eventName": "ASTR
+O_CLI_SESSION_STARTED"
+,
+    "payload": {
+      "cliCommand": "b
+uild",
+      "config": {
+        "integrations"
+: [
+          "@astrojs/st
+arlight"
+        ],
+        "build": {},
+        "server": true
+,
+        "image": {},
+        "markdown": {}
+,
+        "experimental"
+: {},
+        "legacy": {}
+      }
+    }
+  }
+]
+2026-03-23T06:54:41.75
+0Z astro:build Initial
+ setup...
+2026-03-23T06:54:41.76
+1Z astro:middleware Th
+e integration @astrojs
+/starlight has added m
+iddleware that runs be
+fore any application m
+iddleware you define.
+2026-03-23T06:54:42.16
+0Z vite:env loading en
+v files: [
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.local',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.production',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.production.local'
+]
+2026-03-23T06:54:42.16
+0Z vite:env env files 
+loaded in 0.84ms
+2026-03-23T06:54:42.16
+3Z vite:env using reso
+lved env: {
+  ALLUSERSPROFILE: 'C:
+\\ProgramData',
+  ANTIGRAVITY_AGENT: '
+1',
+  ANTIGRAVITY_CLI_ALIA
+S: 'agy',
+  APPDATA: 'C:\\Users\
+\rukat\\AppData\\Roami
+ng',
+  BUNDLED_DEBUGPY_PATH
+: 'c:\\Users\\rukat\\.
+antigravity\\extension
+s\\ms-python.debugpy-2
+025.18.0-win32-x64\\bu
+ndled\\libs\\debugpy',
+  CHROME_CRASHPAD_PIPE
+_NAME: '\\\\.\\pipe\\c
+rashpad_33936_XEFPIDNF
+TUSASSUV',
+  COLOR: '0',
+  COLORTERM: 'truecolo
+r',
+  CommonProgramFiles: 
+'C:\\Program Files\\Co
+mmon Files',
+  'CommonProgramFiles(
+x86)': 'C:\\Program Fi
+les (x86)\\Common File
+s',
+  CommonProgramW6432: 
+'C:\\Program Files\\Co
+mmon Files',
+  COMPUTERNAME: '繧九°縺ｮ
+LENOVO',
+  ComSpec: 'C:\\WINDOW
+S\\system32\\cmd.exe',
+  DEBUG: 'astro:*,vite
+:*',
+  DriverData: 'C:\\Win
+dows\\System32\\Driver
+s\\DriverData',
+  EDITOR: 'C:\\WINDOWS
+\\notepad.exe',
+  EFC_11992_1592913036
+: '1',
+  GIT_ASKPASS: 'c:\\Us
+ers\\rukat\\AppData\\L
+ocal\\Programs\\Antigr
+avity\\resources\\app\
+\extensions\\git\\dist
+\\askpass.sh',
+  HOME: 'C:\\Users\\ru
+kat',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\
+rukat',
+  INIT_CWD: 'C:\\Users
+\\rukat\\Downloads\\繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\\drone-
+license-docs',
+  LANG: 'ja_JP.UTF-8',
+  LOCALAPPDATA: 'C:\\U
+sers\\rukat\\AppData\\
+Local',
+  LOGONSERVER: '\\\\繧九
+°縺ｮLENOVO',
+  NODE: 'C:\\Program F
+iles\\nodejs\\node.exe
+',
+  NODE_ENV: 'productio
+n',
+  npm_command: 'exec',
+  npm_config_cache: 'C
+:\\Users\\rukat\\AppDa
+ta\\Local\\npm-cache',
+  npm_config_globalcon
+fig: 'C:\\Users\\rukat
+\\AppData\\Roaming\\np
+m\\etc\\npmrc',
+  npm_config_global_pr
+efix: 'C:\\Users\\ruka
+t\\AppData\\Roaming\\n
+pm',
+  npm_config_init_modu
+le: 'C:\\Users\\rukat\
+\.npm-init.js',
+  npm_config_local_pre
+fix: 'C:\\Users\\rukat
+\\Downloads\\繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援\\drone-license
+-docs',
+  npm_config_node_gyp:
+ 'C:\\Program Files\\n
+odejs\\node_modules\\n
+pm\\node_modules\\node
+-gyp\\bin\\node-gyp.js
+',
+  npm_config_noproxy: 
+'',
+  npm_config_npm_versi
+on: '11.6.2',
+  npm_config_prefix: '
+C:\\Users\\rukat\\AppD
+ata\\Roaming\\npm',
+  npm_config_userconfi
+g: 'C:\\Users\\rukat\\
+.npmrc',
+  npm_config_user_agen
+t: 'npm/11.6.2 node/v2
+5.2.1 win32 x64 worksp
+aces/false',
+  npm_execpath: 'C:\\P
+rogram Files\\nodejs\\
+node_modules\\npm\\bin
+\\npm-cli.js',
+  npm_lifecycle_event:
+ 'npx',
+  npm_lifecycle_script
+: 'astro',
+  npm_node_execpath: '
+C:\\Program Files\\nod
+ejs\\node.exe',
+  npm_package_json: 'C
+:\\Users\\rukat\\Downl
+oads\\繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+\\drone-license-docs\\
+package.json',
+  npm_package_name: 'd
+rone-license-docs',
+  npm_package_version:
+ '0.0.1',
+  NUMBER_OF_PROCESSORS
+: '16',
+  OneDrive: 'C:\\Users
+\\rukat\\OneDrive',
+  OS: 'Windows_NT',
+  PAGER: 'cat',
+  Path: 'C:\\Users\\ru
+kat\\Downloads\\繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援\\drone-lice
+nse-docs\\node_modules
+\\.bin;C:\\Users\\ruka
+t\\Downloads\\繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援\\drone-licens
+e-docs\\node_modules\\
+.bin;C:\\Users\\rukat\
+\Downloads\\繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援\\node_modules\\
+.bin;C:\\Users\\rukat\
+\Downloads\\node_modul
+es\\.bin;C:\\Users\\ru
+kat\\node_modules\\.bi
+n;C:\\Users\\node_modu
+les\\.bin;C:\\node_mod
+ules\\.bin;C:\\Program
+ Files\\nodejs\\node_m
+odules\\npm\\node_modu
+les\\@npmcli\\run-scri
+pt\\lib\\node-gyp-bin;
+C:\\WINDOWS\\system32;
+C:\\WINDOWS;C:\\WINDOW
+S\\System32\\Wbem;C:\\
+WINDOWS\\System32\\Win
+dowsPowerShell\\v1.0\\
+;C:\\WINDOWS\\System32
+\\OpenSSH\\;C:\\Progra
+m Files (x86)\\Pulse S
+ecure\\VC142.CRT\\X64\
+\;C:\\Program Files (x
+86)\\Pulse Secure\\VC1
+42.CRT\\X86\\;C:\\Prog
+ram Files (x86)\\Commo
+n Files\\Pulse Secure\
+\TNC Client Plugin\\;C
+:\\Program Files\\dotn
+et\\;C:\\Program Files
+\\Git\\cmd;C:\\Program
+ Files\\nodejs\\;C:\\U
+sers\\rukat\\AppData\\
+Local\\Programs\\Pytho
+n\\Python312\\Scripts\
+\;C:\\Users\\rukat\\Ap
+pData\\Local\\Programs
+\\Python\\Python312\\;
+C:\\Users\\rukat\\AppD
+ata\\Local\\Programs\\
+Python\\Launcher\\;C:\
+\Users\\rukat\\AppData
+\\Local\\Microsoft\\Wi
+ndowsApps;;C:\\Users\\
+rukat\\AppData\\Local\
+\Programs\\Microsoft V
+S Code\\bin;C:\\Users\
+\rukat\\AppData\\Local
+\\Programs\\Antigravit
+y\\bin;C:\\Users\\ruka
+t\\AppData\\Roaming\\n
+pm;c:\\Users\\rukat\\.
+antigravity\\extension
+s\\ms-python.debugpy-2
+025.18.0-win32-x64\\bu
+ndled\\scripts\\noConf
+igScripts',
+  PATHEXT: '.COM;.EXE;
+.BAT;.CMD;.VBS;.VBE;.J
+S;.JSE;.WSF;.WSH;.MSC;
+.CPL',
+  PROCESSOR_ARCHITECTU
+RE: 'AMD64',
+  PROCESSOR_IDENTIFIER
+: 'AMD64 Family 25 Mod
+el 80 Stepping 0, Auth
+enticAMD',
+  PROCESSOR_LEVEL: '25
+',
+  PROCESSOR_REVISION: 
+'5000',
+  ProgramData: 'C:\\Pr
+ogramData',
+  ProgramFiles: 'C:\\P
+rogram Files',
+  'ProgramFiles(x86)':
+ 'C:\\Program Files (x
+86)',
+  ProgramW6432: 'C:\\P
+rogram Files',
+  PROMPT: '$P$G',
+  PSModulePath: 'C:\\U
+sers\\rukat\\OneDrive\
+\繝峨く繝･繝｡繝ｳ繝・\WindowsPo
+werShell\\Modules;C:\\
+Program Files\\Windows
+PowerShell\\Modules;C:
+\\WINDOWS\\system32\\W
+indowsPowerShell\\v1.0
+\\Modules',
+  PUBLIC: 'C:\\Users\\
+Public',
+  PYDEVD_DISABLE_FILE_
+VALIDATION: '1',
+  PYTHONSTARTUP: 'c:\\
+Users\\rukat\\AppData\
+\Roaming\\Antigravity\
+\User\\workspaceStorag
+e\\00a1b9548024028a592
+ab9ab54b91947\\ms-pyth
+on.python\\pythonrc.py
+',
+  PYTHON_BASIC_REPL: '
+1',
+  SESSIONNAME: 'Consol
+e',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WIN
+DOWS',
+  TEMP: 'C:\\Users\\ru
+kat\\AppData\\Local\\T
+emp',
+  TERM_PROGRAM: 'vscod
+e',
+  TERM_PROGRAM_VERSION
+: '1.107.0',
+  TMP: 'C:\\Users\\ruk
+at\\AppData\\Local\\Te
+mp',
+  USERDOMAIN: '繧九°縺ｮLE
+NOVO',
+  USERDOMAIN_ROAMINGPR
+OFILE: '繧九°縺ｮLENOVO',
+  USERNAME: 'rukat',
+  USERPROFILE: 'C:\\Us
+ers\\rukat',
+  VSCODE_DEBUGPY_ADAPT
+ER_ENDPOINTS: 'c:\\Use
+rs\\rukat\\.antigravit
+y\\extensions\\ms-pyth
+on.debugpy-2025.18.0-w
+in32-x64\\.noConfigDeb
+ugAdapterEndpoints\\en
+dpoint-f7608cdc20eb434
+8.txt',
+  VSCODE_GIT_ASKPASS_E
+XTRA_ARGS: '',
+  VSCODE_GIT_ASKPASS_M
+AIN: 'c:\\Users\\rukat
+\\AppData\\Local\\Prog
+rams\\Antigravity\\res
+ources\\app\\extension
+s\\git\\dist\\askpass-
+main.js',
+  VSCODE_GIT_ASKPASS_N
+ODE: 'C:\\Users\\rukat
+\\AppData\\Local\\Prog
+rams\\Antigravity\\Ant
+igravity.exe',
+  VSCODE_GIT_IPC_HANDL
+E: '\\\\.\\pipe\\vscod
+e-git-9ed9172271-sock'
+,
+  VSCODE_INJECTION: '1
+',
+  VSCODE_PYTHON_AUTOAC
+TIVATE_GUARD: '1',
+  windir: 'C:\\WINDOWS
+'
+}
+2026-03-23T06:54:42.22
+1Z vite:env loading en
+v files: [
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.local',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.production',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.production.local'
+]
+2026-03-23T06:54:42.22
+1Z vite:env env files 
+loaded in 0.74ms
+2026-03-23T06:54:42.22
+3Z vite:env using reso
+lved env: {
+  ALLUSERSPROFILE: 'C:
+\\ProgramData',
+  ANTIGRAVITY_AGENT: '
+1',
+  ANTIGRAVITY_CLI_ALIA
+S: 'agy',
+  APPDATA: 'C:\\Users\
+\rukat\\AppData\\Roami
+ng',
+  BUNDLED_DEBUGPY_PATH
+: 'c:\\Users\\rukat\\.
+antigravity\\extension
+s\\ms-python.debugpy-2
+025.18.0-win32-x64\\bu
+ndled\\libs\\debugpy',
+  CHROME_CRASHPAD_PIPE
+_NAME: '\\\\.\\pipe\\c
+rashpad_33936_XEFPIDNF
+TUSASSUV',
+  COLOR: '0',
+  COLORTERM: 'truecolo
+r',
+  CommonProgramFiles: 
+'C:\\Program Files\\Co
+mmon Files',
+  'CommonProgramFiles(
+x86)': 'C:\\Program Fi
+les (x86)\\Common File
+s',
+  CommonProgramW6432: 
+'C:\\Program Files\\Co
+mmon Files',
+  COMPUTERNAME: '繧九°縺ｮ
+LENOVO',
+  ComSpec: 'C:\\WINDOW
+S\\system32\\cmd.exe',
+  DEBUG: 'astro:*,vite
+:*',
+  DriverData: 'C:\\Win
+dows\\System32\\Driver
+s\\DriverData',
+  EDITOR: 'C:\\WINDOWS
+\\notepad.exe',
+  EFC_11992_1592913036
+: '1',
+  GIT_ASKPASS: 'c:\\Us
+ers\\rukat\\AppData\\L
+ocal\\Programs\\Antigr
+avity\\resources\\app\
+\extensions\\git\\dist
+\\askpass.sh',
+  HOME: 'C:\\Users\\ru
+kat',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\
+rukat',
+  INIT_CWD: 'C:\\Users
+\\rukat\\Downloads\\繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\\drone-
+license-docs',
+  LANG: 'ja_JP.UTF-8',
+  LOCALAPPDATA: 'C:\\U
+sers\\rukat\\AppData\\
+Local',
+  LOGONSERVER: '\\\\繧九
+°縺ｮLENOVO',
+  NODE: 'C:\\Program F
+iles\\nodejs\\node.exe
+',
+  NODE_ENV: 'productio
+n',
+  npm_command: 'exec',
+  npm_config_cache: 'C
+:\\Users\\rukat\\AppDa
+ta\\Local\\npm-cache',
+  npm_config_globalcon
+fig: 'C:\\Users\\rukat
+\\AppData\\Roaming\\np
+m\\etc\\npmrc',
+  npm_config_global_pr
+efix: 'C:\\Users\\ruka
+t\\AppData\\Roaming\\n
+pm',
+  npm_config_init_modu
+le: 'C:\\Users\\rukat\
+\.npm-init.js',
+  npm_config_local_pre
+fix: 'C:\\Users\\rukat
+\\Downloads\\繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援\\drone-license
+-docs',
+  npm_config_node_gyp:
+ 'C:\\Program Files\\n
+odejs\\node_modules\\n
+pm\\node_modules\\node
+-gyp\\bin\\node-gyp.js
+',
+  npm_config_noproxy: 
+'',
+  npm_config_npm_versi
+on: '11.6.2',
+  npm_config_prefix: '
+C:\\Users\\rukat\\AppD
+ata\\Roaming\\npm',
+  npm_config_userconfi
+g: 'C:\\Users\\rukat\\
+.npmrc',
+  npm_config_user_agen
+t: 'npm/11.6.2 node/v2
+5.2.1 win32 x64 worksp
+aces/false',
+  npm_execpath: 'C:\\P
+rogram Files\\nodejs\\
+node_modules\\npm\\bin
+\\npm-cli.js',
+  npm_lifecycle_event:
+ 'npx',
+  npm_lifecycle_script
+: 'astro',
+  npm_node_execpath: '
+C:\\Program Files\\nod
+ejs\\node.exe',
+  npm_package_json: 'C
+:\\Users\\rukat\\Downl
+oads\\繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+\\drone-license-docs\\
+package.json',
+  npm_package_name: 'd
+rone-license-docs',
+  npm_package_version:
+ '0.0.1',
+  NUMBER_OF_PROCESSORS
+: '16',
+  OneDrive: 'C:\\Users
+\\rukat\\OneDrive',
+  OS: 'Windows_NT',
+  PAGER: 'cat',
+  Path: 'C:\\Users\\ru
+kat\\Downloads\\繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援\\drone-lice
+nse-docs\\node_modules
+\\.bin;C:\\Users\\ruka
+t\\Downloads\\繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援\\drone-licens
+e-docs\\node_modules\\
+.bin;C:\\Users\\rukat\
+\Downloads\\繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援\\node_modules\\
+.bin;C:\\Users\\rukat\
+\Downloads\\node_modul
+es\\.bin;C:\\Users\\ru
+kat\\node_modules\\.bi
+n;C:\\Users\\node_modu
+les\\.bin;C:\\node_mod
+ules\\.bin;C:\\Program
+ Files\\nodejs\\node_m
+odules\\npm\\node_modu
+les\\@npmcli\\run-scri
+pt\\lib\\node-gyp-bin;
+C:\\WINDOWS\\system32;
+C:\\WINDOWS;C:\\WINDOW
+S\\System32\\Wbem;C:\\
+WINDOWS\\System32\\Win
+dowsPowerShell\\v1.0\\
+;C:\\WINDOWS\\System32
+\\OpenSSH\\;C:\\Progra
+m Files (x86)\\Pulse S
+ecure\\VC142.CRT\\X64\
+\;C:\\Program Files (x
+86)\\Pulse Secure\\VC1
+42.CRT\\X86\\;C:\\Prog
+ram Files (x86)\\Commo
+n Files\\Pulse Secure\
+\TNC Client Plugin\\;C
+:\\Program Files\\dotn
+et\\;C:\\Program Files
+\\Git\\cmd;C:\\Program
+ Files\\nodejs\\;C:\\U
+sers\\rukat\\AppData\\
+Local\\Programs\\Pytho
+n\\Python312\\Scripts\
+\;C:\\Users\\rukat\\Ap
+pData\\Local\\Programs
+\\Python\\Python312\\;
+C:\\Users\\rukat\\AppD
+ata\\Local\\Programs\\
+Python\\Launcher\\;C:\
+\Users\\rukat\\AppData
+\\Local\\Microsoft\\Wi
+ndowsApps;;C:\\Users\\
+rukat\\AppData\\Local\
+\Programs\\Microsoft V
+S Code\\bin;C:\\Users\
+\rukat\\AppData\\Local
+\\Programs\\Antigravit
+y\\bin;C:\\Users\\ruka
+t\\AppData\\Roaming\\n
+pm;c:\\Users\\rukat\\.
+antigravity\\extension
+s\\ms-python.debugpy-2
+025.18.0-win32-x64\\bu
+ndled\\scripts\\noConf
+igScripts',
+  PATHEXT: '.COM;.EXE;
+.BAT;.CMD;.VBS;.VBE;.J
+S;.JSE;.WSF;.WSH;.MSC;
+.CPL',
+  PROCESSOR_ARCHITECTU
+RE: 'AMD64',
+  PROCESSOR_IDENTIFIER
+: 'AMD64 Family 25 Mod
+el 80 Stepping 0, Auth
+enticAMD',
+  PROCESSOR_LEVEL: '25
+',
+  PROCESSOR_REVISION: 
+'5000',
+  ProgramData: 'C:\\Pr
+ogramData',
+  ProgramFiles: 'C:\\P
+rogram Files',
+  'ProgramFiles(x86)':
+ 'C:\\Program Files (x
+86)',
+  ProgramW6432: 'C:\\P
+rogram Files',
+  PROMPT: '$P$G',
+  PSModulePath: 'C:\\U
+sers\\rukat\\OneDrive\
+\繝峨く繝･繝｡繝ｳ繝・\WindowsPo
+werShell\\Modules;C:\\
+Program Files\\Windows
+PowerShell\\Modules;C:
+\\WINDOWS\\system32\\W
+indowsPowerShell\\v1.0
+\\Modules',
+  PUBLIC: 'C:\\Users\\
+Public',
+  PYDEVD_DISABLE_FILE_
+VALIDATION: '1',
+  PYTHONSTARTUP: 'c:\\
+Users\\rukat\\AppData\
+\Roaming\\Antigravity\
+\User\\workspaceStorag
+e\\00a1b9548024028a592
+ab9ab54b91947\\ms-pyth
+on.python\\pythonrc.py
+',
+  PYTHON_BASIC_REPL: '
+1',
+  SESSIONNAME: 'Consol
+e',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WIN
+DOWS',
+  TEMP: 'C:\\Users\\ru
+kat\\AppData\\Local\\T
+emp',
+  TERM_PROGRAM: 'vscod
+e',
+  TERM_PROGRAM_VERSION
+: '1.107.0',
+  TMP: 'C:\\Users\\ruk
+at\\AppData\\Local\\Te
+mp',
+  USERDOMAIN: '繧九°縺ｮLE
+NOVO',
+  USERDOMAIN_ROAMINGPR
+OFILE: '繧九°縺ｮLENOVO',
+  USERNAME: 'rukat',
+  USERPROFILE: 'C:\\Us
+ers\\rukat',
+  VSCODE_DEBUGPY_ADAPT
+ER_ENDPOINTS: 'c:\\Use
+rs\\rukat\\.antigravit
+y\\extensions\\ms-pyth
+on.debugpy-2025.18.0-w
+in32-x64\\.noConfigDeb
+ugAdapterEndpoints\\en
+dpoint-f7608cdc20eb434
+8.txt',
+  VSCODE_GIT_ASKPASS_E
+XTRA_ARGS: '',
+  VSCODE_GIT_ASKPASS_M
+AIN: 'c:\\Users\\rukat
+\\AppData\\Local\\Prog
+rams\\Antigravity\\res
+ources\\app\\extension
+s\\git\\dist\\askpass-
+main.js',
+  VSCODE_GIT_ASKPASS_N
+ODE: 'C:\\Users\\rukat
+\\AppData\\Local\\Prog
+rams\\Antigravity\\Ant
+igravity.exe',
+  VSCODE_GIT_IPC_HANDL
+E: '\\\\.\\pipe\\vscod
+e-git-9ed9172271-sock'
+,
+  VSCODE_INJECTION: '1
+',
+  VSCODE_PYTHON_AUTOAC
+TIVATE_GUARD: '1',
+  windir: 'C:\\WINDOWS
+'
+}
+2026-03-23T06:54:42.22
+8Z vite:env loading en
+v files: [
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.local',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.production',
+  'C:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/.e
+nv.production.local'
+]
+2026-03-23T06:54:42.22
+9Z vite:env env files 
+loaded in 0.42ms
+2026-03-23T06:54:42.22
+9Z vite:env using reso
+lved env: {}
+2026-03-23T06:54:42.24
+0Z vite:config using r
+esolved config: {
+  configFile: undefine
+d,
+  mode: 'production',
+  cacheDir: 'C:/Users/
+rukat/Downloads/繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援/drone-licen
+se-docs/node_modules/.
+vite',
+  clearScreen: false,
+  customLogger: {
+    hasWarned: false,
+    info: [Function: i
+nfo],
+    warn: [Function: w
+arn],
+    warnOnce: [Functio
+n: warnOnce],
+    error: [Function: 
+error],
+    clearScreen: [Func
+tion: clearScreen],
+    hasErrorLogged: [F
+unction: hasErrorLogge
+d]
+  },
+  appType: 'custom',
+  optimizeDeps: {
+    include: [
+      'astro > cssesc'
+,
+      'astro > aria-qu
+ery',
+      'astro > axobjec
+t-query'
+    ],
+    exclude: [ 'astro'
+, 'node-fetch' ],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefine
+d,
+    holdUntilCrawlEnd:
+ true,
+    force: false,
+    noDiscovery: true,
+    esbuildOptions: { 
+preserveSymlinks: fals
+e },
+    entries: [
+      'C:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/src/**/*.{jsx,tsx,vu
+e,svelte,html,astro}'
+    ]
+  },
+  plugins: [
+    'vite:optimized-de
+ps',
+    'vite:watch-packag
+e-data',
+    'vite:pre-alias',
+    'alias',
+    'astro-manifest-pl
+ugin',
+    'astro:build',
+    'astro-env-plugin'
+,
+    'astro:markdown',
+    'astro:head-metada
+ta',
+    'astro-content-vir
+tual-mod-plugin',
+    'astro:content-ass
+et-propagation',
+    'astro:assets:esm'
+,
+    'astro:vite-plugin
+-file-url',
+    'astro:i18n',
+    'astro:actions',
+    'astro:container',
+    '@mdx-js/rollup',
+    'vite:modulepreloa
+d-polyfill',
+    'vite:resolve',
+    'vite:html-inline-
+proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper'
+,
+    'vite:worker',
+    'vite:asset',
+    'astro:build:norma
+l',
+    'astro:scripts',
+    'astro:adapter-con
+fig',
+    'astro:html',
+    'astro:postprocess
+',
+    'astro:integration
+-container',
+    'astro:content-imp
+orts',
+    '@astro/plugin-mid
+dleware',
+    'astro:assets',
+    'astro:fonts:fallb
+ack',
+    'astro:prefetch',
+    'astro:transitions
+',
+    'astro:dev-toolbar
+',
+    'vite-plugin-starl
+ight-user-config',
+    'vite-plugin-astro
+-expressive-code',
+    '@astrojs/mdx-post
+process',
+    'vite:wasm-fallbac
+k',
+    'astro:vite-plugin
+-env',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-impor
+t-meta-url',
+    'vite:asset-import
+-meta-url',
+    'vite:dynamic-impo
+rt-vars',
+    'vite:import-glob'
+,
+    'astro:scripts:pag
+e-ssr',
+    'astro:scanner',
+    '@astrojs/vite-plu
+gin-astro-ssr-manifest
+',
+    'astro:server-isla
+nds',
+    'astro:hmr-reload'
+,
+    'vite:client-injec
+t',
+    'vite:css-analysis
+',
+    'vite:import-analy
+sis'
+  ],
+  publicDir: 'C:/Users
+/rukat/Downloads/繝峨Ο繝ｼ
+繝ｳ雉・ｼ縲謨吝援/drone-lice
+nse-docs/public',
+  root: 'C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs',
+  envPrefix: 'PUBLIC_'
+,
+  define: {
+    'import.meta.env.S
+ITE': 'undefined',
+    'import.meta.env.B
+ASE_URL': '"/"',
+    'import.meta.env.A
+SSETS_PREFIX': 'undefi
+ned',
+    __ASTRO_INTERNAL_I
+18N_CONFIG__: '{"base"
+:"/","format":"directo
+ry","trailingSlash":"i
+gnore","i18n":{"defaul
+tLocale":"en","locales
+":["en"],"routing":{"p
+refixDefaultLocale":fa
+lse,"redirectToDefault
+Locale":false,"fallbac
+kType":"redirect"}},"i
+sBuild":false}'
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?
+:\/\/(?:(?:[^:]+\.)?lo
+calhost|127\.0\.0\.1|\
+[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFi
+les: [], ssrFiles: [] 
+},
+    middlewareMode: tr
+ue,
+    fs: {
+      strict: true,
+      deny: [ '.env', 
+'.env.*', '*.{crt,pem}
+', '**/.git/**' ],
+      allow: [ 'C:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs' ]
+    },
+    preTransformReques
+ts: true,
+    perEnvironmentStar
+tEndDuringDev: false,
+    sourcemapIgnoreLis
+t: [Function: isInNode
+Modules$1],
+    hmr: false,
+    watch: { ignored: 
+[ '**' ] },
+    ws: false
+  },
+  resolve: {
+    externalConditions
+: [ 'node' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'astro' 
+],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: 
+false,
+    alias: [
+      { find: 'randomb
+ytes', replacement: 'r
+andombytes/browser' },
+      {
+        find: /^astro$
+/,
+        replacement: '
+C:\\Users\\rukat\\Down
+loads\\繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援\\drone-license-docs\
+\node_modules\\astro\\
+dist\\types\\public\\i
+ndex.js'
+      },
+      {
+        find: 'astro:m
+iddleware',
+        replacement: '
+astro/virtual-modules/
+middleware.js'
+      },
+      { find: 'astro:s
+chema', replacement: '
+astro/zod' },
+      { find: 'astro:c
+omponents', replacemen
+t: 'astro/components' 
+},
+      {
+        find: /^\/?@vi
+te\/env/,
+        replacement: '
+/@fs/C:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/vite/dist
+/client/env.mjs'
+      },
+      {
+        find: /^\/?@vi
+te\/client/,
+        replacement: '
+/@fs/C:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/vite/dist
+/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'bro
+wser', 'module', 'jsne
+xt:main', 'jsnext' ],
+    conditions: [ 'mod
+ule', 'browser', 'deve
+lopment|production', '
+astro' ],
+    builtins: []
+  },
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: 
+{ preserveSymlinks: fa
+lse },
+      include: [],
+      exclude: [],
+      needsInterop: []
+,
+      extensions: [],
+      holdUntilCrawlEn
+d: true,
+      force: false,
+      noDiscovery: tru
+e
+    },
+    noExternal: [
+      'astro',
+      'astro/component
+s',
+      '@nanostores/pre
+act',
+      '@fontsource/*',
+      '@astrojs/starli
+ght',
+      '@astrojs/mdx',
+      '@astrojs/sitema
+p',
+      'astro-expressiv
+e-code'
+    ],
+    external: [],
+    resolve: {
+      conditions: [ 'm
+odule', 'node', 'devel
+opment|production', 'a
+stro' ],
+      externalConditio
+ns: [ 'node' ]
+    }
+  },
+  build: {
+    target: [ 'es2020'
+, 'edge88', 'firefox78
+', 'chrome87', 'safari
+14' ],
+    polyfillModulePrel
+oad: true,
+    modulePreload: { p
+olyfill: true },
+    outDir: 'dist',
+    assetsDir: '_astro
+',
+    assetsInlineLimit:
+ 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: {},
+    commonjsOptions: {
+ include: [ /node_modu
+les/ ], extensions: [ 
+'.js', '.cjs' ] },
+    dynamicImportVarsO
+ptions: { warnOnError:
+ true, exclude: [ /nod
+e_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: tru
+e,
+    manifest: false,
+    lib: false,
+    ssrManifest: false
+,
+    ssrEmitAssets: fal
+se,
+    reportCompressedSi
+ze: true,
+    chunkSizeWarningLi
+mit: 500,
+    watch: null,
+    cssCodeSplit: true
+,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: false,
+    createEnvironment:
+ [Function: createEnvi
+ronment],
+    cssTarget: [ 'es20
+20', 'edge88', 'firefo
+x78', 'chrome87', 'saf
+ari14' ],
+    cssMinify: true
+  },
+  logLevel: 'silent',
+  environments: {
+    client: {
+      define: {
+        'import.meta.e
+nv.SITE': 'undefined',
+        'import.meta.e
+nv.BASE_URL': '"/"',
+        'import.meta.e
+nv.ASSETS_PREFIX': 'un
+defined',
+        __ASTRO_INTERN
+AL_I18N_CONFIG__: '{"b
+ase":"/","format":"dir
+ectory","trailingSlash
+":"ignore","i18n":{"de
+faultLocale":"en","loc
+ales":["en"],"routing"
+:{"prefixDefaultLocale
+":false,"redirectToDef
+aultLocale":false,"fal
+lbackType":"redirect"}
+},"isBuild":false}'
+      },
+      resolve: {
+        externalCondit
+ions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.j
+s',
+          '.mts',  '.t
+s',
+          '.jsx',  '.t
+sx',
+          '.json'
+        ],
+        dedupe: [ 'ast
+ro' ],
+        noExternal: []
+,
+        external: [],
+        preserveSymlin
+ks: false,
+        alias: [
+          { find: 'ran
+dombytes', replacement
+: 'randombytes/browser
+' },
+          {
+            find: /^as
+tro$/,
+            replacemen
+t: 'C:\\Users\\rukat\\
+Downloads\\繝峨Ο繝ｼ繝ｳ雉・ｼ
+縲謨吝援\\drone-license-d
+ocs\\node_modules\\ast
+ro\\dist\\types\\publi
+c\\index.js'
+          },
+          {
+            find: 'ast
+ro:middleware',
+            replacemen
+t: 'astro/virtual-modu
+les/middleware.js'
+          },
+          { find: 'ast
+ro:schema', replacemen
+t: 'astro/zod' },
+          { find: 'ast
+ro:components', replac
+ement: 'astro/componen
+ts' },
+          {
+            find: /^\/
+?@vite\/env/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/env.mjs'
+          },
+          {
+            find: /^\/
+?@vite\/client/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/client.mjs
+'
+          }
+        ],
+        mainFields: [ 
+'browser', 'module', '
+jsnext:main', 'jsnext'
+ ],
+        conditions: [ 
+'module', 'browser', '
+development|production
+', 'astro' ],
+        builtins: []
+      },
+      keepProcessEnv: 
+false,
+      consumer: 'clien
+t',
+      optimizeDeps: {
+        include: [
+          'astro > css
+esc',
+          'astro > ari
+a-query',
+          'astro > axo
+bject-query'
+        ],
+        exclude: [ 'as
+tro', 'node-fetch' ],
+        needsInterop: 
+[],
+        extensions: []
+,
+        disabled: unde
+fined,
+        holdUntilCrawl
+End: true,
+        force: false,
+        noDiscovery: t
+rue,
+        esbuildOptions
+: { preserveSymlinks: 
+false },
+        entries: [
+          'C:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/src/**/*.{jsx,ts
+x,vue,svelte,html,astr
+o}'
+        ]
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { j
+s: true },
+        sourcemapIgnor
+eList: [Function: isIn
+NodeModules$1],
+        preTransformRe
+quests: true,
+        createEnvironm
+ent: [Function: defaul
+tCreateClientDevEnviro
+nment],
+        recoverable: t
+rue,
+        moduleRunnerTr
+ansform: false
+      },
+      build: {
+        target: [ 'es2
+020', 'edge88', 'firef
+ox78', 'chrome87', 'sa
+fari14' ],
+        polyfillModule
+Preload: true,
+        modulePreload:
+ { polyfill: true },
+        outDir: 'dist'
+,
+        assetsDir: '_a
+stro',
+        assetsInlineLi
+mit: 4096,
+        sourcemap: fal
+se,
+        terserOptions:
+ {},
+        rollupOptions:
+ {},
+        commonjsOption
+s: { include: [ /node_
+modules/ ], extensions
+: [ '.js', '.cjs' ] },
+        dynamicImportV
+arsOptions: { warnOnEr
+ror: true, exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: n
+ull,
+        copyPublicDir:
+ true,
+        manifest: fals
+e,
+        lib: false,
+        ssrManifest: f
+alse,
+        ssrEmitAssets:
+ false,
+        reportCompress
+edSize: true,
+        chunkSizeWarni
+ngLimit: 500,
+        watch: null,
+        cssCodeSplit: 
+true,
+        minify: 'esbui
+ld',
+        ssr: false,
+        emitAssets: tr
+ue,
+        createEnvironm
+ent: [Function: create
+Environment],
+        cssTarget: [ '
+es2020', 'edge88', 'fi
+refox78', 'chrome87', 
+'safari14' ],
+        cssMinify: tru
+e
+      }
+    },
+    ssr: {
+      define: {
+        'import.meta.e
+nv.SITE': 'undefined',
+        'import.meta.e
+nv.BASE_URL': '"/"',
+        'import.meta.e
+nv.ASSETS_PREFIX': 'un
+defined',
+        __ASTRO_INTERN
+AL_I18N_CONFIG__: '{"b
+ase":"/","format":"dir
+ectory","trailingSlash
+":"ignore","i18n":{"de
+faultLocale":"en","loc
+ales":["en"],"routing"
+:{"prefixDefaultLocale
+":false,"redirectToDef
+aultLocale":false,"fal
+lbackType":"redirect"}
+},"isBuild":false}'
+      },
+      resolve: {
+        externalCondit
+ions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.j
+s',
+          '.mts',  '.t
+s',
+          '.jsx',  '.t
+sx',
+          '.json'
+        ],
+        dedupe: [ 'ast
+ro' ],
+        noExternal: [
+          'astro',
+          'astro/compo
+nents',
+          '@nanostores
+/preact',
+          '@fontsource
+/*',
+          '@astrojs/st
+arlight',
+          '@astrojs/md
+x',
+          '@astrojs/si
+temap',
+          'astro-expre
+ssive-code'
+        ],
+        external: [],
+        preserveSymlin
+ks: false,
+        alias: [
+          { find: 'ran
+dombytes', replacement
+: 'randombytes/browser
+' },
+          {
+            find: /^as
+tro$/,
+            replacemen
+t: 'C:\\Users\\rukat\\
+Downloads\\繝峨Ο繝ｼ繝ｳ雉・ｼ
+縲謨吝援\\drone-license-d
+ocs\\node_modules\\ast
+ro\\dist\\types\\publi
+c\\index.js'
+          },
+          {
+            find: 'ast
+ro:middleware',
+            replacemen
+t: 'astro/virtual-modu
+les/middleware.js'
+          },
+          { find: 'ast
+ro:schema', replacemen
+t: 'astro/zod' },
+          { find: 'ast
+ro:components', replac
+ement: 'astro/componen
+ts' },
+          {
+            find: /^\/
+?@vite\/env/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/env.mjs'
+          },
+          {
+            find: /^\/
+?@vite\/client/,
+            replacemen
+t: '/@fs/C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/vite/
+dist/client/client.mjs
+'
+          }
+        ],
+        mainFields: [ 
+'module', 'jsnext:main
+', 'jsnext' ],
+        conditions: [ 
+'module', 'node', 'dev
+elopment|production', 
+'astro' ],
+        builtins: [
+          '_http_agent
+',         '_http_clie
+nt',        '_http_com
+mon',
+          '_http_incom
+ing',      '_http_outg
+oing',      '_http_ser
+ver',
+          '_stream_dup
+lex',      '_stream_pa
+ssthrough', '_stream_r
+eadable',
+          '_stream_tra
+nsform',   '_stream_wr
+ap',        '_stream_w
+ritable',
+          '_tls_common
+',         '_tls_wrap'
+,           'assert',
+          'assert/stri
+ct',       'async_hook
+s',         'buffer',
+          'child_proce
+ss',       'cluster', 
+            'console',
+          'constants',
+           'crypto',  
+            'dgram',
+          'diagnostics
+_channel', 'dns',     
+            'dns/promi
+ses',
+          'domain',   
+           'events',  
+            'fs',
+          'fs/promises
+',         'http',    
+            'http2',
+          'https',    
+           'inspector'
+,           'inspector
+/promises',
+          'module',   
+           'net',     
+            'os',
+          'path',     
+           'path/posix
+',          'path/win3
+2',
+          'perf_hooks'
+,          'process', 
+            'punycode'
+,
+          'querystring
+',         'readline',
+            'readline/
+promises',
+          'repl',     
+           'stream',  
+            'stream/co
+nsumers',
+          'stream/prom
+ises',     'stream/web
+',          'string_de
+coder',
+          'sys',      
+           'timers',  
+            'timers/pr
+omises',
+          'tls',      
+           'trace_even
+ts',        'tty',
+          'url',      
+           'util',    
+            'util/type
+s',
+          'v8',       
+           'vm',      
+            'wasi',
+          'worker_thre
+ads',      'zlib',    
+            /^node:/,
+          /^npm:/,    
+           /^bun:/
+        ]
+      },
+      keepProcessEnv: 
+true,
+      consumer: 'serve
+r',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: 
+[],
+        extensions: []
+,
+        disabled: unde
+fined,
+        holdUntilCrawl
+End: true,
+        force: false,
+        noDiscovery: t
+rue,
+        esbuildOptions
+: { preserveSymlinks: 
+false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { j
+s: true },
+        sourcemapIgnor
+eList: [Function: isIn
+NodeModules$1],
+        preTransformRe
+quests: false,
+        createEnvironm
+ent: [Function: defaul
+tCreateDevEnvironment]
+,
+        recoverable: f
+alse,
+        moduleRunnerTr
+ansform: true
+      },
+      build: {
+        target: [ 'es2
+020', 'edge88', 'firef
+ox78', 'chrome87', 'sa
+fari14' ],
+        polyfillModule
+Preload: true,
+        modulePreload:
+ { polyfill: true },
+        outDir: 'dist'
+,
+        assetsDir: '_a
+stro',
+        assetsInlineLi
+mit: 4096,
+        sourcemap: fal
+se,
+        terserOptions:
+ {},
+        rollupOptions:
+ {},
+        commonjsOption
+s: { include: [ /node_
+modules/ ], extensions
+: [ '.js', '.cjs' ] },
+        dynamicImportV
+arsOptions: { warnOnEr
+ror: true, exclude: [ 
+/node_modules/ ] },
+        write: true,
+        emptyOutDir: n
+ull,
+        copyPublicDir:
+ true,
+        manifest: fals
+e,
+        lib: false,
+        ssrManifest: f
+alse,
+        ssrEmitAssets:
+ false,
+        reportCompress
+edSize: true,
+        chunkSizeWarni
+ngLimit: 500,
+        watch: null,
+        cssCodeSplit: 
+true,
+        minify: false,
+        ssr: true,
+        emitAssets: fa
+lse,
+        createEnvironm
+ent: [Function: create
+Environment],
+        cssTarget: [ '
+es2020', 'edge88', 'fi
+refox78', 'chrome87', 
+'safari14' ],
+        cssMinify: 'es
+build'
+      }
+    }
+  },
+  configFileDependenci
+es: [],
+  inlineConfig: {
+    configFile: false,
+    mode: 'production'
+,
+    cacheDir: 'C:\\Use
+rs\\rukat\\Downloads\\
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\\dron
+e-license-docs\\node_m
+odules\\.vite\\',
+    clearScreen: false
+,
+    customLogger: {
+      hasWarned: false
+,
+      info: [Function:
+ info],
+      warn: [Function:
+ warn],
+      warnOnce: [Funct
+ion: warnOnce],
+      error: [Function
+: error],
+      clearScreen: [Fu
+nction: clearScreen],
+      hasErrorLogged: 
+[Function: hasErrorLog
+ged]
+    },
+    appType: 'custom',
+    optimizeDeps: {
+      entries: [
+        'C:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/src/**/*.{jsx,tsx,
+vue,svelte,html,astro}
+'
+      ],
+      exclude: [ 'astr
+o', 'node-fetch' ],
+      noDiscovery: tru
+e
+    },
+    plugins: [
+      {
+        enforce: 'pre'
+,
+        name: 'astro-m
+anifest-plugin',
+        resolveId: [Fu
+nction: resolveId],
+        load: [Functio
+n: load]
+      },
+      null,
+      false,
+      [
+        {
+          name: 'astro
+:build',
+          enforce: 'pr
+e',
+          configEnviro
+nment: [AsyncFunction:
+ configEnvironment],
+          configResolv
+ed: [Function: configR
+esolved],
+          configureSer
+ver: [Function: config
+ureServer],
+          buildStart: 
+[Function: buildStart]
+,
+          load: [Async
+Function: load],
+          transform: [
+AsyncFunction: transfo
+rm],
+          handleHotUpd
+ate: [AsyncFunction: h
+andleHotUpdate]
+        },
+        {
+          name: 'astro
+:build:normal',
+          resolveId: [
+Function: resolveId]
+        }
+      ],
+      {
+        name: 'astro:s
+cripts',
+        config: [Funct
+ion: config],
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [AsyncFu
+nction: load],
+        buildStart: [F
+unction: buildStart]
+      },
+      false,
+      {
+        name: 'astro:v
+ite-plugin-env',
+        config: [Funct
+ion: config],
+        configResolved
+: [Function: configRes
+olved],
+        transform: [Fu
+nction: transform]
+      },
+      {
+        name: 'astro-e
+nv-plugin',
+        enforce: 'pre'
+,
+        config: [Funct
+ion: config],
+        buildStart: [F
+unction: buildStart],
+        resolveId: [Fu
+nction: resolveId],
+        load: [Functio
+n: load]
+      },
+      {
+        name: 'astro:a
+dapter-config',
+        resolveId: [Fu
+nction: resolveId],
+        load: [Functio
+n: load]
+      },
+      {
+        enforce: 'pre'
+,
+        name: 'astro:m
+arkdown',
+        buildEnd: [Fun
+ction: buildEnd],
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [AsyncFu
+nction: load]
+      },
+      {
+        name: 'astro:h
+tml',
+        options: [Func
+tion: options],
+        transform: [As
+yncFunction: transform
+]
+      },
+      {
+        name: 'astro:p
+ostprocess',
+        transform: [As
+yncFunction: transform
+]
+      },
+      {
+        name: 'astro:i
+ntegration-container',
+        configureServe
+r: [AsyncFunction: con
+figureServer],
+        buildStart: [A
+syncFunction: buildSta
+rt]
+      },
+      {
+        name: 'astro:s
+cripts:page-ssr',
+        enforce: 'post
+',
+        transform: [Fu
+nction: transform]
+      },
+      {
+        name: 'astro:h
+ead-metadata',
+        enforce: 'pre'
+,
+        apply: 'serve'
+,
+        configureServe
+r: [Function: configur
+eServer],
+        resolveId: [Fu
+nction: resolveId],
+        transform: [Fu
+nction: transform]
+      },
+      {
+        name: 'astro:s
+canner',
+        enforce: 'post
+',
+        transform: [As
+yncFunction: transform
+],
+        handleHotUpdat
+e: [AsyncFunction: han
+dleHotUpdate]
+      },
+      {
+        name: 'astro-c
+ontent-virtual-mod-plu
+gin',
+        enforce: 'pre'
+,
+        config: [Funct
+ion: config],
+        buildStart: [F
+unction: buildStart],
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [AsyncFu
+nction: load],
+        configureServe
+r: [Function: configur
+eServer]
+      },
+      [
+        {
+          name: 'astro
+:content-imports',
+          config: [Fun
+ction: config],
+          buildStart: 
+[AsyncFunction: buildS
+tart],
+          transform: [
+AsyncFunction: transfo
+rm],
+          configureSer
+ver: [Function: config
+ureServer]
+        }
+      ],
+      {
+        name: 'astro:c
+ontent-asset-propagati
+on',
+        enforce: 'pre'
+,
+        resolveId: [As
+yncFunction: resolveId
+],
+        configureServe
+r: [Function: configur
+eServer],
+        transform: [As
+yncFunction: transform
+]
+      },
+      {
+        name: '@astro/
+plugin-middleware',
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [AsyncFu
+nction: load]
+      },
+      {
+        name: '@astroj
+s/vite-plugin-astro-ss
+r-manifest',
+        enforce: 'post
+',
+        resolveId: [Fu
+nction: resolveId],
+        load: [Functio
+n: load]
+      },
+      [
+        {
+          name: 'astro
+:assets',
+          config: [Fun
+ction: config],
+          resolveId: [
+AsyncFunction: resolve
+Id],
+          load: [Funct
+ion: load],
+          buildStart: 
+[Function: buildStart]
+,
+          renderChunk:
+ [AsyncFunction: rende
+rChunk]
+        },
+        {
+          name: 'astro
+:assets:esm',
+          enforce: 'pr
+e',
+          config: [Fun
+ction: config],
+          configResolv
+ed: [Function: configR
+esolved],
+          load: [Async
+Function: load]
+        },
+        {
+          name: 'astro
+:fonts:fallback',
+          resolveId: [
+Function: resolveId],
+          load: [Funct
+ion: load]
+        }
+      ],
+      {
+        name: 'astro:p
+refetch',
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [Functio
+n: load],
+        transform: [Fu
+nction: transform]
+      },
+      {
+        name: 'astro:t
+ransitions',
+        config: [Funct
+ion: config],
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [Functio
+n: load],
+        transform: [Fu
+nction: transform]
+      },
+      {
+        name: 'astro:d
+ev-toolbar',
+        config: [Funct
+ion: config],
+        resolveId: [Fu
+nction: resolveId],
+        configureServe
+r: [Function: configur
+eServer],
+        load: [AsyncFu
+nction: load]
+      },
+      {
+        name: 'astro:v
+ite-plugin-file-url',
+        enforce: 'pre'
+,
+        resolveId: [Fu
+nction: resolveId]
+      },
+      {
+        name: 'astro:i
+18n',
+        enforce: 'pre'
+,
+        config: [Funct
+ion: config],
+        resolveId: [Fu
+nction: resolveId]
+      },
+      {
+        name: 'astro:a
+ctions',
+        enforce: 'pre'
+,
+        resolveId: [As
+yncFunction: resolveId
+],
+        configureServe
+r: [AsyncFunction: con
+figureServer],
+        load: [AsyncFu
+nction: load]
+      },
+      {
+        name: 'astro:s
+erver-islands',
+        enforce: 'post
+',
+        config: [Funct
+ion: config],
+        configureServe
+r: [Function: configur
+eServer],
+        resolveId: [Fu
+nction: resolveId],
+        load: [Functio
+n: load],
+        transform: [Fu
+nction: transform],
+        renderChunk: [
+Function: renderChunk]
+      },
+      {
+        name: 'astro:c
+ontainer',
+        enforce: 'pre'
+,
+        resolveId: [Fu
+nction: resolveId]
+      },
+      {
+        name: 'astro:h
+mr-reload',
+        enforce: 'post
+',
+        hotUpdate: { o
+rder: 'post', handler:
+ [Function: handler] }
+      },
+      {
+        name: 'vite-pl
+ugin-starlight-user-co
+nfig',
+        resolveId: [Fu
+nction: resolveId],
+        load: [Functio
+n: load]
+      },
+      {
+        name: 'vite-pl
+ugin-astro-expressive-
+code',
+        resolveId: [As
+yncFunction: resolveId
+],
+        load: [Functio
+n: load],
+        handleHotUpdat
+e: [AsyncFunction: han
+dleHotUpdate],
+        transform: [Fu
+nction: transform]
+      },
+      {
+        name: 'vite-pl
+ugin-astro-expressive-
+code-build',
+        apply: 'build'
+,
+        buildEnd: [Fun
+ction: buildEnd]
+      },
+      {
+        name: '@mdx-js
+/rollup',
+        enforce: 'pre'
+,
+        buildEnd: [Fun
+ction: buildEnd],
+        configResolved
+: [Function: configRes
+olved],
+        resolveId: [As
+yncFunction: resolveId
+],
+        transform: [As
+yncFunction: transform
+]
+      },
+      {
+        name: '@astroj
+s/mdx-postprocess',
+        transform: [Fu
+nction: transform]
+      }
+    ],
+    publicDir: 'C:\\Us
+ers\\rukat\\Downloads\
+\繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\\dro
+ne-license-docs\\publi
+c\\',
+    root: 'C:\\Users\\
+rukat\\Downloads\\繝峨Ο繝
+ｼ繝ｳ雉・ｼ縲謨吝援\\drone-li
+cense-docs\\',
+    envPrefix: 'PUBLIC
+_',
+    define: {
+      'import.meta.env
+.SITE': 'undefined',
+      'import.meta.env
+.BASE_URL': '"/"',
+      'import.meta.env
+.ASSETS_PREFIX': 'unde
+fined'
+    },
+    server: {
+      hmr: false,
+      watch: { ignored
+: [ '**' ] },
+      middlewareMode: 
+true,
+      ws: false
+    },
+    resolve: {
+      alias: [
+        { find: 'rando
+mbytes', replacement: 
+'randombytes/browser' 
+},
+        {
+          find: /^astr
+o$/,
+          replacement:
+ 'C:\\Users\\rukat\\Do
+wnloads\\繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援\\drone-license-doc
+s\\node_modules\\astro
+\\dist\\types\\public\
+\index.js'
+        },
+        {
+          find: 'astro
+:middleware',
+          replacement:
+ 'astro/virtual-module
+s/middleware.js'
+        },
+        { find: 'astro
+:schema', replacement:
+ 'astro/zod' },
+        { find: 'astro
+:components', replacem
+ent: 'astro/components
+' }
+      ],
+      dedupe: [ 'astro
+' ],
+      conditions: [ 'm
+odule', 'browser', 'de
+velopment|production',
+ 'astro' ],
+      mainFields: unde
+fined
+    },
+    ssr: {
+      noExternal: [
+        'astro',
+        'astro/compone
+nts',
+        '@nanostores/p
+react',
+        '@fontsource/*
+',
+        '@astrojs/star
+light',
+        '@astrojs/mdx'
+,
+        '@astrojs/site
+map',
+        'astro-express
+ive-code'
+      ],
+      external: []
+    },
+    build: { assetsDir
+: '_astro' },
+    logLevel: 'silent'
+  },
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  command: 'serve',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'post
+css',
+    preprocessorMaxWor
+kers: 0,
+    devSourcemap: fals
+e
+  },
+  json: { namedExports
+: true, stringify: 'au
+to' },
+  esbuild: { jsxDev: f
+alse },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?
+:\/\/(?:(?:[^:]+\.)?lo
+calhost|127\.0\.0\.1|\
+[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs',
+  env: { BASE_URL: '/'
+, MODE: 'production', 
+DEV: false, PROD: true
+ },
+  assetsInclude: [Func
+tion: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: i
+nfo],
+    warn: [Function: w
+arn],
+    warnOnce: [Functio
+n: warnOnce],
+    error: [Function: 
+error],
+    clearScreen: [Func
+tion: clearScreen],
+    hasErrorLogged: [F
+unction: hasErrorLogge
+d]
+  },
+  packageCache: Map(1)
+ {
+    'fnpd_C:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs' => {
+      dir: 'C:/Users/r
+ukat/Downloads/繝峨Ο繝ｼ繝ｳ
+雉・ｼ縲謨吝援/drone-licens
+e-docs',
+      data: {
+        name: 'drone-l
+icense-docs',
+        type: 'module'
+,
+        version: '0.0.
+1',
+        scripts: {
+          dev: 'astro 
+dev',
+          start: 'astr
+o dev',
+          build: 'astr
+o check && astro build
+',
+          preview: 'as
+tro preview',
+          astro: 'astr
+o'
+        },
+        dependencies: 
+{
+          '@astrojs/ch
+eck': '^0.9.4',
+          '@astrojs/st
+arlight': '^0.31.0',
+          astro: '^5.0
+.0',
+          typescript: 
+'^5.7.0'
+        }
+      },
+      hasSideEffects: 
+[Function: hasSideEffe
+cts],
+      setResolvedCache
+: [Function: setResolv
+edCache],
+      getResolvedCache
+: [Function: getResolv
+edCache]
+    },
+    set: [Function (an
+onymous)]
+  },
+  worker: { format: 'i
+ife', plugins: '() => 
+plugins', rollupOption
+s: {} },
+  experimental: { impo
+rtGlobRestoreExtension
+: false, hmrPartialAcc
+ept: false },
+  future: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: t
+rue },
+    sourcemapIgnoreLis
+t: [Function: isInNode
+Modules$1],
+    preTransformReques
+ts: false,
+    createEnvironment:
+ [Function: defaultCre
+ateDevEnvironment],
+    recoverable: false
+,
+    moduleRunnerTransf
+orm: false
+  },
+  webSocketToken: 'NRP
+0OmHSUcZx',
+  getSortedPlugins: [F
+unction: getSortedPlug
+ins],
+  getSortedPluginHooks
+: [Function: getSorted
+PluginHooks],
+  createResolver: [Fun
+ction: createResolver]
+,
+  fsDenyGlob: [Functio
+n: arrayMatcher],
+  safeModulePaths: Set
+(0) {},
+  additionalAllowedHos
+ts: [],
+  Symbol(vite:resolved
+-config): true
+}
+2026-03-23T06:54:42.37
+3Z vite:resolve [32m6
+.23ms[39m [36m@astro
+js/starlight/routes/st
+atic/404.astro[39m ->
+ [2mC:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/@astrojs/
+starlight/routes/stati
+c/404.astro[22m
+2026-03-23T06:54:42.37
+4Z vite:resolve [32m6
+.33ms[39m [36m@astro
+js/starlight/routes/st
+atic/index.astro[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/routes/sta
+tic/index.astro[22m
+2026-03-23T06:54:42.38
+4Z vite:deps (client) 
+Hash is consistent. Sk
+ipping. Use --force to
+ override.
+2026-03-23T06:54:42.38
+9Z vite:resolve [32m0
+.79ms[39m [36mC:\Use
+rs\rukat\Downloads\繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-li
+cense-docs\src\content
+\config.ts[39m -> [2
+mC:/Users/rukat/Downlo
+ads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/d
+rone-license-docs/src/
+content/config.ts[22m
+2026-03-23T06:54:42.39
+3Z vite:load [32m3.20
+ms[39m [fs] [2mC:\Us
+ers\rukat\Downloads\繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-l
+icense-docs\src\conten
+t\config.ts[22m
+2026-03-23T06:54:42.41
+5Z vite:resolve [32m0
+.11ms[39m [36mastro:
+content[39m -> [2m a
+stro:content[22m
+2026-03-23T06:54:42.41
+7Z vite:resolve [32m1
+.84ms[39m [36m@astro
+js/starlight/schema[3
+9m -> [2mC:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs/node_modules/@ast
+rojs/starlight/schema.
+ts[22m
+2026-03-23T06:54:42.41
+7Z vite:import-analysi
+s [32m6.03ms[39m [2
+m[2 imports rewritten]
+ [2msrc/content/confi
+g.ts[22m[2m[22m
+2026-03-23T06:54:42.41
+7Z vite:transform [33
+m23.94ms[39m [2mC:\U
+sers\rukat\Downloads\繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-
+license-docs\src\conte
+nt\config.ts[22m
+2026-03-23T06:54:42.42
+0Z vite:load [32m1.75
+ms[39m [plugin] [2m 
+astro:content[22m
+2026-03-23T06:54:42.42
+4Z vite:resolve [32m2
+.20ms[39m [36mastro/
+content/runtime[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/astro/di
+st/content/runtime.js
+[22m
+2026-03-23T06:54:42.42
+4Z vite:resolve [32m2
+.28ms[39m [36mastro/
+zod[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/zod.js[2
+2m
+2026-03-23T06:54:42.42
+5Z vite:import-analysi
+s [32m3.02ms[39m [2
+m[2 imports rewritten]
+ [2m astro:content[2
+2m[2m[22m
+2026-03-23T06:54:42.42
+5Z vite:transform [32
+m4.61ms[39m [2m astr
+o:content[22m
+2026-03-23T06:54:42.43
+0Z vite:load [32m1.02
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+ntent/runtime.js[22m
+2026-03-23T06:54:42.46
+5Z vite:resolve [32m1
+.34ms[39m [36mastro:
+asset-imports[39m -> 
+[2mC:\Users\rukat\Dow
+nloads\繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援\drone-license-docs\.
+astro\content-assets.m
+js[22m
+2026-03-23T06:54:42.46
+6Z vite:resolve [32m1
+.54ms[39m [36mastro:
+content-module-imports
+[39m -> [2mC:\Users\
+rukat\Downloads\繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援\drone-licen
+se-docs\.astro\content
+-modules.mjs[22m
+2026-03-23T06:54:42.46
+6Z vite:resolve [32m6
+.97ms[39m [36mastro:
+asset-imports[39m -> 
+[2mC:/Users/rukat/Dow
+nloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援/drone-license-docs/.
+astro/content-assets.m
+js[22m
+2026-03-23T06:54:42.46
+6Z vite:resolve [32m2
+.31ms[39m [36mastro:
+content-module-imports
+[39m -> [2mC:/Users/
+rukat/Downloads/繝峨Ο繝ｼ繝
+ｳ雉・ｼ縲謨吝援/drone-licen
+se-docs/.astro/content
+-modules.mjs[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.02ms[39m [36m../ass
+ets/utils/resolveImpor
+ts.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/assets/
+utils/resolveImports.j
+s[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.09ms[39m [36m../cor
+e/errors/index.js[39m
+ -> [2mC:/Users/rukat
+/Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ
+縲謨吝援/drone-license-do
+cs/node_modules/astro/
+dist/core/errors/index
+.js[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.11ms[39m [36m../cor
+e/path.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/cor
+e/path.js[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.15ms[39m [36m../run
+time/server/index.js[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/ast
+ro/dist/runtime/server
+/index.js[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.28ms[39m [36m./conf
+ig.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/content
+/config.js[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.33ms[39m [36m./cons
+ts.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/content
+/consts.js[22m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.36ms[39m [36m./data
+-store.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/con
+tent/data-store.js[22
+m
+2026-03-23T06:54:42.47
+2Z vite:resolve [32m8
+.40ms[39m [36m./load
+ers/errors.js[39m -> 
+[2mC:/Users/rukat/Dow
+nloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援/drone-license-docs/n
+ode_modules/astro/dist
+/content/loaders/error
+s.js[22m
+2026-03-23T06:54:42.47
+4Z vite:resolve [32m9
+.67ms[39m [36mastro:
+assets[39m -> [2m as
+tro:assets[22m
+2026-03-23T06:54:42.47
+5Z vite:import-analysi
+s [33m32.42ms[39m [
+2m[11 imports rewritte
+n] [2mnode_modules/as
+tro/dist/content/runti
+me.js[22m[2m[22m
+2026-03-23T06:54:42.47
+5Z vite:transform [33
+m44.89ms[39m [2m/nod
+e_modules/astro/dist/c
+ontent/runtime.js[22m
+2026-03-23T06:54:42.51
+1Z vite:load [32m1.19
+ms[39m [fs] [2m/node
+_modules/astro/dist/as
+sets/utils/resolveImpo
+rts.js[22m
+2026-03-23T06:54:42.51
+6Z vite:resolve [32m1
+.54ms[39m [36m../../
+content/consts.js[39m
+ -> [2mC:/Users/rukat
+/Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ
+縲謨吝援/drone-license-do
+cs/node_modules/astro/
+dist/content/consts.js
+[22m
+2026-03-23T06:54:42.51
+6Z vite:resolve [32m1
+.64ms[39m [36m../../
+runtime/server/shortha
+sh.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/runtime
+/server/shorthash.js[
+22m
+2026-03-23T06:54:42.51
+6Z vite:resolve [32m1
+.69ms[39m [36m../con
+sts.js[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/astro/dist/assets
+/consts.js[22m
+2026-03-23T06:54:42.51
+6Z vite:import-analysi
+s [32m5.36ms[39m [2
+m[3 imports rewritten]
+ [2mnode_modules/astr
+o/dist/assets/utils/re
+solveImports.js[22m[
+2m[22m
+2026-03-23T06:54:42.51
+6Z vite:transform [32
+m5.89ms[39m [2m/node
+_modules/astro/dist/as
+sets/utils/resolveImpo
+rts.js[22m
+2026-03-23T06:54:42.52
+4Z vite:load [32m1.39
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+ntent/consts.js[22m
+2026-03-23T06:54:42.52
+4Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/co
+ntent/consts.js[22m[
+2m[22m
+2026-03-23T06:54:42.52
+5Z vite:transform [32
+m0.53ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/content/co
+nsts.js[22m[2m[22m
+2026-03-23T06:54:42.52
+7Z vite:load [32m1.04
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/shorthash
+.js[22m
+2026-03-23T06:54:42.52
+8Z vite:import-analysi
+s [32m0.27ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/shorthash
+.js[22m[2m[22m
+2026-03-23T06:54:42.52
+8Z vite:transform [32
+m0.64ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/shorthash.js[22m
+[2m[22m
+2026-03-23T06:54:42.53
+1Z vite:load [32m1.16
+ms[39m [fs] [2m/node
+_modules/astro/dist/as
+sets/consts.js[22m
+2026-03-23T06:54:42.53
+2Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/as
+sets/consts.js[22m[2
+m[22m
+2026-03-23T06:54:42.53
+2Z vite:transform [32
+m0.50ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/assets/con
+sts.js[22m[2m[22m
+2026-03-23T06:54:42.53
+4Z vite:load [32m1.10
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/errors/index.js[22
+m
+2026-03-23T06:54:42.53
+7Z vite:resolve [32m2
+.24ms[39m [36m./erro
+rs.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/core/er
+rors/errors.js[22m
+2026-03-23T06:54:42.53
+7Z vite:resolve [32m2
+.32ms[39m [36m./erro
+rs-data.js[39m -> [2
+mC:/Users/rukat/Downlo
+ads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/d
+rone-license-docs/node
+_modules/astro/dist/co
+re/errors/errors-data.
+js[22m
+2026-03-23T06:54:42.53
+7Z vite:resolve [32m2
+.36ms[39m [36m./util
+s.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/core/err
+ors/utils.js[22m
+2026-03-23T06:54:42.53
+7Z vite:resolve [32m2
+.40ms[39m [36m./zod-
+error-map.js[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/astro/dist/
+core/errors/zod-error-
+map.js[22m
+2026-03-23T06:54:42.53
+8Z vite:import-analysi
+s [32m3.15ms[39m [2
+m[4 imports rewritten]
+ [2mnode_modules/astr
+o/dist/core/errors/ind
+ex.js[22m[2m[22m
+2026-03-23T06:54:42.53
+8Z vite:transform [32
+m3.53ms[39m [2m/node
+_modules/astro/dist/co
+re/errors/index.js[22
+m
+2026-03-23T06:54:42.54
+0Z vite:load [32m0.79
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/errors/errors.js[2
+2m
+2026-03-23T06:54:42.54
+1Z vite:resolve [32m0
+.55ms[39m [36m./prin
+ter.js[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/astro/dist/core/e
+rrors/printer.js[22m
+2026-03-23T06:54:42.54
+1Z vite:import-analysi
+s [32m1.05ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/core/errors/err
+ors.js[22m[2m[22m
+2026-03-23T06:54:42.54
+1Z vite:transform [32
+m1.40ms[39m [2m/node
+_modules/astro/dist/co
+re/errors/errors.js[2
+2m
+2026-03-23T06:54:42.54
+6Z vite:load [32m1.10
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/errors/printer.js[
+22m
+2026-03-23T06:54:42.54
+7Z vite:import-analysi
+s [32m0.78ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/core/errors/pri
+nter.js[22m[2m[22m
+2026-03-23T06:54:42.54
+7Z vite:transform [32
+m1.14ms[39m [2m/node
+_modules/astro/dist/co
+re/errors/printer.js[
+22m
+2026-03-23T06:54:42.55
+0Z vite:load [32m1.03
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/errors/utils.js[22
+m
+2026-03-23T06:54:42.55
+0Z vite:import-analysi
+s [32m0.14ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/co
+re/errors/utils.js[22
+m[2m[22m
+2026-03-23T06:54:42.55
+0Z vite:transform [32
+m0.54ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/core/error
+s/utils.js[22m[2m[2
+2m
+2026-03-23T06:54:42.55
+5Z vite:load [32m1.46
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/errors/errors-data.
+js[22m
+2026-03-23T06:54:42.56
+7Z vite:import-analysi
+s [32m0.49ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/co
+re/errors/errors-data.
+js[22m[2m[22m
+2026-03-23T06:54:42.56
+7Z vite:transform [33
+m12.24ms[39m[2m [ski
+pped] [2m/node_module
+s/astro/dist/core/erro
+rs/errors-data.js[22m
+[2m[22m
+2026-03-23T06:54:42.58
+9Z vite:load [32m1.43
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/errors/zod-error-ma
+p.js[22m
+2026-03-23T06:54:42.59
+0Z vite:import-analysi
+s [32m0.11ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/co
+re/errors/zod-error-ma
+p.js[22m[2m[22m
+2026-03-23T06:54:42.59
+0Z vite:transform [32
+m0.56ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/core/error
+s/zod-error-map.js[22
+m[2m[22m
+2026-03-23T06:54:42.59
+4Z vite:load [32m0.98
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/path.js[22m
+2026-03-23T06:54:42.59
+4Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/astr
+o/dist/core/path.js[2
+2m[2m[22m
+2026-03-23T06:54:42.59
+4Z vite:transform [32
+m0.52ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/core/path.
+js[22m[2m[22m
+2026-03-23T06:54:42.59
+7Z vite:load [32m0.73
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/index.js
+[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m3
+.99ms[39m [36m./astr
+o-component.js[39m ->
+ [2mC:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/astro/dis
+t/runtime/server/astro
+-component.js[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m4
+.10ms[39m [36m./astr
+o-global.js[39m -> [
+2mC:/Users/rukat/Downl
+oads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/
+drone-license-docs/nod
+e_modules/astro/dist/r
+untime/server/astro-gl
+obal.js[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m4
+.13ms[39m [36m./endp
+oint.js[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/astro/dist/runti
+me/server/endpoint.js
+[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m4
+.16ms[39m [36m./esca
+pe.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/runtime
+/server/escape.js[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m4
+.20ms[39m [36m./jsx.
+js[39m -> [2mC:/User
+s/rukat/Downloads/繝峨Ο繝
+ｼ繝ｳ雉・ｼ縲謨吝援/drone-lic
+ense-docs/node_modules
+/astro/dist/runtime/se
+rver/jsx.js[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m4
+.22ms[39m [36m./rend
+er/index.js[39m -> [
+2mC:/Users/rukat/Downl
+oads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/
+drone-license-docs/nod
+e_modules/astro/dist/r
+untime/server/render/i
+ndex.js[22m
+2026-03-23T06:54:42.60
+2Z vite:resolve [32m4
+.25ms[39m [36m./tran
+sition.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/run
+time/server/transition
+.js[22m
+2026-03-23T06:54:42.60
+3Z vite:import-analysi
+s [32m5.61ms[39m [2
+m[7 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+index.js[22m[2m[22m
+2026-03-23T06:54:42.60
+3Z vite:transform [32
+m6.19ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/index.js
+[22m
+2026-03-23T06:54:42.60
+7Z vite:load [32m1.05
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-com
+ponent.js[22m
+2026-03-23T06:54:42.60
+8Z vite:resolve [32m0
+.62ms[39m [36m../../
+core/errors/index.js[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/ast
+ro/dist/core/errors/in
+dex.js[22m
+2026-03-23T06:54:42.60
+8Z vite:import-analysi
+s [32m1.02ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+astro-component.js[22
+m[2m[22m
+2026-03-23T06:54:42.60
+8Z vite:transform [32
+m1.37ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-com
+ponent.js[22m
+2026-03-23T06:54:42.61
+1Z vite:load [32m0.76
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-glo
+bal.js[22m
+2026-03-23T06:54:42.61
+3Z vite:resolve [32m1
+.07ms[39m [36m../../
+core/constants.js[39m
+ -> [2mC:/Users/rukat
+/Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ
+縲謨吝援/drone-license-do
+cs/node_modules/astro/
+dist/core/constants.js
+[22m
+2026-03-23T06:54:42.61
+3Z vite:import-analysi
+s [32m1.68ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+astro-global.js[22m[
+2m[22m
+2026-03-23T06:54:42.61
+3Z vite:transform [32
+m2.60ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-glo
+bal.js[22m
+2026-03-23T06:54:42.61
+6Z vite:load [32m0.85
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/constants.js[22m
+2026-03-23T06:54:42.61
+6Z vite:import-analysi
+s [32m0.06ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/co
+re/constants.js[22m[
+2m[22m
+2026-03-23T06:54:42.61
+6Z vite:transform [32
+m0.42ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/core/const
+ants.js[22m[2m[22m
+2026-03-23T06:54:42.61
+8Z vite:load [32m0.63
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/endpoint.
+js[22m
+2026-03-23T06:54:42.62
+3Z vite:resolve [32m1
+.34ms[39m [36m../../
+core/errors/errors.js
+[39m -> [2mC:/Users/r
+ukat/Downloads/繝峨Ο繝ｼ繝ｳ
+雉・ｼ縲謨吝援/drone-licens
+e-docs/node_modules/as
+tro/dist/core/errors/e
+rrors.js[22m
+2026-03-23T06:54:42.62
+3Z vite:resolve [32m1
+.44ms[39m [36m../../
+core/errors/errors-dat
+a.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/core/err
+ors/errors-data.js[22
+m
+2026-03-23T06:54:42.62
+3Z vite:import-analysi
+s [32m4.76ms[39m [2
+m[3 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+endpoint.js[22m[2m[
+22m
+2026-03-23T06:54:42.62
+3Z vite:transform [32
+m5.11ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/endpoint.
+js[22m
+2026-03-23T06:54:42.63
+2Z vite:load [32m0.95
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/escape.js
+[22m
+2026-03-23T06:54:42.63
+3Z vite:resolve [32m0
+.66ms[39m [36m./util
+.js[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/runtime/s
+erver/util.js[22m
+2026-03-23T06:54:42.63
+3Z vite:import-analysi
+s [32m1.08ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+escape.js[22m[2m[22
+m
+2026-03-23T06:54:42.63
+3Z vite:transform [32
+m1.51ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/escape.js
+[22m
+2026-03-23T06:54:42.63
+8Z vite:load [32m0.81
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/util.js[
+22m
+2026-03-23T06:54:42.63
+8Z vite:import-analysi
+s [32m0.04ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/util.js[
+22m[2m[22m
+2026-03-23T06:54:42.63
+8Z vite:transform [32
+m0.37ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/util.js[22m[2m
+[22m
+2026-03-23T06:54:42.64
+0Z vite:load [32m0.70
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/jsx.js[2
+2m
+2026-03-23T06:54:42.64
+3Z vite:resolve [32m2
+.77ms[39m [36m../../
+jsx-runtime/index.js[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/ast
+ro/dist/jsx-runtime/in
+dex.js[22m
+2026-03-23T06:54:42.64
+4Z vite:resolve [32m2
+.85ms[39m [36m./inde
+x.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/runtime/
+server/index.js[22m
+2026-03-23T06:54:42.64
+4Z vite:resolve [32m2
+.89ms[39m [36m./rend
+er/astro/factory.js[3
+9m -> [2mC:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs/node_modules/astr
+o/dist/runtime/server/
+render/astro/factory.j
+s[22m
+2026-03-23T06:54:42.64
+4Z vite:resolve [32m2
+.91ms[39m [36m./rend
+er/component.js[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/astro/di
+st/runtime/server/rend
+er/component.js[22m
+2026-03-23T06:54:42.64
+4Z vite:resolve [32m2
+.93ms[39m [36m./rend
+er/slot.js[39m -> [2
+mC:/Users/rukat/Downlo
+ads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/d
+rone-license-docs/node
+_modules/astro/dist/ru
+ntime/server/render/sl
+ot.js[22m
+2026-03-23T06:54:42.64
+4Z vite:import-analysi
+s [32m3.80ms[39m [2
+m[5 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+jsx.js[22m[2m[22m
+2026-03-23T06:54:42.64
+4Z vite:transform [32
+m4.19ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/jsx.js[2
+2m
+2026-03-23T06:54:42.64
+9Z vite:load [32m0.93
+ms[39m [fs] [2m/node
+_modules/astro/dist/js
+x-runtime/index.js[22
+m
+2026-03-23T06:54:42.65
+0Z vite:import-analysi
+s [32m0.91ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/jsx-runtime/ind
+ex.js[22m[2m[22m
+2026-03-23T06:54:42.65
+0Z vite:transform [32
+m1.30ms[39m [2m/node
+_modules/astro/dist/js
+x-runtime/index.js[22
+m
+2026-03-23T06:54:42.65
+4Z vite:load [32m0.98
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/factory.js[22m
+2026-03-23T06:54:42.65
+4Z vite:import-analysi
+s [32m0.04ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/factory.js[22m[2
+m[22m
+2026-03-23T06:54:42.65
+5Z vite:transform [32
+m0.42ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/render/astro/fact
+ory.js[22m[2m[22m
+2026-03-23T06:54:42.65
+7Z vite:load [32m0.94
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/co
+mponent.js[22m
+2026-03-23T06:54:42.67
+1Z vite:resolve [32m9
+.30ms[39m [36m../../
+../core/errors/index.j
+s[39m -> [2mC:/Users
+/rukat/Downloads/繝峨Ο繝ｼ
+繝ｳ雉・ｼ縲謨吝援/drone-lice
+nse-docs/node_modules/
+astro/dist/core/errors
+/index.js[22m
+2026-03-23T06:54:42.67
+1Z vite:resolve [32m9
+.46ms[39m [36m../esc
+ape.js[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/astro/dist/runtim
+e/server/escape.js[22
+m
+2026-03-23T06:54:42.67
+1Z vite:resolve [32m9
+.52ms[39m [36m../hyd
+ration.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/run
+time/server/hydration.
+js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [32m9
+.59ms[39m [36m../ser
+ialize.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/run
+time/server/serialize.
+js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [32m9
+.69ms[39m [36m../sho
+rthash.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/run
+time/server/shorthash.
+js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [32m9
+.77ms[39m [36m../uti
+l.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/runtime/
+server/util.js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [32m9
+.83ms[39m [36m./astr
+o/factory.js[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/astro/dist/
+runtime/server/render/
+astro/factory.js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [32m9
+.90ms[39m [36m./astr
+o/index.js[39m -> [2
+mC:/Users/rukat/Downlo
+ads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/d
+rone-license-docs/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/index.js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [32m9
+.95ms[39m [36m./astr
+o/instance.js[39m -> 
+[2mC:/Users/rukat/Dow
+nloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援/drone-license-docs/n
+ode_modules/astro/dist
+/runtime/server/render
+/astro/instance.js[22
+m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.03ms[39m [36m./ast
+ro/render.js[39m -> 
+[2mC:/Users/rukat/Down
+loads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援
+/drone-license-docs/no
+de_modules/astro/dist/
+runtime/server/render/
+astro/render.js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.10ms[39m [36m./com
+mon.js[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/astro/dist/runtim
+e/server/render/common
+.js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.15ms[39m [36m./dom
+.js[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/runtime/s
+erver/render/dom.js[2
+2m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.25ms[39m [36m./hea
+d.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/runtime/
+server/render/head.js
+[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.30ms[39m [36m./ins
+truction.js[39m -> [
+2mC:/Users/rukat/Downl
+oads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/
+drone-license-docs/nod
+e_modules/astro/dist/r
+untime/server/render/i
+nstruction.js[22m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.38ms[39m [36m./ser
+ver-islands.js[39m ->
+ [2mC:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/astro/dis
+t/runtime/server/rende
+r/server-islands.js[2
+2m
+2026-03-23T06:54:42.67
+2Z vite:resolve [33m1
+0.43ms[39m [36m./slo
+t.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/runtime/
+server/render/slot.js
+[22m
+2026-03-23T06:54:42.67
+3Z vite:resolve [33m1
+0.48ms[39m [36m./uti
+l.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/runtime/
+server/render/util.js
+[22m
+2026-03-23T06:54:42.67
+3Z vite:import-analysi
+s [33m16.15ms[39m [
+2m[17 imports rewritte
+n] [2mnode_modules/as
+tro/dist/runtime/serve
+r/render/component.js
+[22m[2m[22m
+2026-03-23T06:54:42.67
+4Z vite:transform [33
+m16.64ms[39m [2m/nod
+e_modules/astro/dist/r
+untime/server/render/c
+omponent.js[22m
+2026-03-23T06:54:42.68
+8Z vite:load [32m0.77
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/hydration
+.js[22m
+2026-03-23T06:54:42.69
+0Z vite:resolve [32m1
+.68ms[39m [36m./seri
+alize.js[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/astro/dist/runt
+ime/server/serialize.j
+s[22m
+2026-03-23T06:54:42.69
+0Z vite:import-analysi
+s [32m2.29ms[39m [2
+m[3 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+hydration.js[22m[2m
+[22m
+2026-03-23T06:54:42.69
+0Z vite:transform [32
+m2.70ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/hydration
+.js[22m
+2026-03-23T06:54:42.69
+5Z vite:load [32m1.04
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/serialize
+.js[22m
+2026-03-23T06:54:42.69
+5Z vite:import-analysi
+s [32m0.07ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/serialize
+.js[22m[2m[22m
+2026-03-23T06:54:42.69
+5Z vite:transform [32
+m0.45ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/serialize.js[22m
+[2m[22m
+2026-03-23T06:54:42.69
+9Z vite:load [32m0.85
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/index.js[22m
+2026-03-23T06:54:42.70
+2Z vite:resolve [32m2
+.61ms[39m [36m./fact
+ory.js[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/astro/dist/runtim
+e/server/render/astro/
+factory.js[22m
+2026-03-23T06:54:42.70
+2Z vite:resolve [32m2
+.69ms[39m [36m./head
+-and-content.js[39m -
+> [2mC:/Users/rukat/D
+ownloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-docs
+/node_modules/astro/di
+st/runtime/server/rend
+er/astro/head-and-cont
+ent.js[22m
+2026-03-23T06:54:42.70
+2Z vite:resolve [32m2
+.73ms[39m [36m./inst
+ance.js[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/astro/dist/runti
+me/server/render/astro
+/instance.js[22m
+2026-03-23T06:54:42.70
+2Z vite:resolve [32m2
+.76ms[39m [36m./rend
+er.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/runtime
+/server/render/astro/r
+ender.js[22m
+2026-03-23T06:54:42.70
+2Z vite:resolve [32m2
+.79ms[39m [36m./rend
+er-template.js[39m ->
+ [2mC:/Users/rukat/Do
+wnloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨
+吝援/drone-license-docs/
+node_modules/astro/dis
+t/runtime/server/rende
+r/astro/render-templat
+e.js[22m
+2026-03-23T06:54:42.70
+3Z vite:import-analysi
+s [32m3.45ms[39m [2
+m[5 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/astro/index.js
+[22m[2m[22m
+2026-03-23T06:54:42.70
+3Z vite:transform [32
+m3.79ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/index.js[22m
+2026-03-23T06:54:42.70
+5Z vite:load [32m0.76
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/head-and-content.j
+s[22m
+2026-03-23T06:54:42.70
+5Z vite:import-analysi
+s [32m0.04ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/head-and-content.j
+s[22m[2m[22m
+2026-03-23T06:54:42.70
+5Z vite:transform [32
+m0.43ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/render/astro/head
+-and-content.js[22m[
+2m[22m
+2026-03-23T06:54:42.70
+7Z vite:load [32m0.58
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/instance.js[22m
+2026-03-23T06:54:42.71
+0Z vite:resolve [32m2
+.17ms[39m [36m../../
+util.js[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/astro/dist/runti
+me/server/util.js[22m
+2026-03-23T06:54:42.71
+0Z vite:resolve [32m2
+.25ms[39m [36m../any
+.js[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/runtime/s
+erver/render/any.js[2
+2m
+2026-03-23T06:54:42.71
+0Z vite:import-analysi
+s [32m2.92ms[39m [2
+m[4 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/astro/instance.
+js[22m[2m[22m
+2026-03-23T06:54:42.71
+0Z vite:transform [32
+m3.25ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/instance.js[22m
+2026-03-23T06:54:42.71
+4Z vite:load [32m1.01
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/an
+y.js[22m
+2026-03-23T06:54:42.71
+8Z vite:import-analysi
+s [32m3.24ms[39m [2
+m[6 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/any.js[22m[2m
+[22m
+2026-03-23T06:54:42.71
+8Z vite:transform [32
+m3.64ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/an
+y.js[22m
+2026-03-23T06:54:42.72
+2Z vite:load [32m0.92
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/co
+mmon.js[22m
+2026-03-23T06:54:42.72
+5Z vite:resolve [32m2
+.70ms[39m [36m../scr
+ipts.js[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/astro/dist/runti
+me/server/scripts.js[
+22m
+2026-03-23T06:54:42.72
+5Z vite:import-analysi
+s [32m3.42ms[39m [2
+m[6 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/common.js[22m
+[2m[22m
+2026-03-23T06:54:42.72
+5Z vite:transform [32
+m3.81ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/co
+mmon.js[22m
+2026-03-23T06:54:42.72
+9Z vite:load [32m1.00
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/scripts.j
+s[22m
+2026-03-23T06:54:42.73
+1Z vite:resolve [32m1
+.41ms[39m [36m./astr
+o-island.prebuilt.js[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/ast
+ro/dist/runtime/server
+/astro-island.prebuilt
+.js[22m
+2026-03-23T06:54:42.73
+1Z vite:resolve [32m1
+.47ms[39m [36m./astr
+o-island.prebuilt-dev.
+js[39m -> [2mC:/User
+s/rukat/Downloads/繝峨Ο繝
+ｼ繝ｳ雉・ｼ縲謨吝援/drone-lic
+ense-docs/node_modules
+/astro/dist/runtime/se
+rver/astro-island.preb
+uilt-dev.js[22m
+2026-03-23T06:54:42.73
+1Z vite:resolve [32m1
+.50ms[39m [36m./astr
+o-island-styles.js[39
+m -> [2mC:/Users/ruka
+t/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-d
+ocs/node_modules/astro
+/dist/runtime/server/a
+stro-island-styles.js
+[22m
+2026-03-23T06:54:42.73
+1Z vite:import-analysi
+s [32m2.04ms[39m [2
+m[3 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+scripts.js[22m[2m[2
+2m
+2026-03-23T06:54:42.73
+1Z vite:transform [32
+m2.35ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/scripts.j
+s[22m
+2026-03-23T06:54:42.73
+4Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-isl
+and.prebuilt.js[22m
+2026-03-23T06:54:42.73
+4Z vite:import-analysi
+s [32m0.04ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/astro-isl
+and.prebuilt.js[22m[
+2m[22m
+2026-03-23T06:54:42.73
+4Z vite:transform [32
+m0.33ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/astro-island.preb
+uilt.js[22m[2m[22m
+2026-03-23T06:54:42.73
+7Z vite:load [32m0.92
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-isl
+and.prebuilt-dev.js[2
+2m
+2026-03-23T06:54:42.73
+7Z vite:import-analysi
+s [32m0.05ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/astro-isl
+and.prebuilt-dev.js[2
+2m[2m[22m
+2026-03-23T06:54:42.73
+7Z vite:transform [32
+m0.45ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/astro-island.preb
+uilt-dev.js[22m[2m[
+22m
+2026-03-23T06:54:42.73
+9Z vite:load [32m0.67
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/astro-isl
+and-styles.js[22m
+2026-03-23T06:54:42.74
+0Z vite:import-analysi
+s [32m0.02ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/astro-isl
+and-styles.js[22m[2m
+[22m
+2026-03-23T06:54:42.74
+0Z vite:transform [32
+m0.31ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/astro-island-styl
+es.js[22m[2m[22m
+2026-03-23T06:54:42.74
+1Z vite:load [32m0.69
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/he
+ad.js[22m
+2026-03-23T06:54:42.74
+3Z vite:resolve [32m1
+.85ms[39m [36m./csp.
+js[39m -> [2mC:/User
+s/rukat/Downloads/繝峨Ο繝
+ｼ繝ｳ雉・ｼ縲謨吝援/drone-lic
+ense-docs/node_modules
+/astro/dist/runtime/se
+rver/render/csp.js[22
+m
+2026-03-23T06:54:42.74
+4Z vite:import-analysi
+s [32m2.47ms[39m [2
+m[4 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/head.js[22m[2
+m[22m
+2026-03-23T06:54:42.74
+4Z vite:transform [32
+m2.76ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/he
+ad.js[22m
+2026-03-23T06:54:42.74
+7Z vite:load [32m0.64
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/cs
+p.js[22m
+2026-03-23T06:54:42.74
+7Z vite:import-analysi
+s [32m0.04ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/render/cs
+p.js[22m[2m[22m
+2026-03-23T06:54:42.74
+7Z vite:transform [32
+m0.34ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/render/csp.js[22
+m[2m[22m
+2026-03-23T06:54:42.74
+9Z vite:load [32m0.69
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/in
+struction.js[22m
+2026-03-23T06:54:42.75
+0Z vite:import-analysi
+s [32m0.02ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/ru
+ntime/server/render/in
+struction.js[22m[2m
+[22m
+2026-03-23T06:54:42.75
+0Z vite:transform [32
+m0.35ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/runtime/se
+rver/render/instructio
+n.js[22m[2m[22m
+2026-03-23T06:54:42.75
+2Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/ut
+il.js[22m
+2026-03-23T06:54:42.75
+4Z vite:import-analysi
+s [32m1.43ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/util.js[22m[2
+m[22m
+2026-03-23T06:54:42.75
+4Z vite:transform [32
+m1.78ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/ut
+il.js[22m
+2026-03-23T06:54:42.76
+0Z vite:load [32m0.95
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/se
+rver-islands.js[22m
+2026-03-23T06:54:42.76
+3Z vite:resolve [32m2
+.87ms[39m [36m../../
+../core/encryption.js
+[39m -> [2mC:/Users/r
+ukat/Downloads/繝峨Ο繝ｼ繝ｳ
+雉・ｼ縲謨吝援/drone-licens
+e-docs/node_modules/as
+tro/dist/core/encrypti
+on.js[22m
+2026-03-23T06:54:42.76
+3Z vite:resolve [32m2
+.95ms[39m [36m./any.
+js[39m -> [2mC:/User
+s/rukat/Downloads/繝峨Ο繝
+ｼ繝ｳ雉・ｼ縲謨吝援/drone-lic
+ense-docs/node_modules
+/astro/dist/runtime/se
+rver/render/any.js[22
+m
+2026-03-23T06:54:42.76
+3Z vite:resolve [32m2
+.99ms[39m [36m./astr
+o/head-and-content.js
+[39m -> [2mC:/Users/r
+ukat/Downloads/繝峨Ο繝ｼ繝ｳ
+雉・ｼ縲謨吝援/drone-licens
+e-docs/node_modules/as
+tro/dist/runtime/serve
+r/render/astro/head-an
+d-content.js[22m
+2026-03-23T06:54:42.76
+4Z vite:import-analysi
+s [32m3.81ms[39m [2
+m[6 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/server-islands.
+js[22m[2m[22m
+2026-03-23T06:54:42.76
+4Z vite:transform [32
+m4.17ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/se
+rver-islands.js[22m
+2026-03-23T06:54:42.76
+9Z vite:load [32m0.95
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/encryption.js[22m
+2026-03-23T06:54:42.77
+3Z vite:resolve [32m0
+.46ms[39m [36m./csp/
+config.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/cor
+e/csp/config.js[22m
+2026-03-23T06:54:42.77
+3Z vite:import-analysi
+s [32m3.72ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/core/encryption
+.js[22m[2m[22m
+2026-03-23T06:54:42.77
+4Z vite:transform [32
+m4.08ms[39m [2m/node
+_modules/astro/dist/co
+re/encryption.js[22m
+2026-03-23T06:54:42.78
+0Z vite:load [32m0.88
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+re/csp/config.js[22m
+2026-03-23T06:54:42.78
+0Z vite:import-analysi
+s [32m0.11ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/astr
+o/dist/core/csp/config
+.js[22m[2m[22m
+2026-03-23T06:54:42.78
+0Z vite:transform [32
+m0.59ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/core/csp/c
+onfig.js[22m[2m[22m
+2026-03-23T06:54:42.78
+5Z vite:load [32m0.89
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/sl
+ot.js[22m
+2026-03-23T06:54:42.78
+7Z vite:resolve [32m2
+.10ms[39m [36m./astr
+o/render-template.js[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/ast
+ro/dist/runtime/server
+/render/astro/render-t
+emplate.js[22m
+2026-03-23T06:54:42.78
+8Z vite:import-analysi
+s [32m2.91ms[39m [2
+m[4 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/slot.js[22m[2
+m[22m
+2026-03-23T06:54:42.78
+8Z vite:transform [32
+m3.30ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/sl
+ot.js[22m
+2026-03-23T06:54:42.79
+2Z vite:load [32m0.82
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/render-template.js
+[22m
+2026-03-23T06:54:42.79
+5Z vite:resolve [32m2
+.00ms[39m [36m../../
+escape.js[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/astro/dist/run
+time/server/escape.js
+[22m
+2026-03-23T06:54:42.79
+5Z vite:resolve [32m2
+.08ms[39m [36m../uti
+l.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/runtime/
+server/render/util.js
+[22m
+2026-03-23T06:54:42.79
+6Z vite:import-analysi
+s [32m3.14ms[39m [2
+m[4 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/astro/render-te
+mplate.js[22m[2m[22
+m
+2026-03-23T06:54:42.79
+6Z vite:transform [32
+m3.65ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/render-template.js
+[22m
+2026-03-23T06:54:42.80
+0Z vite:load [32m0.81
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/render.js[22m
+2026-03-23T06:54:42.80
+4Z vite:resolve [32m3
+.01ms[39m [36m../../
+../../core/errors/inde
+x.js[39m -> [2mC:/Us
+ers/rukat/Downloads/繝峨
+Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-l
+icense-docs/node_modul
+es/astro/dist/core/err
+ors/index.js[22m
+2026-03-23T06:54:42.80
+4Z vite:resolve [32m3
+.12ms[39m [36m../com
+mon.js[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/astro/dist/runtim
+e/server/render/common
+.js[22m
+2026-03-23T06:54:42.80
+4Z vite:import-analysi
+s [32m3.98ms[39m [2
+m[6 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/astro/render.js
+[22m[2m[22m
+2026-03-23T06:54:42.80
+4Z vite:transform [32
+m4.38ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/as
+tro/render.js[22m
+2026-03-23T06:54:42.81
+1Z vite:load [32m0.92
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/do
+m.js[22m
+2026-03-23T06:54:42.81
+3Z vite:import-analysi
+s [32m2.07ms[39m [2
+m[3 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/dom.js[22m[2m
+[22m
+2026-03-23T06:54:42.81
+3Z vite:transform [32
+m2.51ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/do
+m.js[22m
+2026-03-23T06:54:42.81
+6Z vite:load [32m0.87
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/in
+dex.js[22m
+2026-03-23T06:54:42.82
+2Z vite:resolve [32m5
+.00ms[39m [36m./comp
+onent.js[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/astro/dist/runt
+ime/server/render/comp
+onent.js[22m
+2026-03-23T06:54:42.82
+2Z vite:resolve [32m5
+.09ms[39m [36m./page
+.js[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/runtime/s
+erver/render/page.js[
+22m
+2026-03-23T06:54:42.82
+2Z vite:resolve [32m5
+.12ms[39m [36m./scri
+pt.js[39m -> [2mC:/U
+sers/rukat/Downloads/繝
+峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-
+license-docs/node_modu
+les/astro/dist/runtime
+/server/render/script.
+js[22m
+2026-03-23T06:54:42.82
+2Z vite:resolve [32m5
+.17ms[39m [36m./tags
+.js[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/runtime/s
+erver/render/tags.js[
+22m
+2026-03-23T06:54:42.82
+3Z vite:import-analysi
+s [32m6.47ms[39m [2
+m[10 imports rewritten
+] [2mnode_modules/ast
+ro/dist/runtime/server
+/render/index.js[22m
+[2m[22m
+2026-03-23T06:54:42.82
+3Z vite:transform [32
+m6.89ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/in
+dex.js[22m
+2026-03-23T06:54:42.82
+6Z vite:load [32m0.71
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/pa
+ge.js[22m
+2026-03-23T06:54:42.83
+0Z vite:import-analysi
+s [32m4.01ms[39m [2
+m[6 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/page.js[22m[2
+m[22m
+2026-03-23T06:54:42.83
+0Z vite:transform [32
+m4.43ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/pa
+ge.js[22m
+2026-03-23T06:54:42.83
+4Z vite:load [32m0.80
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/sc
+ript.js[22m
+2026-03-23T06:54:42.83
+5Z vite:import-analysi
+s [32m0.91ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/script.js[22m
+[2m[22m
+2026-03-23T06:54:42.83
+5Z vite:transform [32
+m1.27ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/sc
+ript.js[22m
+2026-03-23T06:54:42.83
+7Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/render/ta
+gs.js[22m
+2026-03-23T06:54:42.83
+9Z vite:import-analysi
+s [32m0.80ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+render/tags.js[22m[2
+m[22m
+2026-03-23T06:54:42.83
+9Z vite:transform [32
+m1.23ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/render/ta
+gs.js[22m
+2026-03-23T06:54:42.84
+1Z vite:load [32m0.69
+ms[39m [fs] [2m/node
+_modules/astro/dist/ru
+ntime/server/transitio
+n.js[22m
+2026-03-23T06:54:42.84
+6Z vite:resolve [32m1
+.01ms[39m [36m../../
+transitions/index.js[
+39m -> [2mC:/Users/ru
+kat/Downloads/繝峨Ο繝ｼ繝ｳ雉
+・ｼ縲謨吝援/drone-license
+-docs/node_modules/ast
+ro/dist/transitions/in
+dex.js[22m
+2026-03-23T06:54:42.84
+7Z vite:import-analysi
+s [32m5.42ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/astr
+o/dist/runtime/server/
+transition.js[22m[2m
+[22m
+2026-03-23T06:54:42.84
+7Z vite:transform [32
+m5.95ms[39m [2m/node
+_modules/astro/dist/ru
+ntime/server/transitio
+n.js[22m
+2026-03-23T06:54:42.85
+6Z vite:load [32m0.77
+ms[39m [fs] [2m/node
+_modules/astro/dist/tr
+ansitions/index.js[22
+m
+2026-03-23T06:54:42.85
+7Z vite:resolve [32m0
+.58ms[39m [36m../run
+time/server/transition
+.js[39m -> [2mC:/Use
+rs/rukat/Downloads/繝峨Ο
+繝ｼ繝ｳ雉・ｼ縲謨吝援/drone-li
+cense-docs/node_module
+s/astro/dist/runtime/s
+erver/transition.js[2
+2m
+2026-03-23T06:54:42.85
+7Z vite:import-analysi
+s [32m1.06ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/transitions/ind
+ex.js[22m[2m[22m
+2026-03-23T06:54:42.85
+8Z vite:transform [32
+m1.46ms[39m [2m/node
+_modules/astro/dist/tr
+ansitions/index.js[22
+m
+2026-03-23T06:54:42.86
+1Z vite:load [32m0.81
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+ntent/config.js[22m
+2026-03-23T06:54:42.86
+3Z vite:import-analysi
+s [32m1.37ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/astr
+o/dist/content/config.
+js[22m[2m[22m
+2026-03-23T06:54:42.86
+3Z vite:transform [32
+m1.85ms[39m [2m/node
+_modules/astro/dist/co
+ntent/config.js[22m
+2026-03-23T06:54:42.86
+6Z vite:load [32m1.06
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+ntent/data-store.js[2
+2m
+2026-03-23T06:54:42.87
+2Z vite:resolve [32m0
+.02ms[39m [36mastro:
+data-layer-content[39
+m -> [2m astro:data-l
+ayer-content[22m
+2026-03-23T06:54:42.87
+2Z vite:import-analysi
+s [32m5.56ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/astr
+o/dist/content/data-st
+ore.js[22m[2m[22m
+2026-03-23T06:54:42.87
+2Z vite:transform [32
+m5.92ms[39m [2m/node
+_modules/astro/dist/co
+ntent/data-store.js[2
+2m
+2026-03-23T06:54:42.87
+9Z vite:load [32m0.92
+ms[39m [fs] [2m/node
+_modules/astro/dist/co
+ntent/loaders/errors.j
+s[22m
+2026-03-23T06:54:42.87
+9Z vite:import-analysi
+s [32m0.06ms[39m [2
+m[no imports] [2mnode
+_modules/astro/dist/co
+ntent/loaders/errors.j
+s[22m[2m[22m
+2026-03-23T06:54:42.87
+9Z vite:transform [32
+m0.41ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/content/lo
+aders/errors.js[22m[
+2m[22m
+2026-03-23T06:54:42.88
+3Z vite:load [32m0.72
+ms[39m [fs] [2m/node
+_modules/astro/dist/zo
+d.js[22m
+2026-03-23T06:54:42.88
+4Z vite:import-analysi
+s [32m0.09ms[39m [2
+m[0 imports rewritten]
+ [2mnode_modules/astr
+o/dist/zod.js[22m[2m
+[22m
+2026-03-23T06:54:42.88
+4Z vite:transform [32
+m0.41ms[39m[2m [skip
+ped] [2m/node_modules
+/astro/dist/zod.js[22
+m[2m[22m
+2026-03-23T06:54:42.88
+7Z vite:load [32m0.81
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schema.ts[22m
+2026-03-23T06:54:42.89
+6Z vite:resolve [32m5
+.37ms[39m [36m./sche
+mas/head[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/@astrojs/starli
+ght/schemas/head.ts[2
+2m
+2026-03-23T06:54:42.89
+6Z vite:resolve [32m5
+.44ms[39m [36m./sche
+mas/prevNextLink[39m 
+-> [2mC:/Users/rukat/
+Downloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲
+謨吝援/drone-license-doc
+s/node_modules/@astroj
+s/starlight/schemas/pr
+evNextLink.ts[22m
+2026-03-23T06:54:42.89
+7Z vite:resolve [32m5
+.46ms[39m [36m./sche
+mas/tableOfContents[3
+9m -> [2mC:/Users/ruk
+at/Downloads/繝峨Ο繝ｼ繝ｳ雉・
+ｼ縲謨吝援/drone-license-
+docs/node_modules/@ast
+rojs/starlight/schemas
+/tableOfContents.ts[2
+2m
+2026-03-23T06:54:42.89
+7Z vite:resolve [32m5
+.48ms[39m [36m./sche
+mas/badge[39m -> [2m
+C:/Users/rukat/Downloa
+ds/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dr
+one-license-docs/node_
+modules/@astrojs/starl
+ight/schemas/badge.ts
+[22m
+2026-03-23T06:54:42.89
+7Z vite:resolve [32m5
+.51ms[39m [36m./sche
+mas/hero[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/@astrojs/starli
+ght/schemas/hero.ts[2
+2m
+2026-03-23T06:54:42.89
+7Z vite:resolve [32m5
+.52ms[39m [36m./sche
+mas/sidebar[39m -> [
+2mC:/Users/rukat/Downl
+oads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/
+drone-license-docs/nod
+e_modules/@astrojs/sta
+rlight/schemas/sidebar
+.ts[22m
+2026-03-23T06:54:42.89
+7Z vite:resolve [32m5
+.54ms[39m [36m./sche
+mas/i18n[39m -> [2mC
+:/Users/rukat/Download
+s/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dro
+ne-license-docs/node_m
+odules/@astrojs/starli
+ght/schemas/i18n.ts[2
+2m
+2026-03-23T06:54:42.89
+7Z vite:import-analysi
+s [32m6.62ms[39m [2
+m[8 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schema.
+ts[22m[2m[22m
+2026-03-23T06:54:42.89
+7Z vite:transform [33
+m10.30ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/schema.ts[22m
+2026-03-23T06:54:42.90
+2Z vite:load [32m0.93
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/head.ts
+[22m
+2026-03-23T06:54:42.90
+4Z vite:import-analysi
+s [32m0.32ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/head.ts[22m[2m[22m
+2026-03-23T06:54:42.90
+4Z vite:transform [32
+m2.30ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/head.ts
+[22m
+2026-03-23T06:54:42.90
+6Z vite:load [32m0.75
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/prevNext
+Link.ts[22m
+2026-03-23T06:54:42.90
+8Z vite:import-analysi
+s [32m0.26ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/prevNextLink.ts[22m
+[2m[22m
+2026-03-23T06:54:42.90
+8Z vite:transform [32
+m1.86ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/prevNext
+Link.ts[22m
+2026-03-23T06:54:42.91
+0Z vite:load [32m0.71
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/tableOfC
+ontents.ts[22m
+2026-03-23T06:54:42.91
+2Z vite:import-analysi
+s [32m0.28ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/tableOfContents.ts[2
+2m[2m[22m
+2026-03-23T06:54:42.91
+3Z vite:transform [32
+m2.21ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/tableOfC
+ontents.ts[22m
+2026-03-23T06:54:42.91
+5Z vite:load [32m0.83
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/badge.ts
+[22m
+2026-03-23T06:54:42.91
+7Z vite:import-analysi
+s [32m0.33ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/badge.ts[22m[2m[22
+m
+2026-03-23T06:54:42.91
+7Z vite:transform [32
+m2.14ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/badge.ts
+[22m
+2026-03-23T06:54:42.92
+0Z vite:load [32m0.80
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/hero.ts
+[22m
+2026-03-23T06:54:42.92
+5Z vite:resolve [32m1
+.05ms[39m [36m../com
+ponents/Icons[39m -> 
+[2mC:/Users/rukat/Dow
+nloads/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝
+援/drone-license-docs/n
+ode_modules/@astrojs/s
+tarlight/components/Ic
+ons.ts[22m
+2026-03-23T06:54:42.92
+6Z vite:import-analysi
+s [32m1.61ms[39m [2
+m[2 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/hero.ts[22m[2m[22m
+2026-03-23T06:54:42.92
+6Z vite:transform [32
+m5.46ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/hero.ts
+[22m
+2026-03-23T06:54:42.93
+1Z vite:load [32m1.25
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/components/Icons
+.ts[22m
+2026-03-23T06:54:42.93
+9Z vite:resolve [32m0
+.92ms[39m [36m../use
+r-components/file-tree
+-icons[39m -> [2mC:/
+Users/rukat/Downloads/
+繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/drone
+-license-docs/node_mod
+ules/@astrojs/starligh
+t/user-components/file
+-tree-icons.ts[22m
+2026-03-23T06:54:42.93
+9Z vite:import-analysi
+s [32m1.64ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/compone
+nts/Icons.ts[22m[2m
+[22m
+2026-03-23T06:54:42.93
+9Z vite:transform [32
+m8.09ms[39m [2m/node
+_modules/@astrojs/star
+light/components/Icons
+.ts[22m
+2026-03-23T06:54:42.97
+1Z vite:load [33m10.4
+0ms[39m [fs] [2m/nod
+e_modules/@astrojs/sta
+rlight/user-components
+/file-tree-icons.ts[2
+2m
+2026-03-23T06:54:43.00
+2Z vite:import-analysi
+s [32m1.93ms[39m [2
+m[no imports] [2mnode
+_modules/@astrojs/star
+light/user-components/
+file-tree-icons.ts[22
+m[2m[22m
+2026-03-23T06:54:43.00
+2Z vite:transform [33
+m30.89ms[39m [2m/nod
+e_modules/@astrojs/sta
+rlight/user-components
+/file-tree-icons.ts[2
+2m
+2026-03-23T06:54:43.14
+3Z vite:load [33m36.2
+0ms[39m [fs] [2m/nod
+e_modules/@astrojs/sta
+rlight/schemas/sidebar
+.ts[22m
+2026-03-23T06:54:43.14
+8Z vite:resolve [32m1
+.86ms[39m [36m./badg
+e[39m -> [2mC:/Users
+/rukat/Downloads/繝峨Ο繝ｼ
+繝ｳ雉・ｼ縲謨吝援/drone-lice
+nse-docs/node_modules/
+@astrojs/starlight/sch
+emas/badge.ts[22m
+2026-03-23T06:54:43.14
+8Z vite:resolve [32m1
+.93ms[39m [36m../uti
+ls/path[39m -> [2mC:
+/Users/rukat/Downloads
+/繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援/dron
+e-license-docs/node_mo
+dules/@astrojs/starlig
+ht/utils/path.ts[22m
+2026-03-23T06:54:43.14
+9Z vite:import-analysi
+s [32m2.47ms[39m [2
+m[3 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/sidebar.ts[22m[2m[
+22m
+2026-03-23T06:54:43.14
+9Z vite:transform [32
+m5.34ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/sidebar.
+ts[22m
+2026-03-23T06:54:43.15
+4Z vite:load [32m0.93
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/utils/path.ts[2
+2m
+2026-03-23T06:54:43.15
+6Z vite:import-analysi
+s [32m0.13ms[39m [2
+m[no imports] [2mnode
+_modules/@astrojs/star
+light/utils/path.ts[2
+2m[2m[22m
+2026-03-23T06:54:43.15
+6Z vite:transform [32
+m2.45ms[39m [2m/node
+_modules/@astrojs/star
+light/utils/path.ts[2
+2m
+2026-03-23T06:54:43.16
+0Z vite:load [32m0.99
+ms[39m [fs] [2m/node
+_modules/@astrojs/star
+light/schemas/i18n.ts
+[22m
+2026-03-23T06:54:43.16
+4Z vite:import-analysi
+s [32m0.40ms[39m [2
+m[1 imports rewritten]
+ [2mnode_modules/@ast
+rojs/starlight/schemas
+/i18n.ts[22m[2m[22m
+2026-03-23T06:54:43.16
+4Z vite:transform [32
+m3.88ms[39m [2m/node
+_modules/@astrojs/star
+light/schemas/i18n.ts
+[22m
+[2m15:54:43[22m [34m[content][39m Syncing content
+[2m15:54:43[22m [34m[content][39m Synced content
+[2m15:54:43[22m [34m[types][39m Generated [2m1.11s[22m
+[2m15:54:43[22m [34m[build][39m output: [34m"static"[39m
+[2m15:54:43[22m [34m[build][39m mode: [34m"static"[39m
+[2m15:54:43[22m [34m[build][39m directory: [34mC:\Users\rukat\Downloads\繝峨Ο繝ｼ繝ｳ雉・ｼ縲謨吝援\drone-license-docs\dist\[39m
+[2m15:54:43[22m [34m[build][39m Collecting build info...
+2026-03-23T06:54:43.27
+5Z astro:build 笏懌楳笏 
+[1m[32m笨・[39m[22m no
+de_modules/@astrojs/st
+arlight/routes/static/
+404.astro 竊・[33m/404/
+index.html[39m
+2026-03-23T06:54:43.27
+5Z astro:build All pag
+es loaded   [2m177424
+8876.2s[22m
+[2m15:54:43[22m [34m[build][39m [32m笨・Completed in 1.53s.[39m
