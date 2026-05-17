@@ -46,9 +46,14 @@ TITLE_SET = set(TOC_TITLES)
 def normalize_line(line: str) -> str:
     line = line.replace("\u3000", " ")
     line = re.sub(r"[ \t]+", " ", line.strip())
+    line = remove_japanese_word_spaces(line)
     line = line.replace(" )", ")").replace("( ", "(")
     line = line.replace("（ ", "（").replace(" ）", "）")
     return line
+
+
+def remove_japanese_word_spaces(text: str) -> str:
+    return re.sub(r"(?<=[一-龯ぁ-んァ-ヶ]) (?=[一-龯ぁ-んァ-ヶ])", "", text)
 
 
 def slug_for(title: str) -> str:
@@ -133,7 +138,7 @@ def render_blocks(lines: list[dict]) -> str:
     def flush_paragraph() -> None:
         nonlocal paragraph
         if paragraph:
-            text = " ".join(paragraph)
+            text = remove_japanese_word_spaces(" ".join(paragraph))
             out.append(f"<p>{annotate_inline(text)}</p>")
             paragraph = []
 
@@ -141,7 +146,7 @@ def render_blocks(lines: list[dict]) -> str:
         nonlocal list_items
         if list_items:
             for value in list_items:
-                out.append(f"<li>{annotate_inline(value)}</li>")
+                out.append(f"<li>{annotate_inline(remove_japanese_word_spaces(value))}</li>")
             out.append("</ul>")
             list_items = []
 
