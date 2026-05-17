@@ -256,17 +256,23 @@ def render_html(sections: list[dict]) -> str:
   </header>
 
   <main>
-    <aside class="study-tools" aria-label="学習ツール">
-      <label class="search-label" for="searchInput">キーワード検索</label>
-      <div class="search-box">
-        <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
-        <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
+    <aside class="study-tools" id="studyTools" aria-label="学習ツール">
+      <div class="tools-head">
+        <span>学習ツール</span>
+        <button id="toolsToggle" type="button" aria-expanded="true">最小化</button>
       </div>
-      <div class="tool-row">
-        <button id="collapseToggle" type="button">本文を折りたたむ</button>
-        <button id="resumeButton" type="button">続きから読む</button>
+      <div class="tools-body" id="toolsBody">
+        <label class="search-label" for="searchInput">キーワード検索</label>
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
+          <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
+        </div>
+        <div class="tool-row">
+          <button id="collapseToggle" type="button">本文を折りたたむ</button>
+          <button id="resumeButton" type="button">続きから読む</button>
+        </div>
+        <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
       </div>
-      <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
     </aside>
 
     <section class="toc-panel" id="toc" aria-label="目次">
@@ -474,6 +480,37 @@ main {
   z-index: 20;
   padding: 14px;
   margin-bottom: 16px;
+}
+.study-tools.minimized {
+  padding: 10px 12px;
+}
+.tools-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.tools-head span {
+  font-size: 14px;
+  font-weight: 800;
+}
+.tools-head button {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.tools-body {
+  margin-top: 12px;
+}
+.study-tools.minimized .tools-body {
+  display: none;
 }
 .search-label,
 .panel-heading span {
@@ -692,6 +729,8 @@ JS = r"""
 const body = document.body;
 const searchInput = document.querySelector('#searchInput');
 const clearSearch = document.querySelector('#clearSearch');
+const studyTools = document.querySelector('#studyTools');
+const toolsToggle = document.querySelector('#toolsToggle');
 const sections = [...document.querySelectorAll('.study-section')];
 const tocLinks = [...document.querySelectorAll('.toc-link')];
 const progressBar = document.querySelector('#progressBar');
@@ -702,6 +741,19 @@ const themeToggle = document.querySelector('#themeToggle');
 
 const savedTheme = localStorage.getItem('drone-study-theme');
 if (savedTheme === 'dark') body.classList.add('dark');
+
+function setToolsMinimized(minimized) {
+  studyTools.classList.toggle('minimized', minimized);
+  toolsToggle.textContent = minimized ? '開く' : '最小化';
+  toolsToggle.setAttribute('aria-expanded', String(!minimized));
+  localStorage.setItem('drone-study-tools-minimized', minimized ? 'true' : 'false');
+}
+
+setToolsMinimized(localStorage.getItem('drone-study-tools-minimized') === 'true');
+
+toolsToggle.addEventListener('click', () => {
+  setToolsMinimized(!studyTools.classList.contains('minimized'));
+});
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');

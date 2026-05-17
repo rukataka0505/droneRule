@@ -2,6 +2,8 @@
 const body = document.body;
 const searchInput = document.querySelector('#searchInput');
 const clearSearch = document.querySelector('#clearSearch');
+const studyTools = document.querySelector('#studyTools');
+const toolsToggle = document.querySelector('#toolsToggle');
 const sections = [...document.querySelectorAll('.study-section')];
 const tocLinks = [...document.querySelectorAll('.toc-link')];
 const progressBar = document.querySelector('#progressBar');
@@ -12,6 +14,19 @@ const themeToggle = document.querySelector('#themeToggle');
 
 const savedTheme = localStorage.getItem('drone-study-theme');
 if (savedTheme === 'dark') body.classList.add('dark');
+
+function setToolsMinimized(minimized) {
+  studyTools.classList.toggle('minimized', minimized);
+  toolsToggle.textContent = minimized ? '開く' : '最小化';
+  toolsToggle.setAttribute('aria-expanded', String(!minimized));
+  localStorage.setItem('drone-study-tools-minimized', minimized ? 'true' : 'false');
+}
+
+setToolsMinimized(localStorage.getItem('drone-study-tools-minimized') === 'true');
+
+toolsToggle.addEventListener('click', () => {
+  setToolsMinimized(!studyTools.classList.contains('minimized'));
+});
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');

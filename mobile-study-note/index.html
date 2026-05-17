@@ -42,17 +42,23 @@
   </header>
 
   <main>
-    <aside class="study-tools" aria-label="学習ツール">
-      <label class="search-label" for="searchInput">キーワード検索</label>
-      <div class="search-box">
-        <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
-        <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
+    <aside class="study-tools" id="studyTools" aria-label="学習ツール">
+      <div class="tools-head">
+        <span>学習ツール</span>
+        <button id="toolsToggle" type="button" aria-expanded="true">最小化</button>
       </div>
-      <div class="tool-row">
-        <button id="collapseToggle" type="button">本文を折りたたむ</button>
-        <button id="resumeButton" type="button">続きから読む</button>
+      <div class="tools-body" id="toolsBody">
+        <label class="search-label" for="searchInput">キーワード検索</label>
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
+          <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
+        </div>
+        <div class="tool-row">
+          <button id="collapseToggle" type="button">本文を折りたたむ</button>
+          <button id="resumeButton" type="button">続きから読む</button>
+        </div>
+        <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
       </div>
-      <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
     </aside>
 
     <section class="toc-panel" id="toc" aria-label="目次">
