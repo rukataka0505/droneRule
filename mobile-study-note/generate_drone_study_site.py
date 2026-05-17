@@ -179,6 +179,13 @@ def render_blocks(lines: list[dict]) -> str:
 
 
 def render_html(sections: list[dict]) -> str:
+    page_title = "二等学科試験のためのスマホ学習ノート"
+    browser_title = "無人航空機 教則スマホ学習ノート"
+    page_description = (
+        "無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。"
+        "検索、目次ジャンプ、続きから読む、ダークモードに対応しています。"
+    )
+    page_url = "https://unskillful-latina-subduingly.ngrok-free.dev/index.html"
     nav = "\n".join(
         f'<a class="toc-link toc-level-{s["level"]}" href="#{s["id"]}" data-target="{s["id"]}">{html.escape(s["title"])}</a>'
         for s in sections
@@ -205,7 +212,19 @@ def render_html(sections: list[dict]) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>無人航空機 教則スマホ学習ノート</title>
+  <title>{html.escape(browser_title)}</title>
+  <meta name="description" content="{html.escape(page_description)}">
+  <meta name="theme-color" content="#0c7a66">
+  <link rel="canonical" href="{html.escape(page_url)}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Drone Study">
+  <meta property="og:title" content="{html.escape(page_title)}">
+  <meta property="og:description" content="{html.escape(page_description)}">
+  <meta property="og:url" content="{html.escape(page_url)}">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{html.escape(page_title)}">
+  <meta name="twitter:description" content="{html.escape(page_description)}">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
