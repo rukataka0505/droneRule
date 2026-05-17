@@ -2,31 +2,14 @@
 const body = document.body;
 const searchInput = document.querySelector('#searchInput');
 const clearSearch = document.querySelector('#clearSearch');
-const studyTools = document.querySelector('#studyTools');
-const toolsToggle = document.querySelector('#toolsToggle');
 const sections = [...document.querySelectorAll('.study-section')];
 const tocLinks = [...document.querySelectorAll('.toc-link')];
 const progressBar = document.querySelector('#progressBar');
 const topButton = document.querySelector('#topButton');
-const collapseToggle = document.querySelector('#collapseToggle');
-const resumeButton = document.querySelector('#resumeButton');
 const themeToggle = document.querySelector('#themeToggle');
 
 const savedTheme = localStorage.getItem('drone-study-theme');
 if (savedTheme === 'dark') body.classList.add('dark');
-
-function setToolsMinimized(minimized) {
-  studyTools.classList.toggle('minimized', minimized);
-  toolsToggle.textContent = minimized ? '開く' : '最小化';
-  toolsToggle.setAttribute('aria-expanded', String(!minimized));
-  localStorage.setItem('drone-study-tools-minimized', minimized ? 'true' : 'false');
-}
-
-setToolsMinimized(localStorage.getItem('drone-study-tools-minimized') === 'true');
-
-toolsToggle.addEventListener('click', () => {
-  setToolsMinimized(!studyTools.classList.contains('minimized'));
-});
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');
@@ -62,17 +45,6 @@ addEventListener('scroll', () => {
 }, { passive: true });
 
 topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
-resumeButton.addEventListener('click', () => {
-  const id = localStorage.getItem('drone-study-last-section');
-  document.getElementById(id || 'section-2')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-let collapsed = false;
-collapseToggle.addEventListener('click', () => {
-  collapsed = !collapsed;
-  sections.forEach((section) => section.classList.toggle('collapsed', collapsed));
-  collapseToggle.textContent = collapsed ? '本文を表示する' : '本文を折りたたむ';
-});
 
 function clearMarks(element) {
   element.querySelectorAll('mark').forEach((mark) => mark.replaceWith(document.createTextNode(mark.textContent)));

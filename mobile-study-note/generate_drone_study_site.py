@@ -188,7 +188,7 @@ def render_html(sections: list[dict]) -> str:
     browser_title = "無人航空機 教則スマホ学習ノート"
     page_description = (
         "無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。"
-        "検索、目次ジャンプ、続きから読む、ダークモードに対応しています。"
+        "キーワード検索、目次ジャンプ、ダークモードに対応しています。"
     )
     page_url = "https://unskillful-latina-subduingly.ngrok-free.dev/index.html"
     nav = "\n".join(
@@ -256,34 +256,23 @@ def render_html(sections: list[dict]) -> str:
   </header>
 
   <main>
-    <aside class="study-tools" id="studyTools" aria-label="学習ツール">
-      <div class="tools-head">
-        <span>学習ツール</span>
-        <button id="toolsToggle" type="button" aria-expanded="true">最小化</button>
-      </div>
-      <div class="tools-body" id="toolsBody">
+    <details class="study-panel" id="toc" open>
+      <summary>
+        <span>目次・キーワード検索</span>
+        <span class="summary-icon" aria-hidden="true">▽</span>
+      </summary>
+      <div class="panel-body">
         <label class="search-label" for="searchInput">キーワード検索</label>
         <div class="search-box">
           <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
           <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
         </div>
-        <div class="tool-row">
-          <button id="collapseToggle" type="button">本文を折りたたむ</button>
-          <button id="resumeButton" type="button">続きから読む</button>
+        <div class="toc-links" aria-label="目次">
+          {nav}
         </div>
         <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
       </div>
-    </aside>
-
-    <section class="toc-panel" id="toc" aria-label="目次">
-      <div class="panel-heading">
-        <span>目次</span>
-        <small>タップで章へ移動</small>
-      </div>
-      <div class="toc-links">
-        {nav}
-      </div>
-    </section>
+    </details>
 
     <section class="article-list" id="articleList" data-sections="{section_json}">
       {''.join(articles)}
@@ -465,8 +454,7 @@ main {
   padding: 18px 16px 72px;
 }
 
-.study-tools,
-.toc-panel,
+.study-panel,
 .study-section {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -474,49 +462,47 @@ main {
   box-shadow: var(--shadow);
 }
 
-.study-tools {
+.study-panel {
   position: sticky;
   top: 8px;
   z-index: 20;
-  padding: 14px;
   margin-bottom: 16px;
+  overflow: hidden;
 }
-.study-tools.minimized {
-  padding: 10px 12px;
-}
-.tools-head {
+.study-panel summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-}
-.tools-head span {
-  font-size: 14px;
-  font-weight: 800;
-}
-.tools-head button {
-  min-height: 34px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  color: var(--text);
-  border-radius: var(--radius);
-  padding: 6px 10px;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 800;
+  min-height: 48px;
+  padding: 12px 14px;
   cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-weight: 800;
+  font-size: 14px;
 }
-.tools-body {
-  margin-top: 12px;
-}
-.study-tools.minimized .tools-body {
+.study-panel summary::-webkit-details-marker {
   display: none;
 }
-.search-label,
-.panel-heading span {
+.summary-icon {
+  color: var(--accent-strong);
+  font-size: 15px;
+  line-height: 1;
+  transition: transform .18s ease;
+}
+.study-panel[open] .summary-icon {
+  transform: rotate(180deg);
+}
+.panel-body {
+  padding: 0 14px 14px;
+  border-top: 1px solid var(--line);
+}
+.search-label {
   display: block;
   font-weight: 800;
   font-size: 14px;
+  margin-top: 12px;
 }
 .search-box {
   display: grid;
@@ -534,16 +520,6 @@ input[type="search"] {
   font: inherit;
   line-height: 1.3;
 }
-.tool-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 10px;
-}
-.tool-row button {
-  width: 100%;
-  font-size: 13px;
-}
 .hint {
   color: var(--muted);
   font-size: 12px;
@@ -551,23 +527,13 @@ input[type="search"] {
   margin: 10px 0 0;
 }
 
-.toc-panel {
-  padding: 16px;
-  margin-bottom: 18px;
-}
-.panel-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.panel-heading small {
-  color: var(--muted);
-}
 .toc-links {
   display: grid;
   gap: 4px;
+  margin-top: 12px;
+  max-height: min(54svh, 520px);
+  overflow: auto;
+  padding-right: 2px;
 }
 .toc-link {
   display: block;
@@ -594,7 +560,6 @@ input[type="search"] {
   scroll-margin-top: 150px;
 }
 .study-section.hidden { display: none; }
-.study-section.collapsed > :not(.section-kicker):not(h2) { display: none; }
 .section-kicker {
   color: var(--accent-strong);
   font-size: 12px;
@@ -678,19 +643,18 @@ mark {
     gap: 18px;
     align-items: start;
   }
-  .study-tools,
-  .toc-panel {
+  .study-panel {
     grid-column: 1;
   }
   .article-list {
     grid-column: 2;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
   }
-  .toc-panel {
-    position: sticky;
-    top: 180px;
+  .study-panel {
     max-height: calc(100svh - 196px);
-    overflow: auto;
+  }
+  .study-panel .toc-links {
+    max-height: calc(100svh - 360px);
   }
 }
 
@@ -711,15 +675,11 @@ mark {
     padding-inline: 10px;
   }
   .study-section,
-  .toc-panel,
-  .study-tools {
+  .study-panel {
     border-radius: 8px;
   }
   .study-section {
     padding: 20px 14px;
-  }
-  .tool-row {
-    grid-template-columns: 1fr;
   }
 }
 """
@@ -729,31 +689,14 @@ JS = r"""
 const body = document.body;
 const searchInput = document.querySelector('#searchInput');
 const clearSearch = document.querySelector('#clearSearch');
-const studyTools = document.querySelector('#studyTools');
-const toolsToggle = document.querySelector('#toolsToggle');
 const sections = [...document.querySelectorAll('.study-section')];
 const tocLinks = [...document.querySelectorAll('.toc-link')];
 const progressBar = document.querySelector('#progressBar');
 const topButton = document.querySelector('#topButton');
-const collapseToggle = document.querySelector('#collapseToggle');
-const resumeButton = document.querySelector('#resumeButton');
 const themeToggle = document.querySelector('#themeToggle');
 
 const savedTheme = localStorage.getItem('drone-study-theme');
 if (savedTheme === 'dark') body.classList.add('dark');
-
-function setToolsMinimized(minimized) {
-  studyTools.classList.toggle('minimized', minimized);
-  toolsToggle.textContent = minimized ? '開く' : '最小化';
-  toolsToggle.setAttribute('aria-expanded', String(!minimized));
-  localStorage.setItem('drone-study-tools-minimized', minimized ? 'true' : 'false');
-}
-
-setToolsMinimized(localStorage.getItem('drone-study-tools-minimized') === 'true');
-
-toolsToggle.addEventListener('click', () => {
-  setToolsMinimized(!studyTools.classList.contains('minimized'));
-});
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');
@@ -789,17 +732,6 @@ addEventListener('scroll', () => {
 }, { passive: true });
 
 topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
-resumeButton.addEventListener('click', () => {
-  const id = localStorage.getItem('drone-study-last-section');
-  document.getElementById(id || 'section-2')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-let collapsed = false;
-collapseToggle.addEventListener('click', () => {
-  collapsed = !collapsed;
-  sections.forEach((section) => section.classList.toggle('collapsed', collapsed));
-  collapseToggle.textContent = collapsed ? '本文を表示する' : '本文を折りたたむ';
-});
 
 function clearMarks(element) {
   element.querySelectorAll('mark').forEach((mark) => mark.replaceWith(document.createTextNode(mark.textContent)));
