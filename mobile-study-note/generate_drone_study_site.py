@@ -245,11 +245,13 @@ def render_html(sections: list[dict]) -> str:
       <p class="lead">PDF教則の章立てと本文量を保ちながら、移動中でも読めるWeb記事形式に整えました。検索、目次ジャンプ、読了位置の保存に対応しています。</p>
       <div class="hero-actions">
         <a class="primary" href="#section-2">学習を始める</a>
+        <a class="secondary" href="#quiz">クイズを解く</a>
         <a class="secondary" href="#toc">目次を見る</a>
       </div>
       <div class="stats" aria-label="教材の概要">
         <span><strong>{len(sections)}</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
+        <span><strong>50</strong> 問クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>
@@ -275,6 +277,36 @@ def render_html(sections: list[dict]) -> str:
     </details>
 
     <section class="article-list" id="articleList" data-sections="{section_json}">
+      <section class="quiz-section" id="quiz" aria-label="実試験形式クイズ">
+        <div class="section-kicker">三肢択一式 / 中断・再開対応</div>
+        <h2>実試験形式クイズ</h2>
+        <p class="quiz-lead">二等学科試験と同じ三肢択一式で練習できます。時間制限はなく、回答状況はこの端末に自動保存されます。</p>
+        <div class="quiz-shell">
+          <div class="quiz-toolbar" aria-label="クイズ操作">
+            <button class="primary quiz-start" id="startQuiz" type="button">50問を開始</button>
+            <button class="secondary" id="resumeQuiz" type="button">保存済みから再開</button>
+            <button class="secondary" id="resetQuiz" type="button">最初から</button>
+          </div>
+          <div class="quiz-status" id="quizStatus">問題データを読み込み中...</div>
+          <div class="quiz-card" id="quizCard" hidden>
+            <div class="quiz-meta">
+              <span id="quizCount">問 1 / 50</span>
+              <span id="quizSource">教則ベース予想</span>
+            </div>
+            <h3 id="quizQuestion"></h3>
+            <div class="quiz-choices" id="quizChoices"></div>
+            <div class="quiz-feedback" id="quizFeedback" hidden></div>
+            <div class="quiz-nav">
+              <button class="secondary" id="prevQuestion" type="button">前へ</button>
+              <button class="primary" id="nextQuestion" type="button">次へ</button>
+            </div>
+          </div>
+          <details class="question-list-panel">
+            <summary>問題リスト <span id="questionListCount"></span></summary>
+            <div class="question-list" id="questionList"></div>
+          </details>
+        </div>
+      </section>
       {''.join(articles)}
     </section>
   </main>
@@ -555,9 +587,144 @@ input[type="search"] {
   display: grid;
   gap: 18px;
 }
+.quiz-section,
 .study-section {
   padding: 22px 18px;
   scroll-margin-top: 150px;
+}
+.quiz-section {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.quiz-lead {
+  color: var(--muted);
+}
+.quiz-shell {
+  display: grid;
+  gap: 14px;
+}
+.quiz-toolbar,
+.quiz-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.quiz-toolbar button,
+.quiz-nav button,
+.choice-button {
+  min-height: 44px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.quiz-status {
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.quiz-card {
+  display: grid;
+  gap: 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.quiz-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+#quizQuestion {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+.quiz-choices {
+  display: grid;
+  gap: 8px;
+}
+.choice-button {
+  width: 100%;
+  text-align: left;
+  background: var(--paper);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.6;
+}
+.choice-button.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.choice-button.correct {
+  border-color: #168255;
+  background: rgba(22, 130, 85, 0.15);
+}
+.choice-button.wrong {
+  border-color: #b94a48;
+  background: rgba(185, 74, 72, 0.14);
+}
+.quiz-feedback {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.question-list-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  overflow: hidden;
+}
+.question-list-panel summary {
+  min-height: 44px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+.question-list-panel summary::-webkit-details-marker {
+  display: none;
+}
+.question-list {
+  display: grid;
+  gap: 6px;
+  max-height: 420px;
+  overflow: auto;
+  border-top: 1px solid var(--line);
+  padding: 10px;
+}
+.question-list button {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  padding: 9px 10px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.question-list button.answered {
+  border-color: var(--accent);
 }
 .study-section.hidden { display: none; }
 .section-kicker {
@@ -776,6 +943,158 @@ clearSearch.addEventListener('click', () => {
   runSearch();
   searchInput.focus();
 });
+
+const quizEls = {
+  start: document.querySelector('#startQuiz'),
+  resume: document.querySelector('#resumeQuiz'),
+  reset: document.querySelector('#resetQuiz'),
+  status: document.querySelector('#quizStatus'),
+  card: document.querySelector('#quizCard'),
+  count: document.querySelector('#quizCount'),
+  source: document.querySelector('#quizSource'),
+  question: document.querySelector('#quizQuestion'),
+  choices: document.querySelector('#quizChoices'),
+  feedback: document.querySelector('#quizFeedback'),
+  prev: document.querySelector('#prevQuestion'),
+  next: document.querySelector('#nextQuestion'),
+  list: document.querySelector('#questionList'),
+  listCount: document.querySelector('#questionListCount')
+};
+
+const quizStorageKey = 'drone-study-quiz-state-v1';
+let quizQuestions = [];
+let quizState = { index: 0, answers: {} };
+
+function saveQuizState() {
+  localStorage.setItem(quizStorageKey, JSON.stringify(quizState));
+}
+
+function loadQuizState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(quizStorageKey) || '{}');
+    quizState = {
+      index: Number.isInteger(saved.index) ? saved.index : 0,
+      answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
+    };
+  } catch {
+    quizState = { index: 0, answers: {} };
+  }
+}
+
+function quizScore() {
+  const answered = Object.keys(quizState.answers).length;
+  const correct = quizQuestions.filter((q) => quizState.answers[q.id] === q.answer).length;
+  return { answered, correct, total: quizQuestions.length };
+}
+
+function updateQuizStatus() {
+  if (!quizQuestions.length) return;
+  const { answered, correct, total } = quizScore();
+  quizEls.status.textContent = `保存済み: ${answered}/${total}問回答、正解 ${correct}問。ページを閉じてもこの端末で再開できます。`;
+}
+
+function renderQuestionList() {
+  quizEls.list.innerHTML = '';
+  quizEls.listCount.textContent = `(${quizQuestions.length}問)`;
+  quizQuestions.forEach((q, index) => {
+    const button = document.createElement('button');
+    const answered = quizState.answers[q.id] !== undefined;
+    button.className = answered ? 'answered' : '';
+    button.type = 'button';
+    button.textContent = `${index + 1}. ${q.category} / ${q.question}`;
+    button.addEventListener('click', () => {
+      quizState.index = index;
+      saveQuizState();
+      renderQuiz();
+      document.querySelector('#quiz')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    quizEls.list.appendChild(button);
+  });
+}
+
+function renderQuiz() {
+  if (!quizQuestions.length) return;
+  quizState.index = Math.min(Math.max(quizState.index, 0), quizQuestions.length - 1);
+  const q = quizQuestions[quizState.index];
+  const selected = quizState.answers[q.id];
+
+  quizEls.card.hidden = false;
+  quizEls.count.textContent = `問 ${quizState.index + 1} / ${quizQuestions.length}`;
+  quizEls.source.textContent = `${q.source} / ${q.section}`;
+  quizEls.question.textContent = q.question;
+  quizEls.choices.innerHTML = '';
+  quizEls.feedback.hidden = selected === undefined;
+  quizEls.feedback.innerHTML = selected === undefined
+    ? ''
+    : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong><br>${q.explanation}<br><span class="term">${q.reference}</span>`;
+
+  q.choices.forEach((choice, choiceIndex) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'choice-button';
+    if (selected !== undefined) {
+      if (choiceIndex === q.answer) button.classList.add('correct');
+      if (choiceIndex === selected && selected !== q.answer) button.classList.add('wrong');
+      if (choiceIndex === selected) button.classList.add('selected');
+    }
+    button.textContent = `${String.fromCharCode(97 + choiceIndex)}. ${choice}`;
+    button.addEventListener('click', () => {
+      quizState.answers[q.id] = choiceIndex;
+      saveQuizState();
+      renderQuiz();
+      renderQuestionList();
+      updateQuizStatus();
+    });
+    quizEls.choices.appendChild(button);
+  });
+
+  quizEls.prev.disabled = quizState.index === 0;
+  quizEls.next.textContent = quizState.index === quizQuestions.length - 1 ? '結果を見る' : '次へ';
+  updateQuizStatus();
+}
+
+function startQuiz(reset = false) {
+  if (reset) {
+    quizState = { index: 0, answers: {} };
+    saveQuizState();
+  } else {
+    loadQuizState();
+  }
+  renderQuiz();
+  renderQuestionList();
+}
+
+quizEls.start.addEventListener('click', () => startQuiz(false));
+quizEls.resume.addEventListener('click', () => startQuiz(false));
+quizEls.reset.addEventListener('click', () => startQuiz(true));
+quizEls.prev.addEventListener('click', () => {
+  quizState.index -= 1;
+  saveQuizState();
+  renderQuiz();
+});
+quizEls.next.addEventListener('click', () => {
+  if (quizState.index < quizQuestions.length - 1) {
+    quizState.index += 1;
+    saveQuizState();
+    renderQuiz();
+  } else {
+    updateQuizStatus();
+    quizEls.status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+fetch('quiz_questions.json')
+  .then((response) => response.json())
+  .then((questions) => {
+    quizQuestions = questions.slice(0, 50);
+    loadQuizState();
+    renderQuestionList();
+    updateQuizStatus();
+    if (Object.keys(quizState.answers).length) renderQuiz();
+  })
+  .catch(() => {
+    quizEls.status.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
+  });
 
 updateProgress();
 """

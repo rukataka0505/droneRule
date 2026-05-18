@@ -14,6 +14,7 @@ python -m http.server 8000
 
 - `index.html`: 学習ページ本体
 - `style.css`: スマホ向けレイアウトと表示テーマ
-- `app.js`: 検索、目次ジャンプ、続きから読む、ダークモード
+- `app.js`: 検索、目次ジャンプ、クイズ、ダークモード
+- `quiz_questions.json`: 三肢択一式のクイズ問題データ
 - `generate_drone_study_site.py`: PDFからページを再生成するスクリプト
 - `extracted-sections.json`: 抽出済み本文データ

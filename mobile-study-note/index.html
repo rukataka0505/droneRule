@@ -31,11 +31,13 @@
       <p class="lead">PDF教則の章立てと本文量を保ちながら、移動中でも読めるWeb記事形式に整えました。検索、目次ジャンプ、読了位置の保存に対応しています。</p>
       <div class="hero-actions">
         <a class="primary" href="#section-2">学習を始める</a>
+        <a class="secondary" href="#quiz">クイズを解く</a>
         <a class="secondary" href="#toc">目次を見る</a>
       </div>
       <div class="stats" aria-label="教材の概要">
         <span><strong>25</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
+        <span><strong>50</strong> 問クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>
@@ -85,6 +87,36 @@
     </details>
 
     <section class="article-list" id="articleList" data-sections="[{&quot;id&quot;: &quot;section-1&quot;, &quot;title&quot;: &quot;1. はじめに&quot;}, {&quot;id&quot;: &quot;section-2&quot;, &quot;title&quot;: &quot;2. 無人航空機操縦者の心得&quot;}, {&quot;id&quot;: &quot;section-2-1&quot;, &quot;title&quot;: &quot;2.1 操縦者の役割と責任&quot;}, {&quot;id&quot;: &quot;section-2-2&quot;, &quot;title&quot;: &quot;2.2 安全な飛行の確保&quot;}, {&quot;id&quot;: &quot;section-2-3&quot;, &quot;title&quot;: &quot;2.3 事故が起きた時の対応&quot;}, {&quot;id&quot;: &quot;section-3&quot;, &quot;title&quot;: &quot;3. 無人航空機に関する規則&quot;}, {&quot;id&quot;: &quot;section-3-1&quot;, &quot;title&quot;: &quot;3.1 航空法全般&quot;}, {&quot;id&quot;: &quot;section-3-2&quot;, &quot;title&quot;: &quot;3.2 航空法以外の法令等&quot;}, {&quot;id&quot;: &quot;section-4&quot;, &quot;title&quot;: &quot;4. 無人航空機のシステム&quot;}, {&quot;id&quot;: &quot;section-4-1&quot;, &quot;title&quot;: &quot;4.1 無人航空機の機体の特徴（機体種類別）&quot;}, {&quot;id&quot;: &quot;section-4-2&quot;, &quot;title&quot;: &quot;4.2 無人航空機の機体の特徴（飛行方法別）&quot;}, {&quot;id&quot;: &quot;section-4-3&quot;, &quot;title&quot;: &quot;4.3 飛行原理と飛行性能&quot;}, {&quot;id&quot;: &quot;section-4-4&quot;, &quot;title&quot;: &quot;4.4 機体の構成&quot;}, {&quot;id&quot;: &quot;section-4-5&quot;, &quot;title&quot;: &quot;4.5 機体以外の要素技術&quot;}, {&quot;id&quot;: &quot;section-4-6&quot;, &quot;title&quot;: &quot;4.6 機体の整備・点検・保管・交換・廃棄&quot;}, {&quot;id&quot;: &quot;section-5&quot;, &quot;title&quot;: &quot;5. 無人航空機の操縦者及び運航体制&quot;}, {&quot;id&quot;: &quot;section-5-1&quot;, &quot;title&quot;: &quot;5.1 操縦者の行動規範及び遵守事項&quot;}, {&quot;id&quot;: &quot;section-5-2&quot;, &quot;title&quot;: &quot;5.2 操縦者に求められる操縦知識&quot;}, {&quot;id&quot;: &quot;section-5-3&quot;, &quot;title&quot;: &quot;5.3 操縦者のパフォーマンス&quot;}, {&quot;id&quot;: &quot;section-5-4&quot;, &quot;title&quot;: &quot;5.4 安全な運航のための意思決定体制（CRM 等の理解）&quot;}, {&quot;id&quot;: &quot;section-6&quot;, &quot;title&quot;: &quot;6. 運航上のリスク管理&quot;}, {&quot;id&quot;: &quot;section-6-1&quot;, &quot;title&quot;: &quot;6.1 運航リスクの評価及び最適な運航の計画の立案の基礎&quot;}, {&quot;id&quot;: &quot;section-6-2&quot;, &quot;title&quot;: &quot;6.2 気象の基礎知識及び気象情報を基にしたリスク評価及び運航の計画の立案&quot;}, {&quot;id&quot;: &quot;section-6-3&quot;, &quot;title&quot;: &quot;6.3 機体の種類に応じた運航リスクの評価及び最適な運航の計画の立案&quot;}, {&quot;id&quot;: &quot;section-6-4&quot;, &quot;title&quot;: &quot;6.4 飛行の方法に応じた運航リスクの評価及び最適な運航の計画の立案&quot;}]">
+      <section class="quiz-section" id="quiz" aria-label="実試験形式クイズ">
+        <div class="section-kicker">三肢択一式 / 中断・再開対応</div>
+        <h2>実試験形式クイズ</h2>
+        <p class="quiz-lead">二等学科試験と同じ三肢択一式で練習できます。時間制限はなく、回答状況はこの端末に自動保存されます。</p>
+        <div class="quiz-shell">
+          <div class="quiz-toolbar" aria-label="クイズ操作">
+            <button class="primary quiz-start" id="startQuiz" type="button">50問を開始</button>
+            <button class="secondary" id="resumeQuiz" type="button">保存済みから再開</button>
+            <button class="secondary" id="resetQuiz" type="button">最初から</button>
+          </div>
+          <div class="quiz-status" id="quizStatus">問題データを読み込み中...</div>
+          <div class="quiz-card" id="quizCard" hidden>
+            <div class="quiz-meta">
+              <span id="quizCount">問 1 / 50</span>
+              <span id="quizSource">教則ベース予想</span>
+            </div>
+            <h3 id="quizQuestion"></h3>
+            <div class="quiz-choices" id="quizChoices"></div>
+            <div class="quiz-feedback" id="quizFeedback" hidden></div>
+            <div class="quiz-nav">
+              <button class="secondary" id="prevQuestion" type="button">前へ</button>
+              <button class="primary" id="nextQuestion" type="button">次へ</button>
+            </div>
+          </div>
+          <details class="question-list-panel">
+            <summary>問題リスト <span id="questionListCount"></span></summary>
+            <div class="question-list" id="questionList"></div>
+          </details>
+        </div>
+      </section>
       
             <article class="study-section" id="section-1" data-title="1. はじめに" data-page="7">
               <div class="section-kicker">PDF p.7</div>

@@ -90,4 +90,156 @@ clearSearch.addEventListener('click', () => {
   searchInput.focus();
 });
 
+const quizEls = {
+  start: document.querySelector('#startQuiz'),
+  resume: document.querySelector('#resumeQuiz'),
+  reset: document.querySelector('#resetQuiz'),
+  status: document.querySelector('#quizStatus'),
+  card: document.querySelector('#quizCard'),
+  count: document.querySelector('#quizCount'),
+  source: document.querySelector('#quizSource'),
+  question: document.querySelector('#quizQuestion'),
+  choices: document.querySelector('#quizChoices'),
+  feedback: document.querySelector('#quizFeedback'),
+  prev: document.querySelector('#prevQuestion'),
+  next: document.querySelector('#nextQuestion'),
+  list: document.querySelector('#questionList'),
+  listCount: document.querySelector('#questionListCount')
+};
+
+const quizStorageKey = 'drone-study-quiz-state-v1';
+let quizQuestions = [];
+let quizState = { index: 0, answers: {} };
+
+function saveQuizState() {
+  localStorage.setItem(quizStorageKey, JSON.stringify(quizState));
+}
+
+function loadQuizState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(quizStorageKey) || '{}');
+    quizState = {
+      index: Number.isInteger(saved.index) ? saved.index : 0,
+      answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
+    };
+  } catch {
+    quizState = { index: 0, answers: {} };
+  }
+}
+
+function quizScore() {
+  const answered = Object.keys(quizState.answers).length;
+  const correct = quizQuestions.filter((q) => quizState.answers[q.id] === q.answer).length;
+  return { answered, correct, total: quizQuestions.length };
+}
+
+function updateQuizStatus() {
+  if (!quizQuestions.length) return;
+  const { answered, correct, total } = quizScore();
+  quizEls.status.textContent = `保存済み: ${answered}/${total}問回答、正解 ${correct}問。ページを閉じてもこの端末で再開できます。`;
+}
+
+function renderQuestionList() {
+  quizEls.list.innerHTML = '';
+  quizEls.listCount.textContent = `(${quizQuestions.length}問)`;
+  quizQuestions.forEach((q, index) => {
+    const button = document.createElement('button');
+    const answered = quizState.answers[q.id] !== undefined;
+    button.className = answered ? 'answered' : '';
+    button.type = 'button';
+    button.textContent = `${index + 1}. ${q.category} / ${q.question}`;
+    button.addEventListener('click', () => {
+      quizState.index = index;
+      saveQuizState();
+      renderQuiz();
+      document.querySelector('#quiz')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    quizEls.list.appendChild(button);
+  });
+}
+
+function renderQuiz() {
+  if (!quizQuestions.length) return;
+  quizState.index = Math.min(Math.max(quizState.index, 0), quizQuestions.length - 1);
+  const q = quizQuestions[quizState.index];
+  const selected = quizState.answers[q.id];
+
+  quizEls.card.hidden = false;
+  quizEls.count.textContent = `問 ${quizState.index + 1} / ${quizQuestions.length}`;
+  quizEls.source.textContent = `${q.source} / ${q.section}`;
+  quizEls.question.textContent = q.question;
+  quizEls.choices.innerHTML = '';
+  quizEls.feedback.hidden = selected === undefined;
+  quizEls.feedback.innerHTML = selected === undefined
+    ? ''
+    : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong><br>${q.explanation}<br><span class="term">${q.reference}</span>`;
+
+  q.choices.forEach((choice, choiceIndex) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'choice-button';
+    if (selected !== undefined) {
+      if (choiceIndex === q.answer) button.classList.add('correct');
+      if (choiceIndex === selected && selected !== q.answer) button.classList.add('wrong');
+      if (choiceIndex === selected) button.classList.add('selected');
+    }
+    button.textContent = `${String.fromCharCode(97 + choiceIndex)}. ${choice}`;
+    button.addEventListener('click', () => {
+      quizState.answers[q.id] = choiceIndex;
+      saveQuizState();
+      renderQuiz();
+      renderQuestionList();
+      updateQuizStatus();
+    });
+    quizEls.choices.appendChild(button);
+  });
+
+  quizEls.prev.disabled = quizState.index === 0;
+  quizEls.next.textContent = quizState.index === quizQuestions.length - 1 ? '結果を見る' : '次へ';
+  updateQuizStatus();
+}
+
+function startQuiz(reset = false) {
+  if (reset) {
+    quizState = { index: 0, answers: {} };
+    saveQuizState();
+  } else {
+    loadQuizState();
+  }
+  renderQuiz();
+  renderQuestionList();
+}
+
+quizEls.start.addEventListener('click', () => startQuiz(false));
+quizEls.resume.addEventListener('click', () => startQuiz(false));
+quizEls.reset.addEventListener('click', () => startQuiz(true));
+quizEls.prev.addEventListener('click', () => {
+  quizState.index -= 1;
+  saveQuizState();
+  renderQuiz();
+});
+quizEls.next.addEventListener('click', () => {
+  if (quizState.index < quizQuestions.length - 1) {
+    quizState.index += 1;
+    saveQuizState();
+    renderQuiz();
+  } else {
+    updateQuizStatus();
+    quizEls.status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+fetch('quiz_questions.json')
+  .then((response) => response.json())
+  .then((questions) => {
+    quizQuestions = questions.slice(0, 50);
+    loadQuizState();
+    renderQuestionList();
+    updateQuizStatus();
+    if (Object.keys(quizState.answers).length) renderQuiz();
+  })
+  .catch(() => {
+    quizEls.status.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
+  });
+
 updateProgress();
