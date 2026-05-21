@@ -1,7 +1,5 @@
 
 const body = document.body;
-const searchInput = document.querySelector('#searchInput');
-const clearSearch = document.querySelector('#clearSearch');
 const sections = [...document.querySelectorAll('.study-section')];
 const tocLinks = [...document.querySelectorAll('.toc-link')];
 const progressBar = document.querySelector('#progressBar');
@@ -45,49 +43,5 @@ addEventListener('scroll', () => {
 }, { passive: true });
 
 topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
-
-function clearMarks(element) {
-  element.querySelectorAll('mark').forEach((mark) => mark.replaceWith(document.createTextNode(mark.textContent)));
-  element.normalize();
-}
-
-function highlight(element, query) {
-  if (!query) return;
-  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
-    acceptNode(node) {
-      if (!node.nodeValue.trim() || node.parentElement.closest('script, style, mark')) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }
-  });
-  const nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-  nodes.forEach((node) => {
-    const value = node.nodeValue;
-    const idx = value.toLowerCase().indexOf(query.toLowerCase());
-    if (idx === -1) return;
-    const range = document.createRange();
-    range.setStart(node, idx);
-    range.setEnd(node, idx + query.length);
-    const mark = document.createElement('mark');
-    range.surroundContents(mark);
-  });
-}
-
-function runSearch() {
-  const query = searchInput.value.trim();
-  sections.forEach((section) => {
-    clearMarks(section);
-    const hit = !query || section.textContent.toLowerCase().includes(query.toLowerCase());
-    section.classList.toggle('hidden', !hit);
-    if (hit) highlight(section, query);
-  });
-}
-
-searchInput.addEventListener('input', runSearch);
-clearSearch.addEventListener('click', () => {
-  searchInput.value = '';
-  runSearch();
-  searchInput.focus();
-});
 
 updateProgress();

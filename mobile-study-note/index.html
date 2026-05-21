@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>無人航空機 教則スマホ学習ノート</title>
-  <meta name="description" content="無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。キーワード検索、目次ジャンプ、ダークモードに対応しています。">
+  <meta name="description" content="無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。本文学習とクイズ演習を切り替えながら学べます。">
   <meta name="theme-color" content="#0c7a66">
   <link rel="canonical" href="https://unskillful-latina-subduingly.ngrok-free.dev/index.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Drone Study">
   <meta property="og:title" content="二等学科試験のためのスマホ学習ノート">
-  <meta property="og:description" content="無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。キーワード検索、目次ジャンプ、ダークモードに対応しています。">
+  <meta property="og:description" content="無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。本文学習とクイズ演習を切り替えながら学べます。">
   <meta property="og:url" content="https://unskillful-latina-subduingly.ngrok-free.dev/index.html">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="二等学科試験のためのスマホ学習ノート">
-  <meta name="twitter:description" content="無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。キーワード検索、目次ジャンプ、ダークモードに対応しています。">
+  <meta name="twitter:description" content="無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。本文学習とクイズ演習を切り替えながら学べます。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,36 +27,35 @@
     </nav>
     <div class="hero-inner" id="top">
       <p class="source">令和7年2月1日 第4版 / 無人航空機の飛行の安全に関する教則</p>
-      <h1>二等学科試験のための<br>スマホ学習ノート</h1>
-      <p class="lead">PDF教則の章立てと本文量を保ちながら、移動中でも読めるWeb記事形式に整えました。検索、目次ジャンプ、読了位置の保存に対応しています。</p>
-      <div class="hero-actions">
-        <a class="primary" href="#section-2">学習を始める</a>
-        <a class="secondary" href="quiz.html">クイズを解く</a>
-        <a class="secondary" href="#toc">目次を見る</a>
+      <h1>二等学科試験<br>スマホ学習ノート</h1>
+      <div class="mode-switch" aria-label="学習モード切り替え">
+        <a class="mode-card active" href="#toc">
+          <span>本文で学ぶ</span>
+          <strong>教則ノート</strong>
+        </a>
+        <a class="mode-card" href="quiz.html">
+          <span>クイズで確認</span>
+          <strong>150問演習</strong>
+        </a>
       </div>
+      <p class="lead">PDF教則をスマホで読みやすいWeb記事形式に整えました。本文で理解して、別ページのクイズで確認できます。</p>
       <div class="stats" aria-label="教材の概要">
         <span><strong>25</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
-        <span><strong>別ページ</strong> クイズ</span>
+        <span><strong>150</strong> 問クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>
   </header>
 
   <main>
-    <details class="study-panel" id="toc" open>
-      <summary>
-        <span>目次・キーワード検索</span>
-        <span class="summary-icon" aria-hidden="true">▽</span>
-      </summary>
-      <div class="panel-body">
-        <label class="search-label" for="searchInput">キーワード検索</label>
-        <div class="search-box">
-          <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
-          <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
-        </div>
-        <div class="toc-links" aria-label="目次">
-          <a class="toc-link toc-level-2" href="#section-1" data-target="section-1">1. はじめに</a>
+    <section class="toc-section" id="toc" aria-label="目次">
+      <div class="toc-heading">
+        <span>目次</span>
+        <p>読みたい章を選んで本文へ移動できます。</p>
+      </div>
+      <div class="toc-links" aria-label="目次">
+        <a class="toc-link toc-level-2" href="#section-1" data-target="section-1">1. はじめに</a>
 <a class="toc-link toc-level-2" href="#section-2" data-target="section-2">2. 無人航空機操縦者の心得</a>
 <a class="toc-link toc-level-2" href="#section-2-1" data-target="section-2-1">2.1 操縦者の役割と責任</a>
 <a class="toc-link toc-level-2" href="#section-2-2" data-target="section-2-2">2.2 安全な飛行の確保</a>
@@ -81,10 +80,9 @@
 <a class="toc-link toc-level-2" href="#section-6-2" data-target="section-6-2">6.2 気象の基礎知識及び気象情報を基にしたリスク評価及び運航の計画の立案</a>
 <a class="toc-link toc-level-2" href="#section-6-3" data-target="section-6-3">6.3 機体の種類に応じた運航リスクの評価及び最適な運航の計画の立案</a>
 <a class="toc-link toc-level-2" href="#section-6-4" data-target="section-6-4">6.4 飛行の方法に応じた運航リスクの評価及び最適な運航の計画の立案</a>
-        </div>
-        <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
       </div>
-    </details>
+      <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
+    </section>
 
     <section class="article-list" id="articleList" data-sections="[{&quot;id&quot;: &quot;section-1&quot;, &quot;title&quot;: &quot;1. はじめに&quot;}, {&quot;id&quot;: &quot;section-2&quot;, &quot;title&quot;: &quot;2. 無人航空機操縦者の心得&quot;}, {&quot;id&quot;: &quot;section-2-1&quot;, &quot;title&quot;: &quot;2.1 操縦者の役割と責任&quot;}, {&quot;id&quot;: &quot;section-2-2&quot;, &quot;title&quot;: &quot;2.2 安全な飛行の確保&quot;}, {&quot;id&quot;: &quot;section-2-3&quot;, &quot;title&quot;: &quot;2.3 事故が起きた時の対応&quot;}, {&quot;id&quot;: &quot;section-3&quot;, &quot;title&quot;: &quot;3. 無人航空機に関する規則&quot;}, {&quot;id&quot;: &quot;section-3-1&quot;, &quot;title&quot;: &quot;3.1 航空法全般&quot;}, {&quot;id&quot;: &quot;section-3-2&quot;, &quot;title&quot;: &quot;3.2 航空法以外の法令等&quot;}, {&quot;id&quot;: &quot;section-4&quot;, &quot;title&quot;: &quot;4. 無人航空機のシステム&quot;}, {&quot;id&quot;: &quot;section-4-1&quot;, &quot;title&quot;: &quot;4.1 無人航空機の機体の特徴（機体種類別）&quot;}, {&quot;id&quot;: &quot;section-4-2&quot;, &quot;title&quot;: &quot;4.2 無人航空機の機体の特徴（飛行方法別）&quot;}, {&quot;id&quot;: &quot;section-4-3&quot;, &quot;title&quot;: &quot;4.3 飛行原理と飛行性能&quot;}, {&quot;id&quot;: &quot;section-4-4&quot;, &quot;title&quot;: &quot;4.4 機体の構成&quot;}, {&quot;id&quot;: &quot;section-4-5&quot;, &quot;title&quot;: &quot;4.5 機体以外の要素技術&quot;}, {&quot;id&quot;: &quot;section-4-6&quot;, &quot;title&quot;: &quot;4.6 機体の整備・点検・保管・交換・廃棄&quot;}, {&quot;id&quot;: &quot;section-5&quot;, &quot;title&quot;: &quot;5. 無人航空機の操縦者及び運航体制&quot;}, {&quot;id&quot;: &quot;section-5-1&quot;, &quot;title&quot;: &quot;5.1 操縦者の行動規範及び遵守事項&quot;}, {&quot;id&quot;: &quot;section-5-2&quot;, &quot;title&quot;: &quot;5.2 操縦者に求められる操縦知識&quot;}, {&quot;id&quot;: &quot;section-5-3&quot;, &quot;title&quot;: &quot;5.3 操縦者のパフォーマンス&quot;}, {&quot;id&quot;: &quot;section-5-4&quot;, &quot;title&quot;: &quot;5.4 安全な運航のための意思決定体制（CRM 等の理解）&quot;}, {&quot;id&quot;: &quot;section-6&quot;, &quot;title&quot;: &quot;6. 運航上のリスク管理&quot;}, {&quot;id&quot;: &quot;section-6-1&quot;, &quot;title&quot;: &quot;6.1 運航リスクの評価及び最適な運航の計画の立案の基礎&quot;}, {&quot;id&quot;: &quot;section-6-2&quot;, &quot;title&quot;: &quot;6.2 気象の基礎知識及び気象情報を基にしたリスク評価及び運航の計画の立案&quot;}, {&quot;id&quot;: &quot;section-6-3&quot;, &quot;title&quot;: &quot;6.3 機体の種類に応じた運航リスクの評価及び最適な運航の計画の立案&quot;}, {&quot;id&quot;: &quot;section-6-4&quot;, &quot;title&quot;: &quot;6.4 飛行の方法に応じた運航リスクの評価及び最適な運航の計画の立案&quot;}]">
       

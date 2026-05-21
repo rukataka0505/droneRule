@@ -188,7 +188,7 @@ def render_html(sections: list[dict]) -> str:
     browser_title = "無人航空機 教則スマホ学習ノート"
     page_description = (
         "無人航空機の飛行の安全に関する教則を、スマホで空き時間に読み進めやすいWeb記事形式に整えた学習ページです。"
-        "キーワード検索、目次ジャンプ、ダークモードに対応しています。"
+        "本文学習とクイズ演習を切り替えながら学べます。"
     )
     page_url = "https://unskillful-latina-subduingly.ngrok-free.dev/index.html"
     nav = "\n".join(
@@ -241,40 +241,38 @@ def render_html(sections: list[dict]) -> str:
     </nav>
     <div class="hero-inner" id="top">
       <p class="source">令和7年2月1日 第4版 / 無人航空機の飛行の安全に関する教則</p>
-      <h1>二等学科試験のための<br>スマホ学習ノート</h1>
-      <p class="lead">PDF教則の章立てと本文量を保ちながら、移動中でも読めるWeb記事形式に整えました。検索、目次ジャンプ、読了位置の保存に対応しています。</p>
-      <div class="hero-actions">
-        <a class="primary" href="#section-2">学習を始める</a>
-        <a class="secondary" href="quiz.html">クイズを解く</a>
-        <a class="secondary" href="#toc">目次を見る</a>
+      <h1>二等学科試験<br>スマホ学習ノート</h1>
+      <div class="mode-switch" aria-label="学習モード切り替え">
+        <a class="mode-card active" href="#toc">
+          <span>本文で学ぶ</span>
+          <strong>教則ノート</strong>
+        </a>
+        <a class="mode-card" href="quiz.html">
+          <span>クイズで確認</span>
+          <strong>150問演習</strong>
+        </a>
       </div>
+      <p class="lead">PDF教則をスマホで読みやすいWeb記事形式に整えました。本文で理解して、別ページのクイズで確認できます。</p>
       <div class="stats" aria-label="教材の概要">
         <span><strong>{len(sections)}</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
-        <span><strong>別ページ</strong> クイズ</span>
+        <span><strong>150</strong> 問クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>
   </header>
 
   <main>
-    <details class="study-panel" id="toc" open>
-      <summary>
-        <span>目次・キーワード検索</span>
-        <span class="summary-icon" aria-hidden="true">▽</span>
-      </summary>
-      <div class="panel-body">
-        <label class="search-label" for="searchInput">キーワード検索</label>
-        <div class="search-box">
-          <input id="searchInput" type="search" placeholder="例: 特定飛行、気象、登録記号">
-          <button id="clearSearch" type="button" aria-label="検索をクリア">×</button>
-        </div>
-        <div class="toc-links" aria-label="目次">
-          {nav}
-        </div>
-        <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
+    <section class="toc-section" id="toc" aria-label="目次">
+      <div class="toc-heading">
+        <span>目次</span>
+        <p>読みたい章を選んで本文へ移動できます。</p>
       </div>
-    </details>
+      <div class="toc-links" aria-label="目次">
+        {nav}
+      </div>
+      <p class="hint">「一等」タグは教則原文の区分表示です。二等対策中でも本文確認用に残しています。</p>
+    </section>
 
     <section class="article-list" id="articleList" data-sections="{section_json}">
       {''.join(articles)}
@@ -346,7 +344,7 @@ body {
 }
 
 .hero {
-  min-height: 92svh;
+  min-height: 72svh;
   display: flex;
   flex-direction: column;
   background:
@@ -369,8 +367,7 @@ body {
   font-size: 15px;
 }
 .icon-button,
-.floating-top,
-.search-box button {
+.floating-top {
   border: 1px solid var(--line);
   background: var(--paper);
   color: var(--text);
@@ -382,8 +379,8 @@ body {
 }
 
 .hero-inner {
-  width: min(920px, 100%);
-  padding: 64px 22px 48px;
+  width: min(980px, 100%);
+  padding: 42px 22px 34px;
   margin: auto;
 }
 .source {
@@ -393,7 +390,7 @@ body {
   margin: 0 0 14px;
 }
 h1 {
-  font-size: clamp(34px, 10vw, 72px);
+  font-size: clamp(34px, 9vw, 72px);
   line-height: 1.08;
   margin: 0;
   letter-spacing: 0;
@@ -401,44 +398,49 @@ h1 {
 .lead {
   max-width: 700px;
   color: var(--muted);
-  font-size: 17px;
-  margin: 22px 0 0;
+  font-size: 16px;
+  margin: 20px 0 0;
 }
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+.mode-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 24px;
+  max-width: 680px;
 }
-.primary,
-.secondary,
-.tool-row button {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
+.mode-card {
+  min-height: 82px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  border-radius: var(--radius);
-  padding: 10px 16px;
-  text-decoration: none;
-  font-weight: 800;
+  gap: 4px;
   border: 1px solid var(--line);
-  cursor: pointer;
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--text);
+  text-decoration: none;
+  padding: 16px;
+  box-shadow: var(--shadow);
 }
-.primary {
+.mode-card.active {
   background: var(--accent);
   color: white;
   border-color: var(--accent);
 }
-.secondary,
-.tool-row button {
-  background: var(--paper);
-  color: var(--text);
+.mode-card span {
+  font-size: 13px;
+  font-weight: 800;
+  opacity: .78;
+}
+.mode-card strong {
+  font-size: clamp(20px, 5vw, 30px);
+  line-height: 1.12;
 }
 .stats {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 24px;
 }
 .stats span {
   background: var(--paper);
@@ -456,7 +458,7 @@ main {
   padding: 18px 16px 72px;
 }
 
-.study-panel,
+.toc-section,
 .study-section {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -464,63 +466,27 @@ main {
   box-shadow: var(--shadow);
 }
 
-.study-panel {
-  position: sticky;
-  top: 8px;
-  z-index: 20;
-  margin-bottom: 16px;
-  overflow: hidden;
+.toc-section {
+  padding: 22px 18px;
+  margin-bottom: 18px;
 }
-.study-panel summary {
+.toc-heading {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 10px;
-  min-height: 48px;
-  padding: 12px 14px;
-  cursor: pointer;
-  list-style: none;
-  user-select: none;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.toc-heading span {
   font-weight: 800;
-  font-size: 14px;
+  font-size: clamp(22px, 6vw, 32px);
+  line-height: 1.2;
 }
-.study-panel summary::-webkit-details-marker {
-  display: none;
-}
-.summary-icon {
-  color: var(--accent-strong);
-  font-size: 15px;
-  line-height: 1;
-  transition: transform .18s ease;
-}
-.study-panel[open] .summary-icon {
-  transform: rotate(180deg);
-}
-.panel-body {
-  padding: 0 14px 14px;
-  border-top: 1px solid var(--line);
-}
-.search-label {
-  display: block;
-  font-weight: 800;
-  font-size: 14px;
-  margin-top: 12px;
-}
-.search-box {
-  display: grid;
-  grid-template-columns: 1fr 42px;
-  gap: 8px;
-  margin-top: 8px;
-}
-input[type="search"] {
-  min-width: 0;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  color: var(--text);
-  border-radius: var(--radius);
-  padding: 11px 12px;
-  font: inherit;
-  line-height: 1.3;
+.toc-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
 }
 .hint {
   color: var(--muted);
@@ -531,11 +497,8 @@ input[type="search"] {
 
 .toc-links {
   display: grid;
-  gap: 4px;
-  margin-top: 12px;
-  max-height: min(54svh, 520px);
-  overflow: auto;
-  padding-right: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 6px;
 }
 .toc-link {
   display: block;
@@ -557,146 +520,10 @@ input[type="search"] {
   display: grid;
   gap: 18px;
 }
-.quiz-section,
 .study-section {
   padding: 22px 18px;
   scroll-margin-top: 150px;
 }
-.quiz-section {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.quiz-lead {
-  color: var(--muted);
-}
-.quiz-shell {
-  display: grid;
-  gap: 14px;
-}
-.quiz-toolbar,
-.quiz-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.quiz-toolbar button,
-.quiz-nav button,
-.choice-button {
-  min-height: 44px;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  padding: 10px 14px;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-}
-.quiz-status {
-  color: var(--muted);
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-.quiz-card {
-  display: grid;
-  gap: 14px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 14px;
-}
-.quiz-meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 800;
-}
-#quizQuestion {
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.55;
-  letter-spacing: 0;
-}
-.quiz-choices {
-  display: grid;
-  gap: 8px;
-}
-.choice-button {
-  width: 100%;
-  text-align: left;
-  background: var(--paper);
-  color: var(--text);
-  font-weight: 700;
-  line-height: 1.6;
-}
-.choice-button.selected {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-.choice-button.correct {
-  border-color: #168255;
-  background: rgba(22, 130, 85, 0.15);
-}
-.choice-button.wrong {
-  border-color: #b94a48;
-  background: rgba(185, 74, 72, 0.14);
-}
-.quiz-feedback {
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--paper);
-  padding: 12px;
-  font-size: 14px;
-  line-height: 1.7;
-}
-.question-list-panel {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--paper);
-  overflow: hidden;
-}
-.question-list-panel summary {
-  min-height: 44px;
-  padding: 10px 12px;
-  cursor: pointer;
-  font-weight: 800;
-  list-style: none;
-}
-.question-list-panel summary::-webkit-details-marker {
-  display: none;
-}
-.question-list {
-  display: grid;
-  gap: 6px;
-  max-height: 420px;
-  overflow: auto;
-  border-top: 1px solid var(--line);
-  padding: 10px;
-}
-.question-list button {
-  text-align: left;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--bg);
-  color: var(--text);
-  padding: 9px 10px;
-  font: inherit;
-  font-size: 13px;
-  line-height: 1.5;
-  cursor: pointer;
-}
-.question-list button.answered {
-  border-color: var(--accent);
-}
-.study-section.hidden { display: none; }
 .section-kicker {
   color: var(--accent-strong);
   font-size: 12px;
@@ -755,11 +582,6 @@ li {
   background: rgba(255, 184, 77, 0.18);
   border: 1px solid rgba(169, 80, 0, 0.35);
 }
-mark {
-  background: #fff176;
-  color: #111;
-  padding: 0 2px;
-}
 .floating-top {
   position: fixed;
   right: 16px;
@@ -775,35 +597,19 @@ mark {
 
 @media (min-width: 860px) {
   main {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 18px;
-    align-items: start;
-  }
-  .study-panel {
-    grid-column: 1;
-  }
-  .article-list {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
-  .study-panel {
-    max-height: calc(100svh - 196px);
-  }
-  .study-panel .toc-links {
-    max-height: calc(100svh - 360px);
+    width: min(940px, 100%);
   }
 }
 
 @media (max-width: 520px) {
   .hero {
-    min-height: 88svh;
+    min-height: 72svh;
   }
   .topbar {
     padding-inline: 14px;
   }
   .hero-inner {
-    padding: 42px 18px 34px;
+    padding: 28px 18px 30px;
   }
   .lead {
     font-size: 15px;
@@ -811,8 +617,18 @@ mark {
   main {
     padding-inline: 10px;
   }
+  .mode-switch {
+    grid-template-columns: 1fr;
+  }
+  .toc-heading {
+    display: block;
+  }
+  .toc-heading p {
+    margin-top: 6px;
+    text-align: left;
+  }
   .study-section,
-  .study-panel {
+  .toc-section {
     border-radius: 8px;
   }
   .study-section {
@@ -824,8 +640,6 @@ mark {
 
 JS = r"""
 const body = document.body;
-const searchInput = document.querySelector('#searchInput');
-const clearSearch = document.querySelector('#clearSearch');
 const sections = [...document.querySelectorAll('.study-section')];
 const tocLinks = [...document.querySelectorAll('.toc-link')];
 const progressBar = document.querySelector('#progressBar');
@@ -869,50 +683,6 @@ addEventListener('scroll', () => {
 }, { passive: true });
 
 topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
-
-function clearMarks(element) {
-  element.querySelectorAll('mark').forEach((mark) => mark.replaceWith(document.createTextNode(mark.textContent)));
-  element.normalize();
-}
-
-function highlight(element, query) {
-  if (!query) return;
-  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
-    acceptNode(node) {
-      if (!node.nodeValue.trim() || node.parentElement.closest('script, style, mark')) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }
-  });
-  const nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-  nodes.forEach((node) => {
-    const value = node.nodeValue;
-    const idx = value.toLowerCase().indexOf(query.toLowerCase());
-    if (idx === -1) return;
-    const range = document.createRange();
-    range.setStart(node, idx);
-    range.setEnd(node, idx + query.length);
-    const mark = document.createElement('mark');
-    range.surroundContents(mark);
-  });
-}
-
-function runSearch() {
-  const query = searchInput.value.trim();
-  sections.forEach((section) => {
-    clearMarks(section);
-    const hit = !query || section.textContent.toLowerCase().includes(query.toLowerCase());
-    section.classList.toggle('hidden', !hit);
-    if (hit) highlight(section, query);
-  });
-}
-
-searchInput.addEventListener('input', runSearch);
-clearSearch.addEventListener('click', () => {
-  searchInput.value = '';
-  runSearch();
-  searchInput.focus();
-});
 
 updateProgress();
 """
