@@ -245,13 +245,13 @@ def render_html(sections: list[dict]) -> str:
       <p class="lead">PDF教則の章立てと本文量を保ちながら、移動中でも読めるWeb記事形式に整えました。検索、目次ジャンプ、読了位置の保存に対応しています。</p>
       <div class="hero-actions">
         <a class="primary" href="#section-2">学習を始める</a>
-        <a class="secondary" href="#quiz">クイズを解く</a>
+        <a class="secondary" href="quiz.html">クイズを解く</a>
         <a class="secondary" href="#toc">目次を見る</a>
       </div>
       <div class="stats" aria-label="教材の概要">
         <span><strong>{len(sections)}</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
-        <span><strong>50</strong> 問クイズ</span>
+        <span><strong>別ページ</strong> クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>
@@ -277,36 +277,6 @@ def render_html(sections: list[dict]) -> str:
     </details>
 
     <section class="article-list" id="articleList" data-sections="{section_json}">
-      <section class="quiz-section" id="quiz" aria-label="実試験形式クイズ">
-        <div class="section-kicker">三肢択一式 / 中断・再開対応</div>
-        <h2>実試験形式クイズ</h2>
-        <p class="quiz-lead">二等学科試験と同じ三肢択一式で練習できます。時間制限はなく、回答状況はこの端末に自動保存されます。</p>
-        <div class="quiz-shell">
-          <div class="quiz-toolbar" aria-label="クイズ操作">
-            <button class="primary quiz-start" id="startQuiz" type="button">50問を開始</button>
-            <button class="secondary" id="resumeQuiz" type="button">保存済みから再開</button>
-            <button class="secondary" id="resetQuiz" type="button">最初から</button>
-          </div>
-          <div class="quiz-status" id="quizStatus">問題データを読み込み中...</div>
-          <div class="quiz-card" id="quizCard" hidden>
-            <div class="quiz-meta">
-              <span id="quizCount">問 1 / 50</span>
-              <span id="quizSource">教則ベース予想</span>
-            </div>
-            <h3 id="quizQuestion"></h3>
-            <div class="quiz-choices" id="quizChoices"></div>
-            <div class="quiz-feedback" id="quizFeedback" hidden></div>
-            <div class="quiz-nav">
-              <button class="secondary" id="prevQuestion" type="button">前へ</button>
-              <button class="primary" id="nextQuestion" type="button">次へ</button>
-            </div>
-          </div>
-          <details class="question-list-panel">
-            <summary>問題リスト <span id="questionListCount"></span></summary>
-            <div class="question-list" id="questionList"></div>
-          </details>
-        </div>
-      </section>
       {''.join(articles)}
     </section>
   </main>
@@ -943,158 +913,6 @@ clearSearch.addEventListener('click', () => {
   runSearch();
   searchInput.focus();
 });
-
-const quizEls = {
-  start: document.querySelector('#startQuiz'),
-  resume: document.querySelector('#resumeQuiz'),
-  reset: document.querySelector('#resetQuiz'),
-  status: document.querySelector('#quizStatus'),
-  card: document.querySelector('#quizCard'),
-  count: document.querySelector('#quizCount'),
-  source: document.querySelector('#quizSource'),
-  question: document.querySelector('#quizQuestion'),
-  choices: document.querySelector('#quizChoices'),
-  feedback: document.querySelector('#quizFeedback'),
-  prev: document.querySelector('#prevQuestion'),
-  next: document.querySelector('#nextQuestion'),
-  list: document.querySelector('#questionList'),
-  listCount: document.querySelector('#questionListCount')
-};
-
-const quizStorageKey = 'drone-study-quiz-state-v1';
-let quizQuestions = [];
-let quizState = { index: 0, answers: {} };
-
-function saveQuizState() {
-  localStorage.setItem(quizStorageKey, JSON.stringify(quizState));
-}
-
-function loadQuizState() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(quizStorageKey) || '{}');
-    quizState = {
-      index: Number.isInteger(saved.index) ? saved.index : 0,
-      answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
-    };
-  } catch {
-    quizState = { index: 0, answers: {} };
-  }
-}
-
-function quizScore() {
-  const answered = Object.keys(quizState.answers).length;
-  const correct = quizQuestions.filter((q) => quizState.answers[q.id] === q.answer).length;
-  return { answered, correct, total: quizQuestions.length };
-}
-
-function updateQuizStatus() {
-  if (!quizQuestions.length) return;
-  const { answered, correct, total } = quizScore();
-  quizEls.status.textContent = `保存済み: ${answered}/${total}問回答、正解 ${correct}問。ページを閉じてもこの端末で再開できます。`;
-}
-
-function renderQuestionList() {
-  quizEls.list.innerHTML = '';
-  quizEls.listCount.textContent = `(${quizQuestions.length}問)`;
-  quizQuestions.forEach((q, index) => {
-    const button = document.createElement('button');
-    const answered = quizState.answers[q.id] !== undefined;
-    button.className = answered ? 'answered' : '';
-    button.type = 'button';
-    button.textContent = `${index + 1}. ${q.category} / ${q.question}`;
-    button.addEventListener('click', () => {
-      quizState.index = index;
-      saveQuizState();
-      renderQuiz();
-      document.querySelector('#quiz')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    quizEls.list.appendChild(button);
-  });
-}
-
-function renderQuiz() {
-  if (!quizQuestions.length) return;
-  quizState.index = Math.min(Math.max(quizState.index, 0), quizQuestions.length - 1);
-  const q = quizQuestions[quizState.index];
-  const selected = quizState.answers[q.id];
-
-  quizEls.card.hidden = false;
-  quizEls.count.textContent = `問 ${quizState.index + 1} / ${quizQuestions.length}`;
-  quizEls.source.textContent = `${q.source} / ${q.section}`;
-  quizEls.question.textContent = q.question;
-  quizEls.choices.innerHTML = '';
-  quizEls.feedback.hidden = selected === undefined;
-  quizEls.feedback.innerHTML = selected === undefined
-    ? ''
-    : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong><br>${q.explanation}<br><span class="term">${q.reference}</span>`;
-
-  q.choices.forEach((choice, choiceIndex) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'choice-button';
-    if (selected !== undefined) {
-      if (choiceIndex === q.answer) button.classList.add('correct');
-      if (choiceIndex === selected && selected !== q.answer) button.classList.add('wrong');
-      if (choiceIndex === selected) button.classList.add('selected');
-    }
-    button.textContent = `${String.fromCharCode(97 + choiceIndex)}. ${choice}`;
-    button.addEventListener('click', () => {
-      quizState.answers[q.id] = choiceIndex;
-      saveQuizState();
-      renderQuiz();
-      renderQuestionList();
-      updateQuizStatus();
-    });
-    quizEls.choices.appendChild(button);
-  });
-
-  quizEls.prev.disabled = quizState.index === 0;
-  quizEls.next.textContent = quizState.index === quizQuestions.length - 1 ? '結果を見る' : '次へ';
-  updateQuizStatus();
-}
-
-function startQuiz(reset = false) {
-  if (reset) {
-    quizState = { index: 0, answers: {} };
-    saveQuizState();
-  } else {
-    loadQuizState();
-  }
-  renderQuiz();
-  renderQuestionList();
-}
-
-quizEls.start.addEventListener('click', () => startQuiz(false));
-quizEls.resume.addEventListener('click', () => startQuiz(false));
-quizEls.reset.addEventListener('click', () => startQuiz(true));
-quizEls.prev.addEventListener('click', () => {
-  quizState.index -= 1;
-  saveQuizState();
-  renderQuiz();
-});
-quizEls.next.addEventListener('click', () => {
-  if (quizState.index < quizQuestions.length - 1) {
-    quizState.index += 1;
-    saveQuizState();
-    renderQuiz();
-  } else {
-    updateQuizStatus();
-    quizEls.status.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-});
-
-fetch('quiz_questions.json')
-  .then((response) => response.json())
-  .then((questions) => {
-    quizQuestions = questions.slice(0, 50);
-    loadQuizState();
-    renderQuestionList();
-    updateQuizStatus();
-    if (Object.keys(quizState.answers).length) renderQuiz();
-  })
-  .catch(() => {
-    quizEls.status.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
-  });
 
 updateProgress();
 """

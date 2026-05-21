@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二等学科試験 クイズ演習</title>
+  <meta name="description" content="二等無人航空機操縦士の学科試験対策として、公式サンプル50問と分野別サンプル100問を切り替えて解けるクイズページです。">
+  <meta name="theme-color" content="#123f36">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <header class="quiz-hero">
+    <nav class="quiz-nav-top">
+      <a href="index.html">教則ノート</a>
+      <button id="themeToggle" type="button" aria-label="表示テーマを切り替え">◐</button>
+    </nav>
+    <div class="hero-copy">
+      <p>三肢択一式 / 中断・再開対応</p>
+      <h1>二等学科試験<br>クイズ演習</h1>
+      <span>公式サンプルと追加サンプルを分けて選択できます。回答するたびに正誤と短い解説を表示します。</span>
+    </div>
+  </header>
+
+  <main class="quiz-app">
+    <section class="control-panel" aria-label="問題セット選択">
+      <div class="panel-title">
+        <h2>問題セット</h2>
+        <p id="bankSummary">読み込み中...</p>
+      </div>
+      <div class="bank-tabs" role="tablist" aria-label="問題セット">
+        <button class="active" type="button" data-bank="official">公式サンプル50問</button>
+        <button type="button" data-bank="sample">分野別サンプル100問</button>
+      </div>
+      <label class="field-label" for="categoryFilter">分野</label>
+      <select id="categoryFilter"></select>
+      <div class="control-actions">
+        <button class="primary" id="startButton" type="button">開始 / 続きから</button>
+        <button class="secondary" id="resetButton" type="button">このセットをリセット</button>
+      </div>
+    </section>
+
+    <section class="question-panel" aria-label="クイズ">
+      <div class="progress-strip">
+        <span id="questionCounter">問 - / -</span>
+        <span id="scoreCounter">0問回答</span>
+      </div>
+      <div class="meter"><span id="answerMeter"></span></div>
+      <article class="question-card" id="questionCard">
+        <div class="question-meta">
+          <span id="questionCategory">分野</span>
+          <span id="questionSource">出典</span>
+        </div>
+        <h2 id="questionText">問題セットを選んで開始してください。</h2>
+        <div class="choices" id="choices"></div>
+        <div class="feedback" id="feedback" hidden></div>
+        <div class="question-actions">
+          <button class="secondary" id="prevButton" type="button">前へ</button>
+          <button class="primary" id="nextButton" type="button">次へ</button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="list-panel" aria-label="問題リスト">
+      <div class="panel-title compact">
+        <h2>問題リスト</h2>
+        <p id="listSummary">未回答を確認できます。</p>
+      </div>
+      <div class="question-list" id="questionList"></div>
+    </aside>
+  </main>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
