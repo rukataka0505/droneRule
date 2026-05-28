@@ -256,7 +256,7 @@ def render_html(sections: list[dict]) -> str:
       <div class="stats" aria-label="教材の概要">
         <span><strong>{len(sections)}</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
-        <span><strong>982</strong> 問クイズ</span>
+        <span><strong>1035</strong> 問クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>
