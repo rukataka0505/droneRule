@@ -313,6 +313,10 @@ select {
   display: inline-block;
   margin-bottom: 3px;
 }
+.explanation-text {
+  margin: 5px 0 9px;
+  line-height: 1.8;
+}
 .quote-label {
   display: block;
   margin: 4px 0;
@@ -325,6 +329,10 @@ select {
   border-left: 3px solid var(--accent);
   padding: 0 0 0 10px;
   color: var(--ink);
+}
+.feedback .context-text {
+  border-left-color: var(--line-strong);
+  white-space: pre-wrap;
 }
 .question-actions {
   display: grid;

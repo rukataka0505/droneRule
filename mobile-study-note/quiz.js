@@ -234,11 +234,15 @@ function render() {
   questionText.textContent = q.question;
   choicesEl.innerHTML = '';
   feedback.hidden = selected === undefined;
+  const explanationText = (q.explanation || '').replace(/^教則該当箇所:\s*/, '');
+  const quoteText = q.quote || '';
+  const contextText = q.context || '';
   feedback.innerHTML = selected === undefined
     ? ''
     : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong>
-       <span class="quote-label">教則の該当箇所</span>
-       <blockquote>${escapeHtml(q.quote || q.explanation || '')}</blockquote>
+       ${explanationText ? `<span class="quote-label">解説</span><p class="explanation-text">${escapeHtml(explanationText)}</p>` : ''}
+       ${quoteText ? `<span class="quote-label">教則の該当箇所</span><blockquote>${escapeHtml(quoteText)}</blockquote>` : ''}
+       ${contextText ? `<span class="quote-label">周辺文脈</span><blockquote class="context-text">${escapeHtml(contextText)}</blockquote>` : ''}
        <small>${escapeHtml(q.reference || q.section || '')}</small>`;
 
   q.choices.forEach((choice, index) => {
