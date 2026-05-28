@@ -249,14 +249,14 @@ def render_html(sections: list[dict]) -> str:
         </a>
         <a class="mode-card" href="quiz.html">
           <span>クイズで確認</span>
-          <strong>150問演習</strong>
+          <strong>872問網羅</strong>
         </a>
       </div>
       <p class="lead">PDF教則をスマホで読みやすいWeb記事形式に整えました。本文で理解して、別ページのクイズで確認できます。</p>
       <div class="stats" aria-label="教材の概要">
         <span><strong>{len(sections)}</strong> セクション</span>
         <span><strong>88</strong> PDFページ</span>
-        <span><strong>150</strong> 問クイズ</span>
+        <span><strong>872</strong> 問クイズ</span>
         <span><strong>一等表記</strong> も保持</span>
       </div>
     </div>

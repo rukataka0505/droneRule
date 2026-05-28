@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>二等学科試験 クイズ演習</title>
-  <meta name="description" content="二等無人航空機操縦士の学科試験対策として、公式サンプル50問と高難度予想100問を切り替えて解けるクイズページです。">
+  <title>教則網羅クイズ演習</title>
+  <meta name="description" content="二等無人航空機操縦士の学科試験対策として、教則の最初から最後までを網羅する引用付きクイズページです。">
   <meta name="theme-color" content="#123f36">
   <link rel="stylesheet" href="quiz.css">
 </head>
@@ -15,28 +15,33 @@
       <button id="themeToggle" type="button" aria-label="表示テーマを切り替え">◐</button>
     </nav>
     <div class="hero-copy">
-      <p>三肢択一式 / 中断・再開対応</p>
-      <h1>二等学科試験<br>クイズ演習</h1>
-      <span>公式サンプルと高難度予想問題を分けて選択できます。回答するたびに正誤と短い解説を表示します。</span>
+      <p>三肢択一式 / 教則順 / ランダム10問</p>
+      <h1>教則網羅<br>クイズ演習</h1>
+      <span>教則の最初から最後までを順番に確認できます。分野を複数選んでランダム10問にも切り替えられます。</span>
     </div>
   </header>
 
   <main class="quiz-app">
-    <section class="control-panel" aria-label="問題セット選択">
+    <section class="control-panel" aria-label="出題設定">
       <div class="panel-title">
-        <h2>問題セット</h2>
+        <h2>出題設定</h2>
         <p id="bankSummary">読み込み中...</p>
       </div>
-      <div class="bank-tabs" role="tablist" aria-label="問題セット">
-        <button class="active" type="button" data-bank="official">公式サンプル50問</button>
-        <button type="button" data-bank="sample">高難度10問×10セット</button>
+      <div class="mode-actions">
+        <button class="primary" id="orderedButton" type="button">選択分野を教則順で学ぶ</button>
+        <button class="secondary" id="randomButton" type="button">選択分野からランダム10問</button>
       </div>
-      <label class="field-label" for="categoryFilter">10問グループ</label>
-      <select id="categoryFilter"></select>
       <div class="control-actions">
-        <button class="primary" id="startButton" type="button">開始 / 続きから</button>
         <button class="secondary" id="resetButton" type="button">このセットをリセット</button>
       </div>
+      <div class="category-head">
+        <span>分野を選択</span>
+        <div>
+          <button class="mini-button" id="selectAllButton" type="button">全選択</button>
+          <button class="mini-button" id="clearCategoriesButton" type="button">解除</button>
+        </div>
+      </div>
+      <div class="category-options" id="categoryOptions"></div>
     </section>
 
     <section class="question-panel" aria-label="クイズ">

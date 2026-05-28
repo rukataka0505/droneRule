@@ -128,16 +128,17 @@ body {
   margin-bottom: 10px;
 }
 
-.bank-tabs {
+.mode-actions {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
   margin-top: 14px;
 }
-.bank-tabs button,
+.mode-actions button,
 .control-actions button,
 .question-actions button,
-.choice-button {
+.choice-button,
+.mini-button {
   min-height: 44px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
@@ -147,16 +148,12 @@ body {
   font-weight: 800;
   cursor: pointer;
 }
-.bank-tabs button,
+.mode-actions button,
 .secondary,
-.choice-button {
+.choice-button,
+.mini-button {
   background: var(--panel);
   color: var(--ink);
-}
-.bank-tabs button.active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent-ink);
 }
 .primary {
   background: var(--accent);
@@ -185,6 +182,49 @@ select {
   grid-template-columns: 1fr;
   gap: 8px;
   margin-top: 14px;
+}
+.category-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 800;
+}
+.category-head div {
+  display: flex;
+  gap: 6px;
+}
+.mini-button {
+  min-height: 34px;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+.category-options {
+  display: grid;
+  gap: 7px;
+  max-height: 36svh;
+  overflow: auto;
+  margin-top: 8px;
+  padding-right: 2px;
+}
+.category-check {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+.category-check input {
+  margin-top: 3px;
+  accent-color: var(--accent);
 }
 .question-panel {
   overflow: hidden;
@@ -261,6 +301,19 @@ select {
 .feedback strong {
   display: inline-block;
   margin-bottom: 3px;
+}
+.quote-label {
+  display: block;
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+.feedback blockquote {
+  margin: 6px 0 8px;
+  border-left: 3px solid var(--accent);
+  padding: 0 0 0 10px;
+  color: var(--ink);
 }
 .question-actions {
   display: grid;

@@ -1,10 +1,12 @@
 const body = document.body;
 const themeToggle = document.querySelector('#themeToggle');
-const bankButtons = [...document.querySelectorAll('[data-bank]')];
-const categoryFilter = document.querySelector('#categoryFilter');
+const categoryOptions = document.querySelector('#categoryOptions');
 const bankSummary = document.querySelector('#bankSummary');
-const startButton = document.querySelector('#startButton');
+const orderedButton = document.querySelector('#orderedButton');
+const randomButton = document.querySelector('#randomButton');
 const resetButton = document.querySelector('#resetButton');
+const selectAllButton = document.querySelector('#selectAllButton');
+const clearCategoriesButton = document.querySelector('#clearCategoriesButton');
 const questionCounter = document.querySelector('#questionCounter');
 const scoreCounter = document.querySelector('#scoreCounter');
 const answerMeter = document.querySelector('#answerMeter');
@@ -18,23 +20,19 @@ const nextButton = document.querySelector('#nextButton');
 const questionList = document.querySelector('#questionList');
 const listSummary = document.querySelector('#listSummary');
 
-const banks = {
-  official: {
-    label: '公式サンプル50問',
-    url: 'quiz_questions.json',
-    storage: 'drone-quiz-official-v2'
-  },
-  sample: {
-    label: '高難度10問×10セット',
-    url: 'sample_questions_100.json',
-    storage: 'drone-quiz-hard-v1'
-  }
-};
+const dataUrl = 'manual_quiz_questions.json';
+const storageKey = 'drone-quiz-manual-v1';
 
-let activeBank = 'official';
 let allQuestions = [];
+let questionById = new Map();
 let questions = [];
-let state = { index: 0, answers: {}, category: 'all' };
+let state = {
+  index: 0,
+  answers: {},
+  selectedCategories: [],
+  sessionIds: [],
+  mode: 'ordered'
+};
 
 if (localStorage.getItem('drone-study-theme') === 'dark') body.classList.add('dark');
 
@@ -42,27 +40,6 @@ themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');
   localStorage.setItem('drone-study-theme', body.classList.contains('dark') ? 'dark' : 'light');
 });
-
-function storageKey() {
-  return banks[activeBank].storage;
-}
-
-function loadState() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey()) || '{}');
-    state = {
-      index: Number.isInteger(saved.index) ? saved.index : 0,
-      answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {},
-      category: saved.category || 'all'
-    };
-  } catch {
-    state = { index: 0, answers: {}, category: 'all' };
-  }
-}
-
-function saveState() {
-  localStorage.setItem(storageKey(), JSON.stringify(state));
-}
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (char) => ({
@@ -74,16 +51,104 @@ function escapeHtml(value) {
   })[char]);
 }
 
-function shuffleChoices(question) {
-  if (!question.answerMap) {
-    question.answerMap = question.choices.map((_, index) => index);
-  }
-  return question;
+function categories() {
+  return [...new Set(allQuestions.map((q) => q.category))];
 }
 
-function filteredQuestions() {
-  if (state.category === 'all') return allQuestions;
-  return allQuestions.filter((q) => q.category === state.category);
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    state = {
+      index: Number.isInteger(saved.index) ? saved.index : 0,
+      answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {},
+      selectedCategories: Array.isArray(saved.selectedCategories) ? saved.selectedCategories : [],
+      sessionIds: Array.isArray(saved.sessionIds) ? saved.sessionIds : [],
+      mode: saved.mode === 'random' ? 'random' : 'ordered'
+    };
+  } catch {
+    state = { index: 0, answers: {}, selectedCategories: [], sessionIds: [], mode: 'ordered' };
+  }
+  if (!state.selectedCategories.length) state.selectedCategories = categories();
+}
+
+function saveState() {
+  localStorage.setItem(storageKey, JSON.stringify(state));
+}
+
+function selectedSet() {
+  return new Set(state.selectedCategories);
+}
+
+function selectedPool() {
+  const selected = selectedSet();
+  return allQuestions.filter((q) => selected.has(q.category));
+}
+
+function shuffle(values) {
+  const copy = [...values];
+  for (let index = copy.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(Math.random() * (index + 1));
+    [copy[index], copy[target]] = [copy[target], copy[index]];
+  }
+  return copy;
+}
+
+function renderCategories() {
+  const selected = selectedSet();
+  categoryOptions.innerHTML = '';
+  const counts = allQuestions.reduce((acc, q) => {
+    acc[q.category] = (acc[q.category] || 0) + 1;
+    return acc;
+  }, {});
+
+  categories().forEach((category) => {
+    const label = document.createElement('label');
+    label.className = 'category-check';
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.value = category;
+    input.checked = selected.has(category);
+    input.addEventListener('change', () => {
+      const next = selectedSet();
+      if (input.checked) next.add(category);
+      else next.delete(category);
+      state.selectedCategories = [...next];
+      saveState();
+      renderControls();
+    });
+    const text = document.createElement('span');
+    text.textContent = `${category} (${counts[category]}問)`;
+    label.append(input, text);
+    categoryOptions.appendChild(label);
+  });
+}
+
+function applyOrderedMode() {
+  const pool = selectedPool();
+  state.mode = 'ordered';
+  state.sessionIds = pool.map((q) => q.id);
+  state.index = 0;
+  state.answers = {};
+  saveState();
+  setQuestions();
+  render();
+}
+
+function applyRandomMode() {
+  const pool = selectedPool();
+  state.mode = 'random';
+  state.sessionIds = shuffle(pool).slice(0, 10).map((q) => q.id);
+  state.index = 0;
+  state.answers = {};
+  saveState();
+  setQuestions();
+  render();
+}
+
+function setQuestions() {
+  const ids = state.sessionIds.length ? state.sessionIds : selectedPool().map((q) => q.id);
+  questions = ids.map((id) => questionById.get(id)).filter(Boolean);
+  state.index = Math.min(Math.max(state.index, 0), Math.max(questions.length - 1, 0));
 }
 
 function score() {
@@ -93,26 +158,12 @@ function score() {
   return { answered, correct, total: questions.length };
 }
 
-function populateCategories() {
-  const categories = [...new Set(allQuestions.map((q) => q.category))];
-  categoryFilter.innerHTML = '';
-  const all = document.createElement('option');
-  all.value = 'all';
-  all.textContent = activeBank === 'sample' ? 'すべてのセット' : 'すべて';
-  categoryFilter.appendChild(all);
-  categories.forEach((category) => {
-    const option = document.createElement('option');
-    option.value = category;
-    option.textContent = category;
-    categoryFilter.appendChild(option);
-  });
-  if (!categories.includes(state.category)) state.category = 'all';
-  categoryFilter.value = state.category;
-}
-
-function setQuestions() {
-  questions = filteredQuestions().map(shuffleChoices);
-  state.index = Math.min(Math.max(state.index, 0), Math.max(questions.length - 1, 0));
+function renderControls() {
+  const selectedCount = state.selectedCategories.length;
+  const poolCount = selectedPool().length;
+  randomButton.disabled = poolCount === 0;
+  orderedButton.disabled = poolCount === 0;
+  bankSummary.textContent = `教則網羅クイズ: 全${allQuestions.length}問 / 選択${selectedCount}分野・${poolCount}問`;
 }
 
 function renderList() {
@@ -120,6 +171,7 @@ function renderList() {
   const { answered, correct, total } = score();
   listSummary.textContent = `${answered}/${total}問回答、正解${correct}問`;
 
+  const fragment = document.createDocumentFragment();
   questions.forEach((q, index) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -127,25 +179,26 @@ function renderList() {
       index === state.index ? 'current' : '',
       state.answers[q.id] !== undefined ? 'answered' : ''
     ].filter(Boolean).join(' ');
-    button.textContent = `${index + 1}. ${q.category} / ${q.question}`;
+    button.textContent = `${index + 1}. ${q.category} / ${q.question.replace(/\s+/g, ' ')}`;
     button.addEventListener('click', () => {
       state.index = index;
       saveState();
       render();
     });
-    questionList.appendChild(button);
+    fragment.appendChild(button);
   });
+  questionList.appendChild(fragment);
 }
 
 function render() {
+  renderControls();
   if (!questions.length) {
-    bankSummary.textContent = `${banks[activeBank].label}: 0問`;
     questionCounter.textContent = '問 - / -';
     scoreCounter.textContent = '0問回答';
     answerMeter.style.width = '0%';
     questionCategory.textContent = '分野';
-    questionSource.textContent = banks[activeBank].label;
-    questionText.textContent = 'この分野には問題がありません。';
+    questionSource.textContent = '教則網羅クイズ';
+    questionText.textContent = '分野を1つ以上選択してください。';
     choicesEl.innerHTML = '';
     feedback.hidden = true;
     renderList();
@@ -156,18 +209,20 @@ function render() {
   const selected = state.answers[q.id];
   const { answered, correct, total } = score();
 
-  bankSummary.textContent = `${banks[activeBank].label}: ${total}問${state.category === 'all' ? '' : ` / ${state.category}`}`;
   questionCounter.textContent = `問 ${state.index + 1} / ${total}`;
-  scoreCounter.textContent = `${answered}問回答 / 正解${correct}問`;
+  scoreCounter.textContent = `${state.mode === 'random' ? 'ランダム10問' : '教則順'} / ${answered}問回答 / 正解${correct}問`;
   answerMeter.style.width = `${total ? (answered / total) * 100 : 0}%`;
   questionCategory.textContent = q.category;
-  questionSource.textContent = q.source || banks[activeBank].label;
+  questionSource.textContent = q.reference || q.source;
   questionText.textContent = q.question;
   choicesEl.innerHTML = '';
   feedback.hidden = selected === undefined;
   feedback.innerHTML = selected === undefined
     ? ''
-    : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong><br>${escapeHtml(q.explanation || '')}<br><small>${escapeHtml(q.reference || q.section || '')}</small>`;
+    : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong>
+       <span class="quote-label">教則の該当箇所</span>
+       <blockquote>${escapeHtml(q.quote || q.explanation || '')}</blockquote>
+       <small>${escapeHtml(q.reference || q.section || '')}</small>`;
 
   q.choices.forEach((choice, index) => {
     const button = document.createElement('button');
@@ -192,33 +247,23 @@ function render() {
   renderList();
 }
 
-async function loadBank(bank) {
-  activeBank = bank;
-  bankButtons.forEach((button) => button.classList.toggle('active', button.dataset.bank === bank));
-  loadState();
-  const response = await fetch(banks[bank].url);
-  allQuestions = await response.json();
-  populateCategories();
-  setQuestions();
+orderedButton.addEventListener('click', applyOrderedMode);
+randomButton.addEventListener('click', applyRandomMode);
+selectAllButton.addEventListener('click', () => {
+  state.selectedCategories = categories();
   saveState();
-  render();
-}
-
-bankButtons.forEach((button) => {
-  button.addEventListener('click', () => loadBank(button.dataset.bank));
+  renderCategories();
+  renderControls();
 });
-
-categoryFilter.addEventListener('change', () => {
-  state.category = categoryFilter.value;
-  state.index = 0;
-  setQuestions();
+clearCategoriesButton.addEventListener('click', () => {
+  state.selectedCategories = [];
   saveState();
-  render();
+  renderCategories();
+  renderControls();
 });
-
-startButton.addEventListener('click', () => render());
 resetButton.addEventListener('click', () => {
-  state = { index: 0, answers: {}, category: categoryFilter.value || 'all' };
+  state.answers = {};
+  state.index = 0;
   saveState();
   render();
 });
@@ -233,6 +278,18 @@ nextButton.addEventListener('click', () => {
   render();
 });
 
-loadBank(activeBank).catch(() => {
-  bankSummary.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
-});
+fetch(dataUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    allQuestions = data.sort((a, b) => a.order - b.order);
+    questionById = new Map(allQuestions.map((q) => [q.id, q]));
+    loadState();
+    if (!state.sessionIds.length) state.sessionIds = selectedPool().map((q) => q.id);
+    setQuestions();
+    renderCategories();
+    saveState();
+    render();
+  })
+  .catch(() => {
+    bankSummary.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
+  });
