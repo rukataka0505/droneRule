@@ -1,5 +1,6 @@
 const body = document.body;
 const themeToggle = document.querySelector('#themeToggle');
+const bankButtons = [...document.querySelectorAll('[data-bank]')];
 const categoryOptions = document.querySelector('#categoryOptions');
 const bankSummary = document.querySelector('#bankSummary');
 const orderedButton = document.querySelector('#orderedButton');
@@ -20,9 +21,21 @@ const nextButton = document.querySelector('#nextButton');
 const questionList = document.querySelector('#questionList');
 const listSummary = document.querySelector('#listSummary');
 
-const dataUrl = 'manual_quiz_questions.json';
-const storageKey = 'drone-quiz-manual-v1';
+const banks = {
+  cloze: {
+    label: '穴埋め網羅クイズ',
+    url: 'manual_quiz_questions.json',
+    storage: 'drone-quiz-manual-v1'
+  },
+  exam: {
+    label: '本試験形式・重要知識網羅',
+    url: 'exam_style_questions.json',
+    storage: 'drone-quiz-exam-style-v1'
+  }
+};
+const activeBankKey = 'drone-quiz-active-bank-v1';
 
+let activeBank = localStorage.getItem(activeBankKey) || 'cloze';
 let allQuestions = [];
 let questionById = new Map();
 let questions = [];
@@ -55,9 +68,13 @@ function categories() {
   return [...new Set(allQuestions.map((q) => q.category))];
 }
 
+function storageKey() {
+  return banks[activeBank].storage;
+}
+
 function loadState() {
   try {
-    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    const saved = JSON.parse(localStorage.getItem(storageKey()) || '{}');
     state = {
       index: Number.isInteger(saved.index) ? saved.index : 0,
       answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {},
@@ -72,7 +89,7 @@ function loadState() {
 }
 
 function saveState() {
-  localStorage.setItem(storageKey, JSON.stringify(state));
+  localStorage.setItem(storageKey(), JSON.stringify(state));
 }
 
 function selectedSet() {
@@ -163,7 +180,7 @@ function renderControls() {
   const poolCount = selectedPool().length;
   randomButton.disabled = poolCount === 0;
   orderedButton.disabled = poolCount === 0;
-  bankSummary.textContent = `教則網羅クイズ: 全${allQuestions.length}問 / 選択${selectedCount}分野・${poolCount}問`;
+  bankSummary.textContent = `${banks[activeBank].label}: 全${allQuestions.length}問 / 選択${selectedCount}分野・${poolCount}問`;
 }
 
 function renderList() {
@@ -197,7 +214,7 @@ function render() {
     scoreCounter.textContent = '0問回答';
     answerMeter.style.width = '0%';
     questionCategory.textContent = '分野';
-    questionSource.textContent = '教則網羅クイズ';
+    questionSource.textContent = banks[activeBank].label;
     questionText.textContent = '分野を1つ以上選択してください。';
     choicesEl.innerHTML = '';
     feedback.hidden = true;
@@ -210,7 +227,7 @@ function render() {
   const { answered, correct, total } = score();
 
   questionCounter.textContent = `問 ${state.index + 1} / ${total}`;
-  scoreCounter.textContent = `${state.mode === 'random' ? 'ランダム10問' : '教則順'} / ${answered}問回答 / 正解${correct}問`;
+  scoreCounter.textContent = `${state.mode === 'random' ? 'ランダム10問' : '選択分野順'} / ${answered}問回答 / 正解${correct}問`;
   answerMeter.style.width = `${total ? (answered / total) * 100 : 0}%`;
   questionCategory.textContent = q.category;
   questionSource.textContent = q.reference || q.source;
@@ -247,6 +264,25 @@ function render() {
   renderList();
 }
 
+async function loadBank(bank) {
+  activeBank = banks[bank] ? bank : 'cloze';
+  localStorage.setItem(activeBankKey, activeBank);
+  bankButtons.forEach((button) => button.classList.toggle('active', button.dataset.bank === activeBank));
+  const response = await fetch(banks[activeBank].url);
+  const data = await response.json();
+  allQuestions = data.sort((a, b) => a.order - b.order);
+  questionById = new Map(allQuestions.map((q) => [q.id, q]));
+  loadState();
+  if (!state.sessionIds.length) state.sessionIds = selectedPool().map((q) => q.id);
+  setQuestions();
+  renderCategories();
+  saveState();
+  render();
+}
+
+bankButtons.forEach((button) => {
+  button.addEventListener('click', () => loadBank(button.dataset.bank));
+});
 orderedButton.addEventListener('click', applyOrderedMode);
 randomButton.addEventListener('click', applyRandomMode);
 selectAllButton.addEventListener('click', () => {
@@ -278,18 +314,6 @@ nextButton.addEventListener('click', () => {
   render();
 });
 
-fetch(dataUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    allQuestions = data.sort((a, b) => a.order - b.order);
-    questionById = new Map(allQuestions.map((q) => [q.id, q]));
-    loadState();
-    if (!state.sessionIds.length) state.sessionIds = selectedPool().map((q) => q.id);
-    setQuestions();
-    renderCategories();
-    saveState();
-    render();
-  })
-  .catch(() => {
-    bankSummary.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
-  });
+loadBank(activeBank).catch(() => {
+  bankSummary.textContent = '問題データを読み込めませんでした。ローカルサーバー経由で開いてください。';
+});

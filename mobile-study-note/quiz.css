@@ -128,12 +128,17 @@ body {
   margin-bottom: 10px;
 }
 
+.bank-tabs,
 .mode-actions {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
   margin-top: 14px;
 }
+.bank-tabs {
+  grid-template-columns: 1fr 1fr;
+}
+.bank-tabs button,
 .mode-actions button,
 .control-actions button,
 .question-actions button,
@@ -148,12 +153,18 @@ body {
   font-weight: 800;
   cursor: pointer;
 }
+.bank-tabs button,
 .mode-actions button,
 .secondary,
 .choice-button,
 .mini-button {
   background: var(--panel);
   color: var(--ink);
+}
+.bank-tabs button.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
 }
 .primary {
   background: var(--accent);
