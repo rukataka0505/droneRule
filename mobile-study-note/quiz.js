@@ -25,9 +25,9 @@ const banks = {
     storage: 'drone-quiz-official-v2'
   },
   sample: {
-    label: '分野別サンプル100問',
+    label: '高難度10問×10セット',
     url: 'sample_questions_100.json',
-    storage: 'drone-quiz-sample-v1'
+    storage: 'drone-quiz-hard-v1'
   }
 };
 
@@ -88,7 +88,7 @@ function populateCategories() {
   categoryFilter.innerHTML = '';
   const all = document.createElement('option');
   all.value = 'all';
-  all.textContent = activeBank === 'sample' ? 'すべての分野' : 'すべて';
+  all.textContent = activeBank === 'sample' ? 'すべてのセット' : 'すべて';
   categoryFilter.appendChild(all);
   categories.forEach((category) => {
     const option = document.createElement('option');
