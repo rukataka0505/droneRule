@@ -17,12 +17,6 @@ const prevButton = document.querySelector('#prevButton');
 const nextButton = document.querySelector('#nextButton');
 const questionList = document.querySelector('#questionList');
 const listSummary = document.querySelector('#listSummary');
-const customImport = document.querySelector('#customImport');
-const customQuestionsInput = document.querySelector('#customQuestionsInput');
-const saveCustomButton = document.querySelector('#saveCustomButton');
-const clearCustomButton = document.querySelector('#clearCustomButton');
-const customImportStatus = document.querySelector('#customImportStatus');
-const customQuestionsKey = 'drone-quiz-custom-questions-v1';
 
 const banks = {
   official: {
@@ -34,11 +28,6 @@ const banks = {
     label: '高難度10問×10セット',
     url: 'sample_questions_100.json',
     storage: 'drone-quiz-hard-v1'
-  },
-  custom: {
-    label: '持ち込み問題',
-    storage: 'drone-quiz-custom-v1',
-    local: true
   }
 };
 
@@ -109,7 +98,7 @@ function populateCategories() {
   categoryFilter.innerHTML = '';
   const all = document.createElement('option');
   all.value = 'all';
-  all.textContent = activeBank === 'sample' || activeBank === 'custom' ? 'すべてのセット' : 'すべて';
+  all.textContent = activeBank === 'sample' ? 'すべてのセット' : 'すべて';
   categoryFilter.appendChild(all);
   categories.forEach((category) => {
     const option = document.createElement('option');
@@ -156,9 +145,7 @@ function render() {
     answerMeter.style.width = '0%';
     questionCategory.textContent = '分野';
     questionSource.textContent = banks[activeBank].label;
-    questionText.textContent = activeBank === 'custom'
-      ? '持ち込み問題を貼り付けて保存してください。'
-      : 'この分野には問題がありません。';
+    questionText.textContent = 'この分野には問題がありません。';
     choicesEl.innerHTML = '';
     feedback.hidden = true;
     renderList();
@@ -205,59 +192,12 @@ function render() {
   renderList();
 }
 
-function normalizeAnswer(answer) {
-  if (Number.isInteger(answer)) return answer;
-  if (typeof answer === 'string') {
-    const trimmed = answer.trim().toLowerCase();
-    if (['a', 'ア', '1'].includes(trimmed)) return 0;
-    if (['b', 'イ', '2'].includes(trimmed)) return 1;
-    if (['c', 'ウ', '3'].includes(trimmed)) return 2;
-    const asNumber = Number(trimmed);
-    if (Number.isInteger(asNumber)) return asNumber;
-  }
-  return -1;
-}
-
-function normalizeCustomQuestions(rows) {
-  if (!Array.isArray(rows)) throw new Error('JSONは配列で貼り付けてください。');
-  return rows.map((row, index) => {
-    const choices = Array.isArray(row.choices) ? row.choices.map(String) : [];
-    const answer = normalizeAnswer(row.answer);
-    if (!row.question || choices.length !== 3 || ![0, 1, 2].includes(answer)) {
-      throw new Error(`${index + 1}問目の形式を確認してください。`);
-    }
-    return {
-      id: row.id ? String(row.id) : `custom-${index + 1}`,
-      bank: '持ち込み問題',
-      source: row.source ? String(row.source) : '持ち込み問題',
-      category: row.category ? String(row.category) : '持ち込みセット',
-      section: row.section ? String(row.section) : '',
-      question: String(row.question),
-      choices,
-      answer,
-      explanation: row.explanation ? String(row.explanation) : '',
-      reference: row.reference ? String(row.reference) : row.section ? String(row.section) : ''
-    };
-  });
-}
-
-function loadCustomQuestions() {
-  const raw = localStorage.getItem(customQuestionsKey) || '[]';
-  customQuestionsInput.value = raw === '[]' ? '' : raw;
-  return normalizeCustomQuestions(JSON.parse(raw));
-}
-
 async function loadBank(bank) {
   activeBank = bank;
   bankButtons.forEach((button) => button.classList.toggle('active', button.dataset.bank === bank));
-  customImport.hidden = bank !== 'custom';
   loadState();
-  if (banks[bank].local) {
-    allQuestions = loadCustomQuestions();
-  } else {
-    const response = await fetch(banks[bank].url);
-    allQuestions = await response.json();
-  }
+  const response = await fetch(banks[bank].url);
+  allQuestions = await response.json();
   populateCategories();
   setQuestions();
   saveState();
@@ -281,22 +221,6 @@ resetButton.addEventListener('click', () => {
   state = { index: 0, answers: {}, category: categoryFilter.value || 'all' };
   saveState();
   render();
-});
-saveCustomButton.addEventListener('click', () => {
-  try {
-    const normalized = normalizeCustomQuestions(JSON.parse(customQuestionsInput.value || '[]'));
-    localStorage.setItem(customQuestionsKey, JSON.stringify(normalized, null, 2));
-    customImportStatus.textContent = `${normalized.length}問を保存しました。`;
-    loadBank('custom');
-  } catch (error) {
-    customImportStatus.textContent = error.message || '読み込みに失敗しました。';
-  }
-});
-clearCustomButton.addEventListener('click', () => {
-  localStorage.removeItem(customQuestionsKey);
-  customQuestionsInput.value = '';
-  customImportStatus.textContent = '持ち込み問題を消去しました。';
-  if (activeBank === 'custom') loadBank('custom');
 });
 prevButton.addEventListener('click', () => {
   state.index = Math.max(0, state.index - 1);

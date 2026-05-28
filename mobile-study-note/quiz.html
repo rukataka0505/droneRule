@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>二等学科試験 クイズ演習</title>
-  <meta name="description" content="二等無人航空機操縦士の学科試験対策として、公式サンプル50問、高難度予想100問、持ち込み問題を切り替えて解けるクイズページです。">
+  <meta name="description" content="二等無人航空機操縦士の学科試験対策として、公式サンプル50問と高難度予想100問を切り替えて解けるクイズページです。">
   <meta name="theme-color" content="#123f36">
   <link rel="stylesheet" href="quiz.css">
 </head>
@@ -17,7 +17,7 @@
     <div class="hero-copy">
       <p>三肢択一式 / 中断・再開対応</p>
       <h1>二等学科試験<br>クイズ演習</h1>
-      <span>公式サンプル、高難度予想問題、持ち込み問題を分けて選択できます。回答するたびに正誤と短い解説を表示します。</span>
+      <span>公式サンプルと高難度予想問題を分けて選択できます。回答するたびに正誤と短い解説を表示します。</span>
     </div>
   </header>
 
@@ -30,16 +30,6 @@
       <div class="bank-tabs" role="tablist" aria-label="問題セット">
         <button class="active" type="button" data-bank="official">公式サンプル50問</button>
         <button type="button" data-bank="sample">高難度10問×10セット</button>
-        <button type="button" data-bank="custom">持ち込み問題</button>
-      </div>
-      <div class="custom-import" id="customImport" hidden>
-        <label class="field-label" for="customQuestionsInput">JSON貼り付け</label>
-        <textarea id="customQuestionsInput" rows="7" spellcheck="false"></textarea>
-        <div class="control-actions">
-          <button class="primary" id="saveCustomButton" type="button">保存して読み込む</button>
-          <button class="secondary" id="clearCustomButton" type="button">持ち込み問題を消去</button>
-        </div>
-        <p id="customImportStatus"></p>
       </div>
       <label class="field-label" for="categoryFilter">10問グループ</label>
       <select id="categoryFilter"></select>
