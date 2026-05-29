@@ -67,6 +67,16 @@ function escapeHtml(value) {
   })[char]);
 }
 
+function displayQuestionText(q) {
+  let text = q.question || '';
+  if (activeBank !== 'cloze') return text;
+  text = text.replace(/^教則の次の引用の空欄に入る語句として、最も適切なものを1つ選びなさい。\s*/, '').trim();
+  if (text.startsWith('「') && text.endsWith('」')) {
+    text = text.slice(1, -1).trim();
+  }
+  return text;
+}
+
 function categories() {
   return [...new Set(allQuestions.map((q) => q.category))];
 }
@@ -202,7 +212,7 @@ function renderList() {
       index === state.index ? 'current' : '',
       state.answers[q.id] !== undefined ? 'answered' : ''
     ].filter(Boolean).join(' ');
-    button.textContent = `${index + 1}. ${q.category} / ${q.question.replace(/\s+/g, ' ')}`;
+    button.textContent = `${index + 1}. ${q.category} / ${displayQuestionText(q).replace(/\s+/g, ' ')}`;
     button.addEventListener('click', () => {
       state.index = index;
       saveState();
@@ -291,7 +301,7 @@ function render() {
   answerMeter.style.width = `${total ? (answered / total) * 100 : 0}%`;
   questionCategory.textContent = q.category;
   questionSource.textContent = q.reference || q.source;
-  questionText.textContent = q.question;
+  questionText.textContent = displayQuestionText(q);
   choicesEl.innerHTML = '';
   feedback.hidden = selected === undefined;
   feedback.innerHTML = selected === undefined ? '' : feedbackHtml(q, selected);
