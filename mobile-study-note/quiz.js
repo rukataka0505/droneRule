@@ -24,7 +24,7 @@ const listSummary = document.querySelector('#listSummary');
 
 const banks = {
   cloze: {
-    label: '穴埋め網羅クイズ',
+    label: '穴埋め教則リーダー',
     url: 'manual_quiz_questions.json',
     storage: 'drone-quiz-manual-v1'
   },
@@ -194,15 +194,17 @@ function score() {
 function renderControls() {
   const selectedCount = state.selectedCategories.length;
   const poolCount = selectedPool().length;
+  const unit = activeBank === 'cloze' ? '文' : '問';
   randomButton.disabled = poolCount === 0;
   orderedButton.disabled = poolCount === 0;
-  bankSummary.textContent = `${banks[activeBank].label}: 全${allQuestions.length}問 / 選択${selectedCount}分野・${poolCount}問`;
+  bankSummary.textContent = `${banks[activeBank].label}: 全${allQuestions.length}${unit} / 選択${selectedCount}分野・${poolCount}${unit}`;
 }
 
 function renderList() {
   questionList.innerHTML = '';
   const { answered, correct, total } = score();
-  listSummary.textContent = `${answered}/${total}問回答、正解${correct}問`;
+  const unit = activeBank === 'cloze' ? '文' : '問';
+  listSummary.textContent = `${answered}/${total}${unit}回答、正解${correct}${unit}`;
 
   const fragment = document.createDocumentFragment();
   questions.forEach((q, index) => {
@@ -296,8 +298,9 @@ function render() {
   const selected = state.answers[q.id];
   const { answered, correct, total } = score();
 
-  questionCounter.textContent = `問 ${state.index + 1} / ${total}`;
-  scoreCounter.textContent = `${state.mode === 'random' ? 'ランダム10問' : '選択分野順'} / ${answered}問回答 / 正解${correct}問`;
+  const unit = activeBank === 'cloze' ? '文' : '問';
+  questionCounter.textContent = `${unit} ${state.index + 1} / ${total}`;
+  scoreCounter.textContent = `${state.mode === 'random' ? `ランダム10${unit}` : '選択分野順'} / ${answered}${unit}回答 / 正解${correct}${unit}`;
   answerMeter.style.width = `${total ? (answered / total) * 100 : 0}%`;
   questionCategory.textContent = q.category;
   questionSource.textContent = q.reference || q.source;

@@ -95,6 +95,27 @@ GENERIC_DISTRACTORS = [
     "気象",
 ]
 
+FALLBACK_STOPWORDS = {
+    "こと",
+    "もの",
+    "ため",
+    "場合",
+    "必要",
+    "確認",
+    "飛行",
+    "機体",
+    "安全",
+    "当該",
+    "これ",
+    "それ",
+    "する",
+    "いる",
+    "ある",
+    "できる",
+    "しない",
+    "ならない",
+}
+
 
 def clean_text(text: str) -> str:
     text = text.replace("\u3000", " ")
@@ -180,23 +201,35 @@ def candidate_terms(text: str) -> list[str]:
 def best_answer(text: str) -> str | None:
     terms = candidate_terms(text)
     if not terms:
+        terms = fallback_terms(text)
+    if not terms:
         return None
     terms.sort(key=lambda value: (value in IMPORTANT_TERMS, len(value)), reverse=True)
     return terms[0]
 
 
-def quote_around(text: str, answer: str, max_len: int = 150) -> str:
-    index = text.find(answer)
-    if index < 0:
-        return text[:max_len]
-    start = max(0, index - 58)
-    end = min(len(text), index + len(answer) + 72)
-    quote = text[start:end]
-    if start > 0:
-        quote = "..." + quote
-    if end < len(text):
-        quote += "..."
-    return quote
+def fallback_terms(text: str) -> list[str]:
+    patterns = [
+        r"「([^」]{3,24})」",
+        r"（([^（）]{3,24})）",
+        r"\d+(?:\.\d+)?\s?(?:m|km|g|kg|グラム|分|年|日|時間|MHz|GHz)",
+        r"[一-龯ぁ-んァ-ヶA-Za-z0-9]{3,18}(?:制度|措置|義務|承認|許可|認証|証明|登録|飛行|空域|方式|点検|確認|管理|評価|計画|情報|性能|操作|安全|事故|法|規則|場合|場所|事項|状況|通報|報告|判断|機能|装置|距離|高度|速度|方法|者)",
+        r"[一-龯ぁ-んァ-ヶA-Za-z0-9]{2,12}",
+    ]
+    terms = []
+    seen = set()
+    for pattern in patterns:
+        for value in re.findall(pattern, text):
+            term = clean_text(value)
+            if len(term) < 2 or len(term) > 24:
+                continue
+            if term in seen or term in FALLBACK_STOPWORDS:
+                continue
+            if re.search(r"(?:する|した|される|できる|ある|いる|なる|ない)$", term):
+                continue
+            seen.add(term)
+            terms.append(term)
+    return terms
 
 
 def mask_quote(quote: str, answer: str) -> str:
@@ -242,7 +275,7 @@ def main() -> None:
             answer = best_answer(block["text"])
             if not answer:
                 continue
-            quote = quote_around(block["text"], answer)
+            quote = block["text"]
             if answer not in quote:
                 continue
             choices = [answer] + choose_distractors(answer, section_terms, global_terms, serial)
@@ -258,10 +291,10 @@ def main() -> None:
                     "sectionId": section["id"],
                     "page": block["page"],
                     "order": serial,
-                    "question": f"教則の次の引用の空欄に入る語句として、最も適切なものを1つ選びなさい。\n「{mask_quote(quote, answer)}」",
+                    "question": mask_quote(quote, answer),
                     "choices": choices,
                     "answer": choices.index(answer),
-                    "explanation": f"教則引用: 「{quote}」",
+                    "explanation": f"正解は「{answer}」。教則本文の流れを保ったまま、この語句を補って読み進めます。",
                     "reference": f"{section['title']} / PDF p.{block['page']}",
                     "quote": quote,
                 }
