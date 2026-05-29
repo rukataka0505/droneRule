@@ -334,6 +334,26 @@ select {
   border-left-color: var(--line-strong);
   white-space: pre-wrap;
 }
+.previous-review {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+  padding: 12px;
+  font-size: 14px;
+}
+.previous-review strong {
+  display: block;
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+.previous-review blockquote {
+  margin: 6px 0 8px;
+  border-left: 3px solid var(--line-strong);
+  padding: 0 0 0 10px;
+  color: var(--ink);
+  line-height: 1.8;
+}
 .question-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;

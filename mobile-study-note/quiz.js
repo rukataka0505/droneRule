@@ -16,6 +16,7 @@ const questionSource = document.querySelector('#questionSource');
 const questionText = document.querySelector('#questionText');
 const choicesEl = document.querySelector('#choices');
 const feedback = document.querySelector('#feedback');
+const previousReview = document.querySelector('#previousReview');
 const prevButton = document.querySelector('#prevButton');
 const nextButton = document.querySelector('#nextButton');
 const questionList = document.querySelector('#questionList');
@@ -44,8 +45,10 @@ let state = {
   answers: {},
   selectedCategories: [],
   sessionIds: [],
-  mode: 'ordered'
+  mode: 'ordered',
+  lastReview: null
 };
+let autoAdvanceTimer = null;
 
 if (localStorage.getItem('drone-study-theme') === 'dark') body.classList.add('dark');
 
@@ -80,10 +83,11 @@ function loadState() {
       answers: saved.answers && typeof saved.answers === 'object' ? saved.answers : {},
       selectedCategories: Array.isArray(saved.selectedCategories) ? saved.selectedCategories : [],
       sessionIds: Array.isArray(saved.sessionIds) ? saved.sessionIds : [],
-      mode: saved.mode === 'random' ? 'random' : 'ordered'
+      mode: saved.mode === 'random' ? 'random' : 'ordered',
+      lastReview: saved.lastReview && typeof saved.lastReview === 'object' ? saved.lastReview : null
     };
   } catch {
-    state = { index: 0, answers: {}, selectedCategories: [], sessionIds: [], mode: 'ordered' };
+    state = { index: 0, answers: {}, selectedCategories: [], sessionIds: [], mode: 'ordered', lastReview: null };
   }
   if (!state.selectedCategories.length) state.selectedCategories = categories();
 }
@@ -146,6 +150,7 @@ function applyOrderedMode() {
   state.sessionIds = pool.map((q) => q.id);
   state.index = 0;
   state.answers = {};
+  state.lastReview = null;
   saveState();
   setQuestions();
   render();
@@ -157,6 +162,7 @@ function applyRandomMode() {
   state.sessionIds = shuffle(pool).slice(0, 10).map((q) => q.id);
   state.index = 0;
   state.answers = {};
+  state.lastReview = null;
   saveState();
   setQuestions();
   render();
@@ -207,7 +213,59 @@ function renderList() {
   questionList.appendChild(fragment);
 }
 
+function answerLabel(index) {
+  return `${String.fromCharCode(97 + index)}.`;
+}
+
+function feedbackHtml(q, selected) {
+  const explanationText = (q.explanation || '').replace(/^教則該当箇所:\s*/, '');
+  const quoteText = q.quote || '';
+  const contextText = q.context || '';
+  return `<strong>${selected === q.answer ? '正解' : '不正解'}</strong>
+     ${explanationText ? `<span class="quote-label">解説</span><p class="explanation-text">${escapeHtml(explanationText)}</p>` : ''}
+     ${quoteText ? `<span class="quote-label">教則の該当箇所</span><blockquote>${escapeHtml(quoteText)}</blockquote>` : ''}
+     ${contextText ? `<span class="quote-label">周辺文脈</span><blockquote class="context-text">${escapeHtml(contextText)}</blockquote>` : ''}
+     <small>${escapeHtml(q.reference || q.section || '')}</small>`;
+}
+
+function setLastReview(q) {
+  state.lastReview = {
+    id: q.id,
+    category: q.category,
+    question: q.question,
+    answer: `${answerLabel(q.answer)} ${q.choices[q.answer]}`,
+    quote: q.quote || q.explanation || '',
+    reference: q.reference || q.section || ''
+  };
+}
+
+function renderPreviousReview() {
+  if (activeBank !== 'cloze' || !state.lastReview) {
+    previousReview.hidden = true;
+    previousReview.innerHTML = '';
+    return;
+  }
+  previousReview.hidden = false;
+  previousReview.innerHTML = `<span class="quote-label">直前に正解した文章</span>
+    <strong>${escapeHtml(state.lastReview.answer)}</strong>
+    <blockquote>${escapeHtml(state.lastReview.quote)}</blockquote>
+    <small>${escapeHtml(state.lastReview.reference)}</small>`;
+}
+
+function scheduleClozeAutoAdvance(q, selected) {
+  window.clearTimeout(autoAdvanceTimer);
+  if (activeBank !== 'cloze' || selected !== q.answer || questions.length <= 1) return;
+  autoAdvanceTimer = window.setTimeout(() => {
+    const current = questions[state.index];
+    if (!current || current.id !== q.id || state.answers[q.id] !== q.answer) return;
+    if (state.index < questions.length - 1) state.index += 1;
+    saveState();
+    render();
+  }, 650);
+}
+
 function render() {
+  window.clearTimeout(autoAdvanceTimer);
   renderControls();
   if (!questions.length) {
     questionCounter.textContent = '問 - / -';
@@ -218,6 +276,8 @@ function render() {
     questionText.textContent = '分野を1つ以上選択してください。';
     choicesEl.innerHTML = '';
     feedback.hidden = true;
+    previousReview.hidden = true;
+    previousReview.innerHTML = '';
     renderList();
     return;
   }
@@ -234,16 +294,7 @@ function render() {
   questionText.textContent = q.question;
   choicesEl.innerHTML = '';
   feedback.hidden = selected === undefined;
-  const explanationText = (q.explanation || '').replace(/^教則該当箇所:\s*/, '');
-  const quoteText = q.quote || '';
-  const contextText = q.context || '';
-  feedback.innerHTML = selected === undefined
-    ? ''
-    : `<strong>${selected === q.answer ? '正解' : '不正解'}</strong>
-       ${explanationText ? `<span class="quote-label">解説</span><p class="explanation-text">${escapeHtml(explanationText)}</p>` : ''}
-       ${quoteText ? `<span class="quote-label">教則の該当箇所</span><blockquote>${escapeHtml(quoteText)}</blockquote>` : ''}
-       ${contextText ? `<span class="quote-label">周辺文脈</span><blockquote class="context-text">${escapeHtml(contextText)}</blockquote>` : ''}
-       <small>${escapeHtml(q.reference || q.section || '')}</small>`;
+  feedback.innerHTML = selected === undefined ? '' : feedbackHtml(q, selected);
 
   q.choices.forEach((choice, index) => {
     const button = document.createElement('button');
@@ -254,17 +305,20 @@ function render() {
       if (index === selected && selected !== q.answer) button.classList.add('wrong');
       if (index === selected) button.classList.add('selected');
     }
-    button.textContent = `${String.fromCharCode(97 + index)}. ${choice}`;
+    button.textContent = `${answerLabel(index)} ${choice}`;
     button.addEventListener('click', () => {
       state.answers[q.id] = index;
+      if (activeBank === 'cloze' && index === q.answer) setLastReview(q);
       saveState();
       render();
+      scheduleClozeAutoAdvance(q, index);
     });
     choicesEl.appendChild(button);
   });
 
   prevButton.disabled = state.index === 0;
   nextButton.textContent = state.index === questions.length - 1 ? '先頭へ' : '次へ';
+  renderPreviousReview();
   renderList();
 }
 
@@ -304,6 +358,7 @@ clearCategoriesButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
   state.answers = {};
   state.index = 0;
+  state.lastReview = null;
   saveState();
   render();
 });
